@@ -14,4 +14,5 @@ $ python manage.py runserver
 ```
 Website will be live goto the shown url in console or you can goto http://127.0.0.1:8000/ in your browers.
 
+# Website will look like this -
 ![screenshot](/textutils.png "Text to show on mouseover").
