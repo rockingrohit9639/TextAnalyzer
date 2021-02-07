@@ -1,5 +1,6 @@
 # TextAnalyzer
-This is a simple text analyzer where you can perform some operations like capitalize, lower, upper and remove punctuation. This is created using Django for practice.
+This is a simple text analyzer where you can perform some operations like capitalize, lower, upper and remove punctuation. This is created using Python Django. It is completely open source hence you can too contribute anything to this project if you want.
+
 ### Installation
 
 Download the zip file of project or use the follwoing clone command
