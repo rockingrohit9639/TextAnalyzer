@@ -10,6 +10,7 @@ This project is maintained for CrossWinter of Code.
 - Medium: 200 point
 - Hard: 500 point
 
+You can ask any of your doubts related to Git, GitHub, Project, Django or anything else. I will definitely assist you.
 Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
 # How to contribute ?
