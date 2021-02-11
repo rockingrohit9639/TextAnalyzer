@@ -10,6 +10,8 @@ This project is maintained for CrossWinter of Code.
 - Medium: 200 point
 - Hard: 500 point
 
+Join our ![Discord](https://discord.gg/GycEMxYm) server for more details.
+
 # How to contribute ?
 
 * Fork this repository
