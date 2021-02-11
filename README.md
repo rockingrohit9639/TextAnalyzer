@@ -1,6 +1,15 @@
 # TextAnalyzer
 This is a simple text analyzer where you can perform some operations like capitalize, lower, upper and remove punctuation. This is created using Python Django. It is completely open source hence you can too contribute anything to this project if you want.
 
+# CrossWoC 
+This project is maintained for CrossWinter of Code.
+
+##### Points Table
+- Good first Issue: 50 point
+- Easy: 100 point
+- Medium: 200 point
+- Hard: 500 point
+
 # How to contribute ?
 
 * Fork this repository
