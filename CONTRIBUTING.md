@@ -88,7 +88,7 @@ For major changes, you are welcomed to open an issue  about what you would like 
 
 <p align = "center">
 
-<a href="https://github.com/Khushi0321"><img src="http://ForTheBadge.com/images/badges/built-by-developers.svg" alt="built by developers"></a>
+<a href="https://github.com/rockingrohit9639"> <img src="http://ForTheBadge.com/images/badges/built-by-developers.svg" alt="built by developers"></a>
 [![built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/rockingrohit9639/TextAnalyzer.git)
 
 </p>
