@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Analyzer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <!-- <link rel="stylesheet" href=""> -->
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #D4F4E7;
+        }
+        .navbar{
+            position: absolute;
+            top: 0;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            
+        }
+        li{
+            list-style: none;
+            padding: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-links{
+            display: flex;
+            flex: 0.3;
+            justify-content: space-around;
+        }
+        .git-logo{
+            width: 30px;
+            object-fit: contain;
+        }
+        li:hover{
+            background-color: rgba(153, 153, 153, 0.267); 
+            border-radius: 10px;
+        }
+        .main{
+            padding: 0;
+            margin-top: 65px;
+            height: 85vh;
+            overflow: hidden;
+        }
+        .main-content{
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            align-items: center;
+        }
+        .main-content > button{
+            width: 200px;
+            height: 50px;
+            outline: none;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: white;
+            font-size: medium;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .main-content>button:hover{
+            background-color: rgba(153, 153, 153, 0.267); 
+            color: black;
+        }
+        .logo{
+            padding-left: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h3><a href="#">Analyzer</a></h3>
+                </div>
+                <div class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                </div>
+                <div class="social">
+                    <li><a href=""><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a></li>
+                </div>
+                
+            </div>
+            <div class="main">
+                <div class="main-content">
+                    <h1 style="text-align: center;">Easy way to analyze your texts</h1>
+                    <p style="text-align: center;">We provide services to remove Punctuations,Capitalize,convert your texts to small or big Alphabets</p>
+                    <p style="text-align: center;">This is an open source project managed by <span style="text-decoration:underline;">Rohit Saini</span>.</p>
+                    <button> Get Started</button>
+                </div>
+            </div>
+            <footer style="text-align: center;">
+                Made with 💖 by Open Source Contributors
+            </footer>
+            <!-- <img src="https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/thumbimg_71857972thumbejpg.jpg"> -->
+        </div>
+        
+        <!-- <script src="" async defer></script> -->
+    </body>
+</html>
