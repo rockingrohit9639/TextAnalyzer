@@ -26,3 +26,10 @@ CrossWoC is a six-week long opensource event organised by IEEE DTU & IEEE DTU CS
 
 You can ask any of your doubts related to Git, GitHub, Project, Django or anything else. I will definitely assist you.
 Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
+
+
+
+
+# SCREENSHOTS
+![alt Screenshot 1](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss1.png)
+![alt Screenshot 2](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss2.png)
