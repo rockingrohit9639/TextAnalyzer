@@ -29,6 +29,9 @@
 <div class="jumbotron mx-4 my-4">
   <h3 class="display-4">Analyzed Text - {{ purpose }}</h3>
   <p class="lead"><pre>{{ analyzed_text }}</pre> </p>
+  {% if status %}
+  <h4> Status {{ status }} </h4>
+  {% endif %}
   <hr class="my-4">
   <a class="btn btn-dark btn-lg" href="/" role="button">Go Back</a>
 </div>
