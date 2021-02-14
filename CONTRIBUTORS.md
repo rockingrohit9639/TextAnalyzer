@@ -13,3 +13,8 @@
     1. #14 (easy: 100), PR - #17
     2. #12 (easy: 100), PR - #18
   - Total Points (200)   
+  
+- [tharunc](https://github.com/tharunc)
+  - Solved Issues
+    1. #13 (easy: 100), PR - #23
+  - Total Points (100)
