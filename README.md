@@ -32,4 +32,6 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
 # SCREENSHOTS
 ![alt Screenshot 1](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss1.png)
+
+
 ![alt Screenshot 2](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss2.png)
