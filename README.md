@@ -11,6 +11,11 @@ This is a simple text analyzer where you can perform some operations like capita
 - CSS
 - Bootstrap
 
+## Screenshots
+
+<img src="ss1.png">
+<img src="ss2.png">
+
 # CrossWoC 
 [![chat on discord](https://img.shields.io/badge/chat-on%20discord-brightgreen)](https://discord.gg/GycEMxYm)
 
