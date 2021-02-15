@@ -4,7 +4,11 @@ import string
 
 def index(request):
 
-    return render(request, 'index.html')
+    return render(request, 'home.html')
+
+def about(request):
+
+    return render(request, 'about.html')
 
 def analyze(request):
     puncts = string.punctuation
