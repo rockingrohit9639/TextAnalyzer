@@ -9,15 +9,35 @@ def index(request):
 def analyze(request):
     
     puncts = string.punctuation
+    word_to_find = request.POST.get("word_input")
     djText = request.POST.get('text', 'default')
     remPunc = request.POST.get('removepunc', 'off')
     cap = request.POST.get('capitalize', 'off')
     small = request.POST.get('toSmall', 'off')
     upper = request.POST.get('toUpper', 'off')
+    word_find_flag = request.POST.get('word_find', 'off')
     analyzed_text = ""
+
     countword = len(djText.split())
 
     if remPunc == "on" and cap == "on":
+
+    word_status = ""
+    if word_find_flag == "on":
+        if word_to_find != "":
+            if djText.find(word_to_find) != -1:
+                word_status = "found"
+            else:
+                word_status = "not found"
+            analyzed_text = djText
+            result = {
+                "analyzed_text": analyzed_text,
+                "purpose": "Find",
+                "status": word_status,
+            }
+
+    elif remPunc == "on" and cap == "on":
+
         for char in djText:
             if char not in puncts:
                 analyzed_text = analyzed_text + char
