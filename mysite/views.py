@@ -7,6 +7,7 @@ def index(request):
     return render(request, 'index.html')
 
 def analyze(request):
+    
     puncts = string.punctuation
     word_to_find = request.POST.get("word_input")
     djText = request.POST.get('text', 'default')
@@ -16,6 +17,11 @@ def analyze(request):
     upper = request.POST.get('toUpper', 'off')
     word_find_flag = request.POST.get('word_find', 'off')
     analyzed_text = ""
+
+    countword = len(djText.split())
+
+    if remPunc == "on" and cap == "on":
+
     word_status = ""
     if word_find_flag == "on":
         if word_to_find != "":
@@ -31,6 +37,7 @@ def analyze(request):
             }
 
     elif remPunc == "on" and cap == "on":
+
         for char in djText:
             if char not in puncts:
                 analyzed_text = analyzed_text + char
@@ -38,7 +45,8 @@ def analyze(request):
         analyzed_text = analyzed_text.capitalize()
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations & Capitalize"
+            "purpose": "Remove Punctuations & Capitalize",
+            "wordcount": countword
         }
     elif remPunc == "on" and small == "on":
         for char in djText:
@@ -48,7 +56,8 @@ def analyze(request):
         analyzed_text = analyzed_text.lower()
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations & To Small"
+            "purpose": "Remove Punctuations & To Small",
+            "wordcount": countword
         }
 
     elif remPunc == "on" and upper == "on":
@@ -59,7 +68,8 @@ def analyze(request):
         analyzed_text = analyzed_text.upper()
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations & To Upper"
+            "purpose": "Remove Punctuations & To Upper",
+            "wordcount": countword
         }
 
     elif cap == "on" and small == "on":
@@ -68,7 +78,8 @@ def analyze(request):
         analyzed_text = analyzed_text.lower()
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Capitalize & To Small"
+            "purpose": "Capitalize & To Small",
+            "wordcount": countword
         }
 
     elif cap == "on" and upper == "on":
@@ -77,13 +88,15 @@ def analyze(request):
         analyzed_text = analyzed_text.upper()
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Capitalize & To Upper"
+            "purpose": "Capitalize & To Upper",
+            "wordcount": countword
         }
     elif small == "on" and upper == "on":
         analyzed_text = "Text can be smaller or uppercase only."
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Small & Upper"
+            "purpose": "Small & Upper",
+            "wordcount": countword
         }
 
     elif remPunc == 'on':
@@ -92,14 +105,16 @@ def analyze(request):
                 analyzed_text = analyzed_text + char
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations"
+            "purpose": "Remove Punctuations",
+            "wordcount": countword
         }
     elif cap == "on":
         analyzed_text = djText.capitalize()
 
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Capitalize"
+            "purpose": "Capitalize",
+            "wordcount": countword
         }
 
     elif small == "on":
@@ -107,7 +122,8 @@ def analyze(request):
 
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "To Smallercase"
+            "purpose": "To Smallercase",
+            "wordcount": countword
         }
 
     elif upper == "on":
@@ -115,7 +131,8 @@ def analyze(request):
 
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "To Uppercase"
+            "purpose": "To Uppercase",
+            "wordcount": countword
         }
     else:
         return HttpResponse('''<script type="text/javascript">alert("Please select atleast one option.");</script>''')
