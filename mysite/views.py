@@ -2,12 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import string
 
+
 def index(request):
 
     return render(request, 'index.html')
 
+
 def analyze(request):
-    
+
     puncts = string.punctuation
     word_to_find = request.POST.get("word_input")
     djText = request.POST.get('text', 'default')
@@ -17,12 +19,10 @@ def analyze(request):
     upper = request.POST.get('toUpper', 'off')
     word_find_flag = request.POST.get('word_find', 'off')
     analyzed_text = ""
+    word_status = ""
 
     countword = len(djText.split())
 
-    if remPunc == "on" and cap == "on":
-
-    word_status = ""
     if word_find_flag == "on":
         if word_to_find != "":
             if djText.find(word_to_find) != -1:
@@ -30,10 +30,12 @@ def analyze(request):
             else:
                 word_status = "not found"
             analyzed_text = djText
+
             result = {
                 "analyzed_text": analyzed_text,
                 "purpose": "Find",
                 "status": word_status,
+                "wordcount": countword
             }
 
     elif remPunc == "on" and cap == "on":

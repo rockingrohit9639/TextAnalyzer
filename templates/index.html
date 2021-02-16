@@ -32,8 +32,8 @@
 <form action='/analyze' method='post'> {% csrf_token %}
   <h1 class="mx-4 my-4">Welcome to Text Alalyzer</h1>
   <div class="form-group mx-4 my-4">
-    <textarea class="form-control" id="text" rows="4" name="text"></textarea>
-    <input class="form-control" id="word_input" name="word_input">
+    <textarea class="form-control" id="text" rows="4" name="text" placeholder="Enter your text here"></textarea>
+    <input class="form-control my-2" id="word_input" name="word_input" placeholder="Enter word to find in text">
     <h4>Actions</h4>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="on" id="word_find" name="word_find">
