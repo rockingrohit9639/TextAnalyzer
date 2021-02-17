@@ -1,67 +1,141 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<!DOCTYPE html>
+<html>
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Analyzer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href=""> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        .container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #D4F4E7;
+        }
 
-    <title>Text Analyzer</title>
-  </head>
-  <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="/">Text Analyzer</a>
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    </ul>
-  </div>
-</nav>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Welcome to Text Analyzer</strong> Do whatever you want to do with your text. Happy to help.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="container">
-<form action='/analyze' method='post'> {% csrf_token %}
-  <h1 class="mx-4 my-4">Welcome to Text Alalyzer</h1>
-  <div class="form-group mx-4 my-4">
-    <textarea class="form-control" id="text" rows="4" name="text"></textarea>
-    <h4>Actions</h4>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="removepunc" name="removepunc">
-      <label class="form-check-label" for=removepunc">Remove Punctuations</label>
+        }
+
+        li {
+            list-style: none;
+            padding: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-links {
+            display: flex;
+            flex: 0.3;
+            justify-content: space-around;
+        }
+
+        .git-logo {
+            width: 30px;
+            object-fit: contain;
+        }
+
+        li:hover {
+            background-color: rgba(153, 153, 153, 0.267);
+            border-radius: 10px;
+        }
+
+        .main {
+            padding: 0;
+            margin-top: 65px;
+            height: 85vh;
+            overflow: hidden;
+        }
+
+        .main-content {
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            align-items: center;
+        }
+
+        .main-content>a>button {
+            width: 200px;
+            height: 50px;
+            outline: none;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: white;
+            font-size: medium;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .main-content>a>button:hover {
+            background-color: rgba(153, 153, 153, 0.267);
+            color: black;
+        }
+
+        .logo {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h3><a href="analyze.html">Analyzer</a></h3>
+            </div>
+            <div class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+            </div>
+            <div class="social">
+                <li><a href=""><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a>
+                </li>
+            </div>
+
+        </div>
+        <div class="main">
+            <div class="main-content">
+                <h1 style="text-align: center;">Easy way to analyze your texts</h1>
+                <p style="text-align: center;">We provide services to remove Punctuations,Capitalize,convert your texts
+                    to small or big Alphabets</p>
+                <p style="text-align: center;">This is an open source project managed by <span
+                        style="text-decoration:underline;">Rohit Saini</span>.</p>
+                <a href="/index"><button> Get Started</button></a>
+            </div>
+        </div>
+        <footer style="text-align: center;">
+            Made with 💖 by Open Source Contributors
+        </footer>
+        <!-- <img src="https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/thumbimg_71857972thumbejpg.jpg"> -->
     </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="capitalize" name="capitalize">
-      <label class="form-check-label" for=capitalize">Capitalize</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="toSmall" name="toSmall">
-      <label class="form-check-label" for=toSmall">To Small</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="toUpper" name="toUpper">
-      <label class="form-check-label" for=toUpper">To Upper</label>
-    </div>
 
+    <!-- <script src="" async defer></script> -->
+</body>
 
-    <button type="submit" class="btn btn-dark my-4">Analyze Text</button>
-  </div>
-</form>
-</div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
 </html>

@@ -10,6 +10,10 @@ def about(request):
 
     return render(request, 'about.html')
 
+def home(request):
+
+    return render(request, 'index.html')
+
 def analyze(request):
     puncts = string.punctuation
     djText = request.POST.get('text', 'default')
