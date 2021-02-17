@@ -1,72 +1,208 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Text Analyzer </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            .container{
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+                font-family: 'Poppins', sans-serif;
+                background-color: #D4F4E7;
+            }
+            .navbar{
+                position: absolute;
+                top: 0;
+                width: 95%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 34px;
+                overflow: hidden;  
+            }
+            li{
+                list-style: none;
+                padding: 5px;
+            }
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            .nav-links{
+                display: flex;
+                flex: 0.3;
+                justify-content: space-around;
+            }
+            .git-logo{
+                width: 30px;
+                object-fit: contain;
+            }
+            li:hover{
+                background-color: rgba(153, 153, 153, 0.267); 
+                border-radius: 10px;
+            }
+            .main{
+                margin-top: 70px;
+            }
+            .main-content{
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                padding-top: 30px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .main-content > p{
+                margin-top: -10px;
+            }
+            .input-field{
+                width: 100%;
+                background-color: white;
+                font-family: 'Poppins', sans-serif;
+                padding: 10px;
+                min-height: 100px;
+                border-radius: 5px;    
+                resize: vertical;
+                font-size: medium;
+            }
+            .form-input{
+                width: 20px;
+                height:20px;
+                cursor: pointer;
+            }
+            .form-label{
+                font-size: medium;
+            }
+            .button-container{
+                display: flex;
+                width: 800px;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            button{
+                width: 200px;
+                height: 50px;
+                outline: none;
+                border: none;
+                font-family: 'Poppins', sans-serif;
+                background-color: black;
+                color: white;
+                font-size: medium;
+                cursor: pointer;
+                transition: all 0.2s;
+                align-self: center;
+                margin-top: 20px;
+            }
+            button:hover{
+                background-color: rgba(153, 153, 153, 0.267); 
+                color: black;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+            }
+            .input-word{
+                margin-top: 10px;
+                border: 1px solid darkgray;
+                width: 100%;
+                background-color: white;
+                font-family: 'Poppins', sans-serif;
+                padding: 10px;
+                min-height: 20px;
+                border-radius: 5px;
+            }
+            @media screen and (max-width: 600px) {
+                body{
+                    width: 100%;
+                    height: 100%;
+                    background-color: #D4F4E7;
+                }
+                .input-field{
+                    width:100%;
+                    
+                }
+                .input-word{
+                    width: 100%;
+                }
+                .container{
+                    width: 100%;
+                }
+                .navbar{
+                    position: relative;
+                    width: 100vw;
+                    background-color: white;
+                }
+            }
+            
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Text Analyzer</title>
-  </head>
-  <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="/">Text Analyzer</a>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    </ul>
-  </div>
-</nav>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Welcome to Text Analyzer</strong> Do whatever you want to do with your text. Happy to help.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="container">
-<form action='/analyze' method='post'> {% csrf_token %}
-  <h1 class="mx-4 my-4">Welcome to Text Alalyzer</h1>
-  <div class="form-group mx-4 my-4">
-    <textarea class="form-control" id="text" rows="4" name="text" placeholder="Enter your text here"></textarea>
-    <input class="form-control my-2" id="word_input" name="word_input" placeholder="Enter word to find in text">
-    <h4>Actions</h4>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="word_find" name="word_find">
-      <label class="form-check-label" for="word_find">Find word</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="removepunc" name="removepunc">
-      <label class="form-check-label" for="removepunc">Remove Punctuations</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="capitalize" name="capitalize">
-      <label class="form-check-label" for="capitalize">Capitalize</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="toSmall" name="toSmall">
-      <label class="form-check-label" for="toSmall">To Small</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="on" id="toUpper" name="toUpper">
-      <label class="form-check-label" for=toUpper">To Upper</label>
-    </div>
-
-
-    <button type="submit" class="btn btn-dark my-4"> Analyze </button>
-  </div>
-</form>
-</div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h3><a href="/">Analyzer</a></h3>
+                </div>
+                <div class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                </div>
+                <div class="social">
+                    <li><a href="https://github.com/rockingrohit9639/TextAnalyzer" target="_blank"><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a></li>
+                </div>
+                
+            </div>
+            <div class="main">
+                <div class="main-content">
+                    <h1 class="header" style="text-align: center;">Welcome to Text Analyzer</h1>
+                    <p style="text-align: center;">Add your text below to perform desired operations on it</p>
+                    <form action="/analyze" method="POST">{% csrf_token %}
+                        <textarea  id="text" name="text" class="input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
+                        
+                        <input class="input-word" id="word_input" name="word_input" placeholder="Enter word to find in text"/>
+                        <p style="text-align: center;">Actions you can perform : </p>
+                        <div class="button-container">
+                            <div class="buttons">
+                                <input class="form-input" type="checkbox" value="on" id="word_find" name="word_find">
+                                <label class="form-label" for="word_find">Find word</label>
+                            </div>
+                            <div class="buttons">
+                                <input class="form-input" type="checkbox" value="on" id="removepunc" name="removepunc">
+                                <label class="form-label" for=removepunc">Remove Punctuations</label>
+                            </div>
+                            <div class="buttons">
+                                <input class="form-input" type="checkbox" value="on" id="capitalize" name="capitalize">
+                                <label class="form-label" for=capitalize">Capitalize</label>
+                            </div>
+                            <div class="buttons">
+                                <input class="form-input" type="checkbox" value="on" id="toSmall" name="toSmall">
+                                <label class="form-label" for=toSmall">To Small</label>
+                            </div>
+                            <div class="buttons">
+                                <input class="form-input" type="checkbox" value="on" id="toUpper" name="toUpper">
+                                <label class="form-label" for=toUpper">To Upper</label>
+                            </div>
+                        </div>
+                        <button type="submit">Analyze Text</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </body>
 </html>
