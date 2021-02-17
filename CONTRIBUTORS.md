@@ -2,6 +2,11 @@
 
 - [Rohit Kumar Saini](https://github.com/rockingrohit9639) (Author)
 
+- [Shudhanshu Singh](https://github.com/ShudhanshuSingh) 
+   - Solved Issues
+      1. [#8 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/8), PR - [#29](https://github.com/rockingrohit9639/TextAnalyzer/pull/29)
+      2. [#9 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/9), PR - [#29](https://github.com/rockingrohit9639/TextAnalyzer/pull/29)
+
 - [Achyut Kumar](https://github.com/Sloth-Panda)
   - Solved Issues
     1. [#11 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/11), PR - [#15](https://github.com/rockingrohit9639/TextAnalyzer/pull/15)
