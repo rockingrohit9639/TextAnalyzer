@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Analyzer</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-        <!-- <link rel="stylesheet" href=""> -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Analyzer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href=""> -->
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
         }
-        .container{
+
+        .container {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -22,7 +24,8 @@
             font-family: 'Poppins', sans-serif;
             background-color: #D4F4E7;
         }
-        .navbar{
+
+        .navbar {
             position: absolute;
             top: 0;
             width: 95%;
@@ -30,36 +33,43 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 10px;
-            
+
         }
-        li{
+
+        li {
             list-style: none;
             padding: 5px;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: inherit;
         }
-        .nav-links{
+
+        .nav-links {
             display: flex;
             flex: 0.3;
             justify-content: space-around;
         }
-        .git-logo{
+
+        .git-logo {
             width: 30px;
             object-fit: contain;
         }
-        li:hover{
-            background-color: rgba(153, 153, 153, 0.267); 
+
+        li:hover {
+            background-color: rgba(153, 153, 153, 0.267);
             border-radius: 10px;
         }
-        .main{
+
+        .main {
             padding: 0;
             margin-top: 65px;
             height: 85vh;
             overflow: hidden;
         }
-        .main-content{
+
+        .main-content {
             padding-left: 0;
             padding-right: 0;
             margin: 0;
@@ -68,7 +78,8 @@
             padding-top: 30px;
             align-items: center;
         }
-        .main-content > button{
+
+        .main-content>a>button {
             width: 200px;
             height: 50px;
             outline: none;
@@ -80,44 +91,51 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        .main-content>button:hover{
-            background-color: rgba(153, 153, 153, 0.267); 
+
+        .main-content>a>button:hover {
+            background-color: rgba(153, 153, 153, 0.267);
             color: black;
         }
-        .logo{
+
+        .logo {
             padding-left: 20px;
         }
     </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <h3><a href="#">Analyzer</a></h3>
-                </div>
-                <div class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                </div>
-                <div class="social">
-                    <li><a href=""><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a></li>
-                </div>
-                
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h3><a href="analyze.html">Analyzer</a></h3>
             </div>
-            <div class="main">
-                <div class="main-content">
-                    <h1 style="text-align: center;">Easy way to analyze your texts</h1>
-                    <p style="text-align: center;">We provide services to remove Punctuations,Capitalize,convert your texts to small or big Alphabets</p>
-                    <p style="text-align: center;">This is an open source project managed by <span style="text-decoration:underline;">Rohit Saini</span>.</p>
-                    <button> Get Started</button>
-                </div>
+            <div class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="/about">About Us</a></li>
             </div>
-            <footer style="text-align: center;">
-                Made with 💖 by Open Source Contributors
-            </footer>
-            <!-- <img src="https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/thumbimg_71857972thumbejpg.jpg"> -->
+            <div class="social">
+                <li><a href=""><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a>
+                </li>
+            </div>
+
         </div>
-        
-        <!-- <script src="" async defer></script> -->
-    </body>
+        <div class="main">
+            <div class="main-content">
+                <h1 style="text-align: center;">Easy way to analyze your texts</h1>
+                <p style="text-align: center;">We provide services to remove Punctuations,Capitalize,convert your texts
+                    to small or big Alphabets</p>
+                <p style="text-align: center;">This is an open source project managed by <span
+                        style="text-decoration:underline;">Rohit Saini</span>.</p>
+                <a href="/index"><button> Get Started</button></a>
+            </div>
+        </div>
+        <footer style="text-align: center;">
+            Made with 💖 by Open Source Contributors
+        </footer>
+        <!-- <img src="https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/thumbimg_71857972thumbejpg.jpg"> -->
+    </div>
+
+    <!-- <script src="" async defer></script> -->
+</body>
+
 </html>
