@@ -32,16 +32,22 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
 
 # SCREENSHOTS
+
+## HOME 
+
 ![ss1](https://user-images.githubusercontent.com/46225357/108541144-20134b00-7308-11eb-8dac-f738398f55de.png)
 
+## TEXT ANALYZER
 
 ![ss2](https://user-images.githubusercontent.com/46225357/108542048-3b328a80-7309-11eb-9ed9-10c40c1b6d58.png)
 
+## REMOVE PUNCTUATIONS & CAPITALIZE
 
 ![ss3](https://user-images.githubusercontent.com/46225357/108542086-4ab1d380-7309-11eb-9ed5-8b90ae56900b.png)
 
-
+## FIND A WORD
 ![ss4](https://user-images.githubusercontent.com/46225357/108542148-60bf9400-7309-11eb-8639-07693d20cc3c.png)
 
+## WORD FOUND/NOT FOUND
 
 ![ss5](https://user-images.githubusercontent.com/46225357/108542185-6e751980-7309-11eb-9a7f-1ae26ba6f5b8.png)
