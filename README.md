@@ -39,7 +39,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
 ## Text Analyzer
 
-![ss2](https://user-images.githubusercontent.com/46225357/108542048-3b328a80-7309-11eb-9ed9-10c40c1b6d58.png)
+![ss2](https://user-images.githubusercontent.com/46225357/108543867-a9784c80-730b-11eb-94b5-adc94a8d1379.png)
 
 ## Remove Punctuations & Capitalize
 
