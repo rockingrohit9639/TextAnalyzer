@@ -32,7 +32,16 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
 
 # SCREENSHOTS
-![alt Screenshot 1](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss1.png)
+![ss1](https://user-images.githubusercontent.com/46225357/108541144-20134b00-7308-11eb-8dac-f738398f55de.png)
 
 
-![alt Screenshot 2](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss2.png)
+![ss2](https://user-images.githubusercontent.com/46225357/108542048-3b328a80-7309-11eb-9ed9-10c40c1b6d58.png)
+
+
+![ss3](https://user-images.githubusercontent.com/46225357/108542086-4ab1d380-7309-11eb-9ed5-8b90ae56900b.png)
+
+
+![ss4](https://user-images.githubusercontent.com/46225357/108542148-60bf9400-7309-11eb-8639-07693d20cc3c.png)
+
+
+![ss5](https://user-images.githubusercontent.com/46225357/108542185-6e751980-7309-11eb-9a7f-1ae26ba6f5b8.png)
