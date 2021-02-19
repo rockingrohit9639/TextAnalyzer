@@ -8,7 +8,7 @@
     2. [#16 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/16), PR - [#20](https://github.com/rockingrohit9639/TextAnalyzer/pull/20)
     3. [#3 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/3), PR - [#28](https://github.com/rockingrohit9639/TextAnalyzer/pull/28)
     4. [#4 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/4), PR - [#28](https://github.com/rockingrohit9639/TextAnalyzer/pull/28)
-  - Total Points (900)
+  - Total Points (1000)
 
 - [Shudhanshu Singh](https://github.com/ShudhanshuSingh) 
    - Solved Issues
