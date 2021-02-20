@@ -32,7 +32,23 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
 
 # SCREENSHOTS
-![alt Screenshot 1](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss1.png)
 
+## HOME 
 
-![alt Screenshot 2](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/ss2.png)
+![ss1](https://user-images.githubusercontent.com/46225357/108541144-20134b00-7308-11eb-8dac-f738398f55de.png)
+
+## Text Analyzer
+
+![ss2](https://user-images.githubusercontent.com/46225357/108544072-f0fed880-730b-11eb-81e6-5a1f982c9e41.png)
+
+## Remove Punctuations & Capitalize
+
+![ss3](https://user-images.githubusercontent.com/46225357/108542086-4ab1d380-7309-11eb-9ed5-8b90ae56900b.png)
+
+## Find A Word
+
+![ss4](https://user-images.githubusercontent.com/46225357/108542148-60bf9400-7309-11eb-8639-07693d20cc3c.png)
+
+## Word Found/Not Found
+
+![ss5](https://user-images.githubusercontent.com/46225357/108542185-6e751980-7309-11eb-9a7f-1ae26ba6f5b8.png)
