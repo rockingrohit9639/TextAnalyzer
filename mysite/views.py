@@ -24,6 +24,7 @@ def analyze(request):
     small = request.POST.get('toSmall', 'off')
     upper = request.POST.get('toUpper', 'off')
     word_find_flag = request.POST.get('word_find', 'off')
+    New_Line = request.POST.get('New_line', 'off')
     analyzed_text = ""
     word_status = ""
 
@@ -43,6 +44,16 @@ def analyze(request):
                 "status": word_status,
                 "wordcount": countword
             }
+    elif New_Line == "on":
+        for char in djText:
+            if char == '.':
+                char='\n';
+            analyzed_text = analyzed_text + char
+        result = {
+            "analyzed_text": analyzed_text,
+            "purpose": "Remove Punctuations",
+            "wordcount": countword
+        }
 
     elif remPunc == "on" and cap == "on":
 
@@ -142,6 +153,8 @@ def analyze(request):
             "purpose": "To Uppercase",
             "wordcount": countword
         }
+    
+
     else:
         return HttpResponse('''<script type="text/javascript">alert("Please select atleast one option.");</script>''')
 
