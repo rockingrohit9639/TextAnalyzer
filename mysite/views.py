@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import string
+import re
 
 def index(request):
 
@@ -25,6 +26,7 @@ def analyze(request):
     upper = request.POST.get('toUpper', 'off')
     word_find_flag = request.POST.get('word_find', 'off')
     New_Line = request.POST.get('New_line', 'off')
+    Emails= request.POST.get('Email_Address', 'off')
     analyzed_text = ""
     word_status = ""
 
@@ -51,9 +53,18 @@ def analyze(request):
             analyzed_text = analyzed_text + char
         result = {
             "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations",
+            "purpose": "Changes '.' to New Line",
             "wordcount": countword
         }
+    elif Emails == "on":
+        lst= re.findall('\S+@\S+', djText)
+        result = {
+            "analyzed_text": lst,
+            "purpose": "Find All Emails",
+            "wordcount": countword
+        }
+
+
 
     elif remPunc == "on" and cap == "on":
 
