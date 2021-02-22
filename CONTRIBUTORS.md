@@ -26,8 +26,14 @@
   - Solved Issues 
     1. [#2 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/2), PR - [#24](https://github.com/rockingrohit9639/TextAnalyzer/pull/24)
   - Total Points (200)
+
+
+- [Arbaz Alam](https://github.com/arbazalam01)
+  - Solved Issues 
+    1. [#19 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/19), PR - [#36](https://github.com/rockingrohit9639/TextAnalyzer/pull/36)
+  - Total Points (200)
  
- 
+
 - [Akash20x](https://github.com/Akash20x)
   - Solved Issues
     1. [#25 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/25), PR - [#32](https://github.com/rockingrohit9639/TextAnalyzer/pull/32)
