@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import string
 import re
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import random
 
 def index(request):
 
@@ -27,6 +30,8 @@ def analyze(request):
     word_find_flag = request.POST.get('word_find', 'off')
     New_Line = request.POST.get('New_line', 'off')
     Emails= request.POST.get('Email_Address', 'off')
+    Passgen=request.POST.get('Password_Generator','off')
+
     analyzed_text = ""
     word_status = ""
 
@@ -70,8 +75,31 @@ def analyze(request):
             "wordcount": countword
         }
 
-
-
+    elif Passgen=="on":
+        stop_words = set(stopwords.words('english'))
+        chars = "!£$%&*#@"
+        ucase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        text = re.sub(r'[^\w\s]', '', djText) 
+        token=word_tokenize(text)
+        filtered_sentence = [w for w in token if not w in stop_words] 
+        filtered_sentence = [] 
+        for w in token: 
+            if w not in stop_words: 
+                filtered_sentence.append(w) 
+        random_word=random.choice(filtered_sentence)
+        random_word=random_word.title()
+        merge=""
+        for word in random_word.split():
+            merge+=random.choice(chars)+word[:-1]+ word[-1].upper()\
+            +random.choice(string.ascii_letters)+"@"+random.choice(ucase_letters)\
+            +random.choice(string.digits)+" "
+        final_text=merge[:-1]
+        result = {
+            "analyzed_text": final_text,
+            "purpose": "Generate password from text",
+            "wordcount": countword
+        }
+ 
     elif remPunc == "on" and cap == "on":
 
         for char in djText:
