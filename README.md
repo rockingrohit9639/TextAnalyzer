@@ -1,6 +1,6 @@
 # TextAnalyzer
 
-![TextAnalyzer](https://socialify.git.ci/rockingrohit9639/TextAnalyzer/image?font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
+![TextAnalyzer](https://textanalyzerapp.herokuapp.com)(https://socialify.git.ci/rockingrohit9639/TextAnalyzer/image?font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
 
 This is a simple text analyzer where you can perform some operations like capitalize, lower, upper and remove punctuation. This is created using Python Django. It is completely open source hence you can too contribute anything to this project if you want. All your new ideas are welcome here, we will implement it together.
 
