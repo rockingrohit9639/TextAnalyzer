@@ -1,6 +1,8 @@
-# TextAnalyzer(https://textanalyzerapp.herokuapp.com/)
+# TextAnalyzer
 
-  
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![Support Server](https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/5WFsqjc3)
+[Deployed App](https://textanalyzerapp.herokuapp.com/)
 
 ![TextAnalyzer](https://socialify.git.ci/rockingrohit9639/TextAnalyzer/image?font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
 
@@ -13,31 +15,17 @@ This is a simple text analyzer where you can perform some operations like capita
 ## Tech Used
 
 - Python
-
 - Django
-
 - HTML
-
 - CSS
-
 - Bootstrap
 
-  
-
 # CrossWoC
-
 [![chat on discord](https://img.shields.io/badge/chat-on%20discord-brightgreen)](https://discord.gg/GycEMxYm)
-
-  
 
 CrossWoC is a six-week long opensource event organised by IEEE DTU & IEEE DTU CS, which gives programmers and innovators an opportunity to bring out their nascent talent and find intriguing solutions to real-world problems. It provides a platform for developers to dig deeper into their gray matter and bring out their latent creativity through open source.
 
-  
-
 ![CrossWoC](https://camo.githubusercontent.com/4d270d544d67ce146ad9ec7d3811e165a64de576dc29b783c6960d7644a3e3b6/68747470733a2f2f63726f7373776f632e696565656474752e696e2f696d616765732f696d6763772e706e67)
-
-  
-  
 
 ##### Points Table
 
