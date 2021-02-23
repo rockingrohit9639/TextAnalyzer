@@ -57,9 +57,15 @@ def analyze(request):
             "wordcount": countword
         }
     elif Emails == "on":
-        lst= re.findall('\S+@\S+', djText)
+        regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+        lst= re.findall('\S+@+\S+', djText)
+        tmp=""
+        for x in lst:
+            if(re.search(regex,x)):
+                tmp+=x
+                tmp+='\n'
         result = {
-            "analyzed_text": lst,
+            "analyzed_text": tmp,
             "purpose": "Find All Emails",
             "wordcount": countword
         }
