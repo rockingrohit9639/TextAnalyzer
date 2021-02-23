@@ -2,9 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import string
 import re
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import random
+nltk.download('stopwords')
 
 def index(request):
 
