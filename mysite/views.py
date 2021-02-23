@@ -2,10 +2,13 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import string
 import re
+import requests
+from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import random
+import textwrap
 nltk.download('stopwords')
 
 def index(request):
@@ -33,6 +36,8 @@ def analyze(request):
     New_Line = request.POST.get('New_line', 'off')
     Emails= request.POST.get('Email_Address', 'off')
     Passgen=request.POST.get('Password_Generator','off')
+    search_word=request.POST.get('Search_word','off')
+
 
     analyzed_text = ""
     word_status = ""
@@ -101,7 +106,26 @@ def analyze(request):
             "purpose": "Generate password from text",
             "wordcount": countword
         }
- 
+        
+    elif search_word=="on":
+        url = 'https://www.dictionary.com/browse/'
+        headers = requests.utils.default_headers() 
+        headers.update({
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+        })
+        req = requests.get(url+djText, headers)
+        soup = BeautifulSoup(req.content, 'html.parser')
+        mydivs = soup.findAll("div", {"value": "1"})[0]
+        for tags in mydivs:
+            meaning = tags.text
+        wrap = textwrap.TextWrapper(width=100) 
+        word_meaning = wrap.fill(text=meaning) 
+        result = {
+            "analyzed_text": word_meaning,
+            "purpose": "Searched Word",
+            "wordcount": countword
+        }
+        
     elif remPunc == "on" and cap == "on":
 
         for char in djText:
