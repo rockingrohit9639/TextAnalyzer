@@ -16,6 +16,13 @@
     2. [#10 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/10), PR - [#37](https://github.com/rockingrohit9639/TextAnalyzer/pull/37)
   - Total Points (700)
 
+- [Akash20x](https://github.com/Akash20x)
+  - Solved Issues
+    1. [#25 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/25), PR - [#32](https://github.com/rockingrohit9639/TextAnalyzer/pull/32)
+    2. [#30 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/30), PR - [#32](https://github.com/rockingrohit9639/TextAnalyzer/pull/33)
+    3. [#34 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/34), PR - [#41](https://github.com/rockingrohit9639/TextAnalyzer/pull/41)
+  - Total Points (650)
+
 - [Shudhanshu Singh](https://github.com/ShudhanshuSingh) 
    - Solved Issues
       1. [#8 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/8), PR - [#29](https://github.com/rockingrohit9639/TextAnalyzer/pull/29)
@@ -32,12 +39,6 @@
   - Solved Issues 
     1. [#2 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/2), PR - [#24](https://github.com/rockingrohit9639/TextAnalyzer/pull/24)
   - Total Points (200)
-
-- [Akash20x](https://github.com/Akash20x)
-  - Solved Issues
-    1. [#25 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/25), PR - [#32](https://github.com/rockingrohit9639/TextAnalyzer/pull/32)
-    2. [#30 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/30), PR - [#32](https://github.com/rockingrohit9639/TextAnalyzer/pull/33)
-  - Total Points (150)
  
 - [tharunc](https://github.com/tharunc)
   - Solved Issues
