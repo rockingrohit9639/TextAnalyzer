@@ -3,6 +3,7 @@ from django.shortcuts import render
 import string
 import re
 import requests
+import json
 from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
@@ -23,6 +24,32 @@ def home(request):
 
     return render(request, 'index.html')
 
+
+def gallery(request):
+    ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
+    place = val()
+    payload = {
+        'query': place,
+        'client_id': ACCESS_KEY,
+        'per_page': 5,
+    }
+    url = 'https://api.unsplash.com/search/photos'
+    r = requests.get(url, params=payload).json()
+
+    package = json.dumps(r, indent=2)
+    arr = []
+    for data in r['results']:
+        arr.append(data['urls']['regular'])
+
+    place=place.upper()+":"
+    context = {
+        'link': arr,
+        'text': place,
+    }
+    return render(request, 'gallery.html', context)
+
+
+
 def analyze(request):
 
     puncts = string.punctuation
@@ -37,7 +64,7 @@ def analyze(request):
     Emails= request.POST.get('Email_Address', 'off')
     Passgen=request.POST.get('Password_Generator','off')
     search_word=request.POST.get('Search_word','off')
-
+    gallery=request.POST.get('q','off')
 
     analyzed_text = ""
     word_status = ""
@@ -125,6 +152,20 @@ def analyze(request):
             "purpose": "Searched Word",
             "wordcount": countword
         }
+
+
+    elif gallery=="on":
+        global val
+        def val():
+            return djText
+
+        result = {
+            "analyzed_text": djText,
+            "purpose":"Images",
+            "status": "Press Button To View Images",
+            "wordcount": countword
+        }                
+
         
     elif remPunc == "on" and cap == "on":
 
