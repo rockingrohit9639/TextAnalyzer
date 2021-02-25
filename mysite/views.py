@@ -10,7 +10,9 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import random
 import textwrap
+
 nltk.download('stopwords')
+nltk.download('punkt')
 
 def index(request):
 
