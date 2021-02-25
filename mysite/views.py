@@ -114,14 +114,21 @@ def analyze(request):
         chars = "!£$%&*#@"
         ucase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         text = re.sub(r'[^\w\s]', '', djText) 
-        token=word_tokenize(text)
-        filtered_sentence = [w for w in token if not w in stop_words] 
-        filtered_sentence = [] 
+        token = word_tokenize(text)
+
+        filtered_sentence = []
+        
         for w in token: 
             if w not in stop_words: 
-                filtered_sentence.append(w) 
-        random_word=random.choice(filtered_sentence)
+                filtered_sentence.append(w)
+
+        if len(filtered_sentence) > 0:
+            random_word = random.choice(filtered_sentence)
+        else:
+            random_word = token[0]
+
         random_word=random_word.title()
+    
         merge=""
         for word in random_word.split():
             merge+=random.choice(chars)+word[:-1]+ word[-1].upper()\
