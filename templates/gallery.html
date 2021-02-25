@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Analyzer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    
+      <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #D4F4E7;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+
+        }
+
+        li {
+            list-style: none;
+            padding: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-links {
+            display: flex;
+            flex: 0.3;
+            justify-content: space-around;
+        }
+
+        .git-logo {
+            width: 30px;
+            object-fit: contain;
+        }
+
+        li:hover {
+            background-color: rgba(153, 153, 153, 0.267);
+            border-radius: 10px;
+        }
+
+        .main {
+            padding: 0;
+            margin-top: 65px;
+            overflow: hidden;
+        }
+
+        .main-content {
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            align-items: center;
+        }
+
+        .gallery{
+        	margin:5px;
+        }
+
+        .logo {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h3><a href="/"> Text Analyzer</a></h3>
+            </div>
+            <div class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+            </div>
+            <div class="social">
+                <li><a href=""><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a>
+                </li>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-content">
+               {% if text %}
+		    <h2 id="text">{{ text }}</h2>
+		    {% endif %}
+            <div class="gallery">
+		            {% for i in link %}
+		                <div class="img">
+		                <img src="{{ i }}" class="card-wide">
+		                </div>
+		            {% endfor %}
+		        </div>
+		    </div>
+        </div>
+
+
+        
+        <footer style="text-align: center;">
+            Made with 💖 by Open Source Contributors
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
