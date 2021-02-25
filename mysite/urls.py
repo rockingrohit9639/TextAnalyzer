@@ -14,4 +14,5 @@ urlpatterns = [
     path('analyze', views.analyze, name='rmvpunc'),
     path('about', views.about, name='About Us'),
     path('index', views.home, name='Get Started'),
+    path('gallery/',views.gallery,name='gallery'),
 ]
