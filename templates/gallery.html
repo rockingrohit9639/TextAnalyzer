@@ -108,6 +108,7 @@
 
         <div class="main">
             <div class="main-content">
+	{% csrf_token %}
                {% if text %}
 		    <h2 id="text">{{ text }}</h2>
 		    {% endif %}
