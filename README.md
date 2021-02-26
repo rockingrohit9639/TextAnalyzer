@@ -1,4 +1,7 @@
 # TextAnalyzer
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Support Server](https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/5WFsqjc3)
@@ -89,3 +92,23 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
   
 
 ![ss5](https://user-images.githubusercontent.com/46225357/108542185-6e751980-7309-11eb-9a7f-1ae26ba6f5b8.png)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars.githubusercontent.com/u/70213384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/rockingrohit9639/TextAnalyzer/commits?author=Sloth-Panda" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
