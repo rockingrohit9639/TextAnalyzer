@@ -98,6 +98,8 @@ Thanks goes to these wonderful people :star: :
   
   <tr>
   <td align="center"><a href="https://github.com/rockingrohit9639"><img src="https://avatars.githubusercontent.com/u/40729749?s=460&u=c3a23be339e8224f441e1ecd543d5177f6615ac8&v=4s=100" width="100px;" alt=""/><br /><sub><b>Rohit Kumar Saini (Author)</b></sub></a><br />💻</a></td>
+  </tr>
+  <tr>
   <td align="center"><a href="https://github.com/Akash20x"><img src="https://avatars.githubusercontent.com/u/46225357?s=460&u=f45b1544ead37f447e95ddd09912b1aeb9bf936d&v=4s=100" width="100px;" alt=""/><br /><sub><b> Akash20x </b></sub></a><br />💻</a></td>
   <td align="center"><a href="https://github.com/arbazalam01"><img src="https://avatars.githubusercontent.com/u/29120203?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Arbaz Alam </b></sub></a><br />💻</a></td>
     <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars.githubusercontent.com/u/70213384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br />💻</a></td>
