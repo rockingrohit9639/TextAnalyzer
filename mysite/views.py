@@ -37,10 +37,12 @@ def gallery(request):
     payload = {
         'query': place,
         'client_id': ACCESS_KEY,
-        'per_page': 5,
+        'per_page': 10,
     }
     url = 'https://api.unsplash.com/search/photos'
     r = requests.get(url, params=payload).json()
+
+    print(r)
 
     package = json.dumps(r, indent=2)
     arr = []

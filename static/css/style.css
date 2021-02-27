@@ -42,8 +42,7 @@ li:hover {
 .main {
     padding: 0;
     height: 85vh;
-    overflow: hidden;
-    
+    overflow-y: auto;
 }
 
 .main-content {
