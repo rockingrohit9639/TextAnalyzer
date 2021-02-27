@@ -41,7 +41,6 @@ li:hover {
 
 .main {
     padding: 0;
-    margin-top: 65px;
     height: 85vh;
     overflow: hidden;
     
@@ -140,4 +139,10 @@ form{
     padding: 10px;
     min-height: 20px;
     border-radius: 5px;
+}
+
+#analyzed_text {
+    color: rgba(252, 81, 95, 0.616);
+    font-weight: 500;
+    font-size: 2rem;
 }

@@ -1,147 +1,34 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Analyzer</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+    .main {
+        text-align: center;
+    }
+</style>
 
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            background-color: #D4F4E7;
-        }
+<p><b>W</b>e are the makers/contributors of this project text analyzer where you can
+    perform
+    some operations like capitalize, lower, upper and remove punctuation. This is created using
+    Python Django. It is completely open source hence you can too contribute anything to
+    this project if you want. All your new ideas are welcome here, we
+    will implement it together.
+</p>
 
-        .navbar {
-            position: absolute;
-            top: 0;
-            width: 95%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10px;
+<div class="mentor">
+    <h2>Our mentor</h2>
+    <p><a href="https://github.com/rockingrohit9639" target="_blank">Rohit Kumar Saini</a></p>
+</div>
 
-        }
-
-        li {
-            list-style: none;
-            padding: 5px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .nav-links {
-            display: flex;
-            flex: 0.3;
-            justify-content: space-around;
-        }
-
-        .git-logo {
-            width: 30px;
-            object-fit: contain;
-        }
-
-        li:hover {
-            background-color: rgba(153, 153, 153, 0.267);
-            border-radius: 10px;
-        }
-
-        .main {
-            padding: 0;
-            margin-top: 65px;
-            height: 85vh;
-            overflow: hidden;
-        }
-
-        .main-content {
-            padding-left: 0;
-            padding-right: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            padding-top: 30px;
-            align-items: center;
-            text-align: center;
-        }
-
-        .logo {
-            padding-left: 20px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-
-        <div class="navbar">
-
-            <div class="logo">
-                <h3><a href="/"> Text Analyzer</a></h3>
-            </div>
-
-            <div class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-            </div>
-
-            <div class="social">
-                <li><a href=""><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a>
-                </li>
-            </div>
-
-        </div>
-
-        <div class="main">
-            <div class="main-content">
-
-                <p><b>W</b>e are the makers/contributors of this project text analyzer where you can
-                    perform
-                    some operations like capitalize, lower, upper and remove punctuation. This is created using
-                    Python Django. It is completely open source hence you can too contribute anything to
-                    this project if you want. All your new ideas are welcome here, we
-                    will implement it together.
-                </p>
-                
-                <div class="mentor">
-                    <h2>Our mentor</h2>
-                    <p><a href="https://github.com/rockingrohit9639" target="_blank">Rohit Kumar Saini</a></p>
-                </div>
-
-                <div class="contributors">
-                    <h2>Our Contributors</h2>
-                    <p><a href="https://github.com/Sloth-Panda">Achyut Kumar Panda</p>
-                    <p><a href="https://github.com/ShudhanshuSingh">Shudhanshu Singh</p>
-                    <p><a href="https://github.com/muthuannamalai12">Muthu Annamalai</p>
-                    <p><a href="https://github.com/ayushrastogi689">Ayush Rastogi</p>
-                    <p><a href="https://github.com/tharunc">Tharun C</p>
-                    <p><a href="https://github.com/Amit366">Amit Kumar Mishra</p>
-                </div>
-
-            </div>
-        </div>
-
-        <footer style="text-align: center;">
-            Made with 💖 by Open Source Contributors
-        </footer>
-    </div>
+<div class="contributors">
+    <h2>Our Contributors</h2>
+    <p><a href="https://github.com/Sloth-Panda">Achyut Kumar Panda</p>
+    <p><a href="https://github.com/ShudhanshuSingh">Shudhanshu Singh</p>
+    <p><a href="https://github.com/muthuannamalai12">Muthu Annamalai</p>
+    <p><a href="https://github.com/ayushrastogi689">Ayush Rastogi</p>
+    <p><a href="https://github.com/tharunc">Tharun C</p>
+    <p><a href="https://github.com/Amit366">Amit Kumar Mishra</p>
+</div>
 
 
-</body>
-
-</html>
+{% endblock content %}

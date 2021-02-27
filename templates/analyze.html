@@ -1,148 +1,17 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% block content %}          
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Analyzed Successfully</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+<h1 class="header">Text Analyzed Successfully 🎉</h1>
+<p>You choosed : {{purpose}}</p>
+<h3>Result : </h3>
+<p><pre id="analyzed_text"> {{analyzed_text}} </pre></p>
+<hr />
 
-        .container {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            font-family: 'Poppins', sans-serif;
-            background-color: #D4F4E7;
-        }
+{% if status %}
+<h4> Status : {{ status }} </h4>
+<a href="gallery/"><button>Results</button></a>
+{% endif %}
 
-        .navbar {
-            position: absolute;
-            top: 0;
-            width: 95%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 34px;
-            overflow: hidden;
-        }
+<p class="text-muted"> Words : {{ wordcount }}</p>
 
-        li {
-            list-style: none;
-            padding: 5px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .nav-links {
-            display: flex;
-            flex: 0.3;
-            justify-content: space-around;
-        }
-
-        .git-logo {
-            width: 30px;
-            object-fit: contain;
-        }
-
-        li:hover {
-            background-color: rgba(153, 153, 153, 0.267);
-            border-radius: 10px;
-        }
-
-        .main {
-            margin-top: 70px;
-        }
-
-        .main-content {
-            padding-left: 0;
-            padding-right: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            padding-top: 30px;
-            align-items: center;
-        }
-
-        .main-content>p {
-            margin-top: -10px;
-        }
-
-        button {
-            width: 200px;
-            height: 50px;
-            margin-bottom:45px;
-            outline: none;
-            border: none;
-            font-family: 'Poppins', sans-serif;
-            background-color: black;
-            color: white;
-            font-size: medium;
-            cursor: pointer;
-            transition: all 0.2s;
-            align-self: center;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background-color: rgba(153, 153, 153, 0.267);
-            color: black;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <h3><a href="/"> Text Analyzer</a></h3>
-            </div>
-            <div class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="#">About Us</a></li>
-            </div>
-            <div class="social">
-                <li><a href="https://github.com/rockingrohit9639/TextAnalyzer"><img class="git-logo"
-                            src="https://image.flaticon.com/icons/png/512/25/25231.png"></a></li>
-            </div>
-        </div>
-        <div class="main">
-            <div class="main-content">
-                <h1 class="header">Text Analyzed Successfully 🎉</h1>
-                <p>You choosed : {{purpose}}</p>
-                <h3>Result : </h3>
-                <p><pre>{{analyzed_text}}</pre></p>
-                <hr />
-                {% if status %}
-                <h4> Status : {{ status }} </h4>
-                <a href="gallery/"><button>Results</button></a>
-                {% endif %}
-                <p class="text-muted"> Words : {{ wordcount }}</p>
-            </div>
-
-   
-         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-             crossorigin="anonymous"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-              integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-              crossorigin="anonymous"></script>
-         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-              integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-              crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+{% endblock %}
