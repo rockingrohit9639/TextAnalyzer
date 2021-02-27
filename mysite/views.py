@@ -42,8 +42,6 @@ def gallery(request):
     url = 'https://api.unsplash.com/search/photos'
     r = requests.get(url, params=payload).json()
 
-    print(r)
-
     package = json.dumps(r, indent=2)
     arr = []
     for data in r['results']:
