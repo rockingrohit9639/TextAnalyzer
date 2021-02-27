@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.utils.html import format_html
 import string
 import re
 import requests
@@ -82,16 +83,22 @@ def analyze(request):
         if word_to_find != "":
             if djText.find(word_to_find) != -1:
                 word_status = "found"
+                word=djText.replace(word_to_find,"<" + word_to_find+">")
+                djText=format_html('<b style="color:{};">{}</b>','red',word)
+            
             else:
                 word_status = "not found"
             analyzed_text = djText
+            word_find="Find Word = " + word_to_find
 
             result = {
                 "analyzed_text": analyzed_text,
-                "purpose": "Find",
+                "highlight":"Choosen word is highlighted by < >",
+                "purpose": word_find,
                 "status": word_status,
                 "wordcount": countword
             }
+
     elif New_Line == "on":
         for char in djText:
             if char == '.':
@@ -205,7 +212,7 @@ def analyze(request):
         result = {
             "analyzed_text": djText,
             "purpose":"Images",
-            "status": "Press Button To View Images",
+            "status2": "Press Button To View Images",
             "wordcount": countword
         }                
 
