@@ -10,9 +10,13 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import random
 import textwrap
+from PyDictionary import PyDictionary
 
 nltk.download('stopwords')
 nltk.download('punkt')
+
+#Api key for the meriam-webster api
+api_key = "e7aa870d-ee6d-482c-a437-eb6bb0bcb9c1"
 
 def index(request):
 
@@ -67,7 +71,8 @@ def analyze(request):
     Passgen=request.POST.get('Password_Generator','off')
     search_word=request.POST.get('Search_word','off')
     gallery=request.POST.get('q','off')
-
+    Suggest_word=request.POST.get('suggest_word','off')
+    
     analyzed_text = ""
     word_status = ""
 
@@ -162,7 +167,36 @@ def analyze(request):
             "wordcount": countword
         }
 
+    
+    elif Suggest_word=="on":
+        find = requests.get(f"https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{djText}?key={api_key}")
+        response = find.json()
+        
+        if len(response) == 0:
+            print("Word Not Recognized!")
+        else:
+            k=[]
+            if str(response[0]).count(" ") == 0:
+                for j in range(len(response)):
+                    k.append(response[j])
+                predict=" , ".join(k)
+                djText=predict
 
+            else:
+                dictionary=PyDictionary()
+                testdict=dictionary.synonym(djText)
+                suggest=" , ".join(testdict)
+                djText=suggest
+            wrap = textwrap.TextWrapper(width=100) 
+            suggest = wrap.fill(text=djText) 
+
+        result = {
+            "analyzed_text": suggest,
+            "purpose": "Suggested Word",
+            "wordcount": countword
+        }
+        
+    
     elif gallery=="on":
         global val
         def val():
