@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container_main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D4F4E7;
+}
+
+li {
+    list-style: none;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.nav-links {
+    display: flex;
+    flex: 0.3;
+    justify-content: space-around;
+}
+
+.git-logo {
+    width: 30px;
+    object-fit: contain;
+}
+
+li:hover {
+    background-color: rgba(153, 153, 153, 0.267);
+    border-radius: 10px;
+}
+
+.main {
+    padding: 0;
+    margin-top: 65px;
+    height: 85vh;
+    overflow: hidden;
+    
+}
+
+.main-content {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    align-items: center;
+}
+
+.main-content>a>button {
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.main-content>a>button:hover {
+    background-color: rgba(153, 153, 153, 0.267);
+    color: black;
+}
+
+.logo {
+    padding-left: 20px;
+}
+
+.main-content > p{
+    margin-top: -10px;
+}
+.input-field{
+    width: 100%;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    min-height: 100px;
+    border-radius: 5px;    
+    resize: vertical;
+    font-size: medium;
+}
+.form-input{
+    width: 20px;
+    height:20px;
+    cursor: pointer;
+}
+.form-label{
+    font-size: medium;
+}
+.button-container{
+    display: flex;
+    /* width: 800px; */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+button{
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: center;
+    margin-top: 20px;
+}
+button:hover{
+    background-color: rgba(153, 153, 153, 0.267); 
+    color: black;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    
+}
+.input-word{
+    margin-top: 10px;
+    border: 1px solid darkgray;
+    width: 100%;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    min-height: 20px;
+    border-radius: 5px;
+}

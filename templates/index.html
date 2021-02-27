@@ -1,180 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> Text Analyzer </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-        <style>
-            body{
-                margin: 0;
-                padding: 0;
-                overflow-x: hidden;
-            }
-            .container{
-                margin: 0;
-                padding: 0;
-                width: 100vw;
-                height: 100vh;
-                font-family: 'Poppins', sans-serif;
-                background-color: #D4F4E7;
-            }
-            .navbar{
-                position: absolute;
-                top: 0;
-                width: 95%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0 34px;
-                overflow: hidden;  
-            }
-            li{
-                list-style: none;
-                padding: 5px;
-            }
-            a{
-                text-decoration: none;
-                color: inherit;
-            }
-            .nav-links{
-                display: flex;
-                flex: 0.3;
-                justify-content: space-around;
-            }
-            .git-logo{
-                width: 30px;
-                object-fit: contain;
-            }
-            li:hover{
-                background-color: rgba(153, 153, 153, 0.267); 
-                border-radius: 10px;
-            }
-            .main{
-                margin-top: 70px;
-            }
-            .main-content{
-                padding-left: 0;
-                padding-right: 0;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                padding-top: 30px;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            .main-content > p{
-                margin-top: -10px;
-            }
-            .input-field{
-                width: 100%;
-                background-color: white;
-                font-family: 'Poppins', sans-serif;
-                padding: 10px;
-                min-height: 100px;
-                border-radius: 5px;    
-                resize: vertical;
-                font-size: medium;
-            }
-            .form-input{
-                width: 20px;
-                height:20px;
-                cursor: pointer;
-            }
-            .form-label{
-                font-size: medium;
-            }
-            .button-container{
-                display: flex;
-                width: 800px;
-                justify-content: space-around;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            button{
-                width: 200px;
-                height: 50px;
-                outline: none;
-                border: none;
-                font-family: 'Poppins', sans-serif;
-                background-color: black;
-                color: white;
-                font-size: medium;
-                cursor: pointer;
-                transition: all 0.2s;
-                align-self: center;
-                margin-top: 20px;
-            }
-            button:hover{
-                background-color: rgba(153, 153, 153, 0.267); 
-                color: black;
-            }
-            form{
-                display: flex;
-                flex-direction: column;
-            }
-            .input-word{
-                margin-top: 10px;
-                border: 1px solid darkgray;
-                width: 100%;
-                background-color: white;
-                font-family: 'Poppins', sans-serif;
-                padding: 10px;
-                min-height: 20px;
-                border-radius: 5px;
-            }
-            @media screen and (max-width: 600px) {
-                body{
-                    width: 100%;
-                    height: 100%;
-                    background-color: #D4F4E7;
-                }
-                .input-field{
-                    width:100%;
-                    
-                }
-                .input-word{
-                    width: 100%;
-                }
-                .container{
-                    width: 100%;
-                }
-                .navbar{
-                    position: relative;
-                    width: 100vw;
-                    background-color: white;
-                }
-            }
-            
 
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <h3><a href="/">Analyzer</a></h3>
-                </div>
-                <div class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                </div>
-                <div class="social">
-                    <li><a href="https://github.com/rockingrohit9639/TextAnalyzer" target="_blank"><img class="git-logo" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a></li>
-                </div>
-                
-            </div>
-            <div class="main">
-                <div class="main-content">
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+    {% block content %}
+        
                     <h1 class="header" style="text-align: center;">Welcome to Text Analyzer</h1>
                     <p style="text-align: center;">Add your text below to perform desired operations on it</p>
                     <form action="/analyze" method="POST">{% csrf_token %}
-                        <textarea  id="text" name="text" class="input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
+                        <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
+        
                         
-                        <input class="input-word" id="word_input" name="word_input" placeholder="Enter word to find in text"/>
+                        <input class="form-control input-word" id="word_input" name="word_input" placeholder="Enter word to find in text"/>
+            
                         <p style="text-align: center;">Actions you can perform : </p>
                         <div class="button-container">
                             <div class="buttons">
@@ -225,9 +64,6 @@
                         </div>
                         <button type="submit">Analyze Text</button>
                     </form>
-                </div>
-            </div>
-        </div>
-        
-    </body>
-</html>
+
+                    
+        {% endblock %}
