@@ -4,9 +4,11 @@
 <h1 class="header">Text Analyzed Successfully 🎉</h1>
 <p>You choosed : {{purpose}}</p>
 <h3>Result : </h3>
-<p><pre id="analyzed_text"> {{analyzed_text}} </pre></p>
+<textarea id="analyzed_text"> {{analyzed_text}} </textarea>
 <hr />
-
+<i class="fa fa-clone" id="copy_icon" onclick="myFunction()">
+    <span class="popuptext" id="myPopup">Copy</span>
+  </i>
 {% if status %}
 <h4> Status : {{ status }} </h4>
 <a href="gallery/"><button>Results</button></a>
