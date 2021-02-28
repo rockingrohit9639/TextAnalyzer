@@ -8,8 +8,12 @@
 <hr />
 
 {% if status %}
-<h4> Status : {{ status }} </h4>
-<a href="gallery/"><button>Results</button></a>
+    <h4> Status : {{ status }} </h4>
+
+    {% if find_image %}
+    <a href="gallery/"><button>Results</button></a>
+    {% endif %}
+
 {% endif %}
 
 <p class="text-muted mt-2"> Words : {{ wordcount }}</p>

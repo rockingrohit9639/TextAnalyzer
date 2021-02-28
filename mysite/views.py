@@ -31,6 +31,7 @@ def home(request):
     return render(request, 'index.html')
 
 
+
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
     place = val()
@@ -76,6 +77,8 @@ def analyze(request):
     analyzed_text = ""
     word_status = ""
 
+    
+
     countword = len(djText.split())
 
     if word_find_flag == "on":
@@ -84,6 +87,7 @@ def analyze(request):
                 word_status = "found"
             else:
                 word_status = "not found"
+            
             analyzed_text = djText
 
             result = {
@@ -92,6 +96,7 @@ def analyze(request):
                 "status": word_status,
                 "wordcount": countword
             }
+
     elif New_Line == "on":
         for char in djText:
             if char == '.':
@@ -206,6 +211,7 @@ def analyze(request):
             "analyzed_text": djText,
             "purpose":"Images",
             "status": "Press Button To View Images",
+            "find_image": True,
             "wordcount": countword
         }                
 
