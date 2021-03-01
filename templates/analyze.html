@@ -4,7 +4,12 @@
 <h1 class="header">Text Analyzed Successfully 🎉</h1>
 <p>You choosed : {{purpose}}</p>
 <h3>Result : </h3>
-<p><pre id="analyzed_text"> {{analyzed_text}} </pre></p>
+
+{% if highlight %}
+<h4> {{ highlight }} </h4>
+{% endif %}
+
+<p><pre id="analyzed_text"> {{analyzed_text|safe}}</pre></p>
 <hr />
 
 {% if status %}
