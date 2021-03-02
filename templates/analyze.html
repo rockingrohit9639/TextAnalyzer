@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
-{% block content %}          
+{% block content %}  
+
+{% if findWord %}
+<style>
+  #copy_icon{
+    display: none;
+  }
+</style>
+{% endif %}
 
 <h1 class="header">Text Analyzed Successfully 🎉</h1>
 <p>You choosed : {{purpose}}</p>
 <h3>Result : </h3>
+<<<<<<< HEAD
+=======
 
 {% if highlight %}
 <h4> {{ highlight }} </h4>
 {% endif %}
 
 <p><pre id="analyzed_text"> {{analyzed_text|safe}}</pre></p>
+>>>>>>> 8662d4c73d4d194fd7524691cc4017d88f25b59b
 <hr />
+
+<i class="fa fa-clone" id="copy_icon" onclick="copyToClipboard('analyzed_text')">
+    <span class="popuptext" id="myPopup">Copy</span>
+  </i>
 
 {% if status %}
     <h4> Status : {{ status }} </h4>

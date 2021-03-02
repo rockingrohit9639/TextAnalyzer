@@ -145,3 +145,20 @@ form{
     font-weight: 500;
     font-size: 2rem;
 }
+#copy_icon {
+    top: 19%;
+    left: 80%;
+    z-index: 1;
+    display: inline-block;
+    color: rgb(85, 85, 85);
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  #copy_icon:hover {
+    color: rgb(167, 162, 162);
+  }
+  

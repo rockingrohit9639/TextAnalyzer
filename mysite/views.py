@@ -101,7 +101,8 @@ def analyze(request):
                 "highlight":"Choosen word is highlighted by red colour",
                 "purpose": word_find,
                 "status": word_status,
-                "wordcount": countword
+                "wordcount": countword,
+                "findWord":True
             }
 
     elif New_Line == "on":
