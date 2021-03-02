@@ -22,12 +22,36 @@
 
 <div class="contributors">
     <h2>Our Contributors</h2>
-    <p><a href="https://github.com/Sloth-Panda">Achyut Kumar Panda</p>
+    <!--<p><a href="https://github.com/Sloth-Panda">Achyut Kumar Panda</p>
     <p><a href="https://github.com/ShudhanshuSingh">Shudhanshu Singh</p>
     <p><a href="https://github.com/muthuannamalai12">Muthu Annamalai</p>
     <p><a href="https://github.com/ayushrastogi689">Ayush Rastogi</p>
     <p><a href="https://github.com/tharunc">Tharun C</p>
-    <p><a href="https://github.com/Amit366">Amit Kumar Mishra</p>
+    <p><a href="https://github.com/Amit366">Amit Kumar Mishra</p>-->
+
+
+    <div id="contributorsLlist">
+
+        {% if userData %}
+            {% for data in userData %}
+               <table>
+                <tr>
+                   <td>
+                    <div class="contributor">
+                        <img src="{{ data.avatar_url }}" class="rounded-circle" alt="avatar">
+                        <a href="{{ data.html_url }}"><p> {{ data.login }} <p></a>
+                    </div>
+                   </td>
+                    
+                </tr>
+              </table>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+    
+    
 </div>
 
 
