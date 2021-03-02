@@ -25,7 +25,15 @@ def index(request):
 
 def about(request):
 
-    return render(request, 'about.html')
+    api_url='https://api.github.com/repos/rockingrohit9639/TextAnalyzer/contributors'
+
+    response = requests.get(api_url).json()
+
+    context = {
+        "userData": response
+    }
+
+    return render(request, 'about.html', context)
 
 def home(request):
 
