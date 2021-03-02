@@ -40,6 +40,10 @@ def home(request):
     return render(request, 'index.html')
 
 
+def index2(request):
+
+    return render(request, 'index2.html')
+
 
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
@@ -110,6 +114,7 @@ def analyze(request):
                 "purpose": word_find,
                 "status": word_status,
                 "wordcount": countword,
+                "analyze_text":True,
                 "findWord":True
             }
 
@@ -121,6 +126,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Changes '.' to New Line",
+            "analyze_text":True,
             "wordcount": countword
         }
     elif Emails == "on":
@@ -134,6 +140,7 @@ def analyze(request):
         result = {
             "analyzed_text": tmp,
             "purpose": "Find All Emails",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -166,6 +173,7 @@ def analyze(request):
         result = {
             "analyzed_text": final_text,
             "purpose": "Generate password from text",
+            "generate_text":True,
             "wordcount": countword
         }
         
@@ -185,6 +193,7 @@ def analyze(request):
         result = {
             "analyzed_text": word_meaning,
             "purpose": "Searched Word",
+            "generate_text":True,
             "wordcount": countword
         }
 
@@ -214,6 +223,7 @@ def analyze(request):
         result = {
             "analyzed_text": suggest,
             "purpose": "Suggested Word",
+            "generate_text":True,
             "wordcount": countword
         }
         
@@ -228,6 +238,7 @@ def analyze(request):
             "purpose":"Images",
             "status": "Press Button To View Images",
             "find_image": True,
+            "generate_text":True,
             "wordcount": countword
         }                
 
@@ -242,6 +253,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Remove Punctuations & Capitalize",
+            "analyze_text":True,
             "wordcount": countword
         }
     elif remPunc == "on" and small == "on":
@@ -253,6 +265,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Remove Punctuations & To Small",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -265,6 +278,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Remove Punctuations & To Upper",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -275,6 +289,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Capitalize & To Small",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -285,6 +300,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Capitalize & To Upper",
+            "analyze_text":True,
             "wordcount": countword
         }
     elif small == "on" and upper == "on":
@@ -292,6 +308,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Small & Upper",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -302,6 +319,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Remove Punctuations",
+            "analyze_text":True,
             "wordcount": countword
         }
     elif cap == "on":
@@ -310,6 +328,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "Capitalize",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -319,6 +338,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "To Smallercase",
+            "analyze_text":True,
             "wordcount": countword
         }
 
@@ -328,6 +348,7 @@ def analyze(request):
         result = {
             "analyzed_text": analyzed_text,
             "purpose": "To Uppercase",
+            "analyze_text":True,
             "wordcount": countword
         }
     
