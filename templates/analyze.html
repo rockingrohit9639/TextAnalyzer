@@ -35,5 +35,13 @@
 
 <p class="text-muted mt-2"> Words : {{ wordcount }}</p>
 
+{% if analyze_text %}
 <a href="/index"><button>Back</button></a>
+{% endif %}
+
+{% if generate_text %}
+<a href="/index2"><button>Back</button></a>
+{% endif %}
+
 {% endblock %}
+
