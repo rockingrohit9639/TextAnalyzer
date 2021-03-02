@@ -4,16 +4,30 @@
 <h1 class="header">Text Analyzed Successfully 🎉</h1>
 <p>You choosed : {{purpose}}</p>
 <h3>Result : </h3>
+<<<<<<< HEAD
 <textarea id="analyzed_text"> {{analyzed_text}} </textarea>
+=======
+
+{% if highlight %}
+<h4> {{ highlight }} </h4>
+{% endif %}
+
+<p><pre id="analyzed_text"> {{analyzed_text|safe}}</pre></p>
+>>>>>>> 8662d4c73d4d194fd7524691cc4017d88f25b59b
 <hr />
 <i class="fa fa-clone" id="copy_icon" onclick="myFunction()">
     <span class="popuptext" id="myPopup">Copy</span>
   </i>
 {% if status %}
-<h4> Status : {{ status }} </h4>
-<a href="gallery/"><button>Results</button></a>
+    <h4> Status : {{ status }} </h4>
+
+    {% if find_image %}
+    <a href="gallery/"><button>Results</button></a>
+    {% endif %}
+
 {% endif %}
 
 <p class="text-muted mt-2"> Words : {{ wordcount }}</p>
 
+<a href="/index"><button>Back</button></a>
 {% endblock %}

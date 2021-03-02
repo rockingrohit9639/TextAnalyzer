@@ -4,19 +4,13 @@
 {% if text %}
 <h2 id="text">{{ text }}</h2>
 {% endif %}
+
 <div class="gallery">
     {% for i in link %}
     <div class="img">
         <img src="{{ i }}" class="card-wide">
     </div>
     {% endfor %}
-</div>
-
-
-
-<footer style="text-align: center;">
-    Made with 💖 by Open Source Contributors
-</footer>
 </div>
 
 {% endblock %}
