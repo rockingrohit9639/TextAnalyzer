@@ -123,6 +123,14 @@ button:hover{
     background-color: rgba(153, 153, 153, 0.267); 
     color: black;
 }
+button#btns{
+    margin-left: 0.7em;
+    margin-top: 3em;
+    }
+button#btns2{
+    margin-left: 4em;
+    margin-top: 3em;
+    }
 form{
     display: flex;
     flex-direction: column;
