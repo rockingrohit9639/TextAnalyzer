@@ -55,16 +55,17 @@
   - Solved Issues 
     1. [#2 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/2), PR - [#24](https://github.com/rockingrohit9639/TextAnalyzer/pull/24)
   - Total Points (200)
+
+- [Priya Nagda](https://github.com/pri1311)
+  - Solved Issues
+    1. [#70 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/70), PR - [#73](https://github.com/rockingrohit9639/TextAnalyzer/pull/73)
+    2. [#74 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/74), PR - [#75](https://github.com/rockingrohit9639/TextAnalyzer/pull/75)
+  - Total Points (150)
  
 - [tharunc](https://github.com/tharunc)
   - Solved Issues
     1. [#13 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/13), PR - [#23](https://github.com/rockingrohit9639/TextAnalyzer/pull/23)
   - Total Points (100)
-
-- [Priya Nagda](https://github.com/pri1311)
-  - Solved Issues
-    1. [#70 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/70), PR - [#73](https://github.com/rockingrohit9639/TextAnalyzer/pull/73)
-  - Total Points (50)
 
 - [kopinasaur](https://github.com/kopinasaur)
   - Solved Issues
