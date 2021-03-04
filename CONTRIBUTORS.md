@@ -65,3 +65,8 @@
   - Solved Issues
     1. [#70 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/70), PR - [#73](https://github.com/rockingrohit9639/TextAnalyzer/pull/73)
   - Total Points (50)
+
+- [kopinasaur](https://github.com/kopinasaur)
+  - Solved Issues
+    1. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
+  - Total Points (50)
