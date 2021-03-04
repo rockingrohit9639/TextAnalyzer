@@ -7,7 +7,7 @@
 </p>
 <form action="/analyze" method="POST">
     {% csrf_token %}
-    <input id="text" name="text" class="form-control" autofocus="true" placeholder="Enter your text here" />
+    <input id="text" name="text" class="form-control" autofocus="true" autocomplete="off" placeholder="Enter your text here" />
 
     <p style="text-align: center">Actions you can perform :</p>
     <div class="button-container">
