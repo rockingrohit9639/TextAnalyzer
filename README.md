@@ -98,6 +98,7 @@ Thanks goes to these wonderful people :star: :
   <tr>
   <td align="center"><a href="https://github.com/rockingrohit9639"><img src="https://avatars.githubusercontent.com/u/40729749?s=460&u=c3a23be339e8224f441e1ecd543d5177f6615ac8&v=4s=100" width="100px;" alt=""/><br /><sub><b>Rohit Kumar Saini (Author)</b></sub></a><br />💻</a></td>
   </tr>
+  
   <tr>
   <td align="center"><a href="https://github.com/Akash20x"><img src="https://avatars.githubusercontent.com/u/46225357?s=460&u=f45b1544ead37f447e95ddd09912b1aeb9bf936d&v=4s=100" width="100px;" alt=""/><br /><sub><b> Akash20x </b></sub></a><br />💻</a></td>
   <td align="center"><a href="https://github.com/arbazalam01"><img src="https://avatars.githubusercontent.com/u/29120203?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Arbaz Alam </b></sub></a><br />💻</a></td>
@@ -105,8 +106,11 @@ Thanks goes to these wonderful people :star: :
     <td align="center"><a href="https://github.com/ShudhanshuSingh"><img src="https://avatars.githubusercontent.com/u/65860180?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Shudhanshu Singh </b></sub></a><br />💻</a></td>
     <td align="center"><a href="https://github.com/muthuannamalai12"><img src="https://avatars.githubusercontent.com/u/64524822?s=460&u=c1f8f317ca1eb1340f411b69b3b7c85446303ae5&v=4s=100" width="100px;" alt=""/><br /><sub><b> Muthu Annamalai.V </b></sub></a><br />💻</a></td>
     <td align="center"><a href="https://github.com/ayushrastogi689"><img src="https://avatars.githubusercontent.com/u/66988298?s=460&u=88dd84d78d9d07102b0421a8eb94c34f69b63b68&v=4s=100" width="100px;" alt=""/><br /><sub><b> Ayush Rastogi </b></sub></a><br />💻</a></td>
+    </tr>
+    <tr>
     <td align="center"><a href="https://github.com/tharunc"><img src="https://avatars.githubusercontent.com/u/68283386?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> tharunc </b></sub></a><br />💻</a></td>
     <td align="center"><a href="https://github.com/Amit366"><img src="https://avatars.githubusercontent.com/u/60662775?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Amit Kumar Mishra </b></sub></a><br />💻</a></td>
+    <td align="center"><a href="https://github.com/pri1311"><img src="https://avatars.githubusercontent.com/u/64613009?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Priya Nagda </b></sub></a><br />💻</a></td>
   </tr>
 </table>
 
