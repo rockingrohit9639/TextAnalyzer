@@ -152,6 +152,7 @@ form{
     color: rgba(252, 81, 95, 0.616);
     font-weight: 500;
     font-size: 2rem;
+    word-wrap: break-word;
 }
 
 .contributor {
