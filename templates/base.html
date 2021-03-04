@@ -69,14 +69,18 @@
 
       <!-- end of Navbar  -->
 
-      <div class="main">
-        <div class="main-content">{% block content %} {% endblock %}</div>
-      </div>
-
-      <footer style="text-align: center">
-        Made with 💖 by Open Source Contributors
-      </footer>
+      <div>{% block content %} {% endblock %}</div> 
     </div>
+
+    <footer>
+          <div class="inner-width">
+            <div class="copyright">
+              <h5>&copy; 2021 | An open sourse project managed by...Rohit Saini.</h5>
+              <h3 style="color:black;"><b>Made with 💖 by Open Sourse contributors...!!</b></h3>
+            </div>
+          </div>
+    </footer>
+
     <script src="{% static 'js/Script.js' %}"></script>
 
     <script

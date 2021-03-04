@@ -2,12 +2,21 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% block content %}
 
-
-    {% block content %}
+    <style>
+        .home{
+                min-height: 500px;
+                background:linear-gradient(to bottom, rgb(134, 133, 133) , white);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+    </style>
         
+        <div class ="home">
+            <div class = "main-content" >  
                     <h1 class="header" style="text-align: center;">Welcome to Text Analyzer</h1>
-                    <p style="text-align: center;">Add your text below to perform desired operations on it</p>
+                    <p style="text-align: center;">**Add your text below to perform desired operations on it..</p>
                     <form action="/analyze" method="POST">{% csrf_token %}
                         <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
         
@@ -46,11 +55,11 @@
                             </div>
                                                               
                         </div>
-                        <button type="submit">Analyze Text</button>
+                        <button type="submit" class="button">Analyze Text..</button>
                     </form>
-                    <div id="container">
-                        <a href="/"><button id="btns">Back To Home</button></a>
-                        <a href="/index2"><button id="btns2">Text Generator</button></a>
-                    </div>
+                        <a href="/index2"><button  class="button">Text Generator ▶</button></a>
+                        <a href="/"><button class="button" > ◀ Back </button></a>
+            </div>
+        </div>
                     
-        {% endblock %}
+{% endblock %}

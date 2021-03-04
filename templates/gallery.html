@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% if text %}
-<h2 id="text">{{ text }}</h2>
-{% endif %}
+    <section id = "home">
+        <div class="main-content">
 
-<div class="gallery">
-    {% for i in link %}
-    <div class="img">
-        <img src="{{ i }}" class="card-wide">
-    </div>
-    {% endfor %}
-</div>
+            {% if text %}
+            <h2 id="text">{{ text }}</h2>
+            {% endif %}
+
+            <div class="gallery">
+                {% for i in link %}
+                <div class="img">
+                    <img src="{{ i }}" class="card-wide">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

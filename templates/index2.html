@@ -1,38 +1,52 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
 
-<h1 class="header" style="text-align: center">Welcome to Text Analyzer</h1>
-<h4 class="header" style="text-align: center">(Text Generator Mode)</h4>
-<p style="text-align: center; margin-top: 2px">
-    Add your text below to perform desired operations on it
-</p>
-<form action="/analyze" method="POST">
-    {% csrf_token %}
-    <input id="text" name="text" class="form-control" autofocus="true" placeholder="Enter your text here" />
+    <style>
+        .home{
+                min-height: 500px;
+                background:linear-gradient(to bottom, rgb(134, 133, 133) , white);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+    </style>
 
-    <p style="text-align: center">Actions you can perform :</p>
-    <div class="button-container">
-        <div class="buttons">
-            <input class="form-input" type="checkbox" value="on" id="Password_Generator" name="Password_Generator" />
-            <label class="form-label" for="Password_Generator">Generate Password</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="checkbox" value="on" id="word_find" name="Search_word" />
-            <label class="form-label" for="Search_word">Find Meaning</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="checkbox" id="gallery" name="q" value="on" />
-            <label class="form-label" for="q">Search Images </label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="checkbox" value="on" id="suggest_word" name="suggest_word" />
-            <label class="form-label" for="suggest_word">Suggest Word</label>
+    <div class = "home">
+        <div class="main-content">
+
+            <h1 class="header" style="text-align: center">Welcome to Text Analyzer</h1>
+            <h4 class="header" style="text-align: center">(Text Generator Mode)</h4>
+            <p style="text-align: center; margin-top: 2px">
+                **Add your text below to perform desired operations on it..
+            </p>
+            <form action="/analyze" method="POST">
+                {% csrf_token %}
+                <input id="text" name="text" class="form-control" autofocus="true" placeholder="Enter your text here" />
+
+                <p style="text-align: center">Actions you can perform :</p>
+                <div class="button-container">
+                    <div class="buttons">
+                        <input class="form-input" type="checkbox" value="on" id="Password_Generator" name="Password_Generator" />
+                        <label class="form-label" for="Password_Generator">Generate Password</label>
+                    </div>
+                    <div class="buttons">
+                        <input class="form-input" type="checkbox" value="on" id="word_find" name="Search_word" />
+                        <label class="form-label" for="Search_word">Find Meaning</label>
+                    </div>
+                    <div class="buttons">
+                        <input class="form-input" type="checkbox" id="gallery" name="q" value="on" />
+                        <label class="form-label" for="q">Search Images </label>
+                    </div>
+                    <div class="buttons">
+                        <input class="form-input" type="checkbox" value="on" id="suggest_word" name="suggest_word" />
+                        <label class="form-label" for="suggest_word">Suggest Word</label>
+                    </div>
+                </div>
+                <button type="submit" class="button">Generate Text..</button>
+            </form>
+                <a href="/index2"><button  class="button">Text Analyzer▶</button></a>
+                <a href="/"><button class="button" > ◀ Back </button></a>
         </div>
     </div>
-    <button type="submit">Generate Text</button>
-</form>
-<div id="container">
-    <a href="/"><button id="btns">Back To Home</button></a>
-    <a href="/index"><button id="btns2">Text Analyzer</button></a>
-</div>
 
 {% endblock %}

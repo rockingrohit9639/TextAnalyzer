@@ -39,40 +39,6 @@ li:hover {
     border-radius: 10px;
 }
 
-.main {
-    padding: 0;
-    height: 85vh;
-    overflow-y: auto;
-}
-
-.main-content {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    padding-top: 30px;
-    align-items: center;
-}
-
-.main-content>a>button {
-    width: 200px;
-    height: 50px;
-    outline: none;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    background-color: black;
-    color: white;
-    font-size: medium;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.main-content>a>button:hover {
-    background-color: rgba(153, 153, 153, 0.267);
-    color: black;
-}
-
 .logo {
     padding-left: 20px;
 }
@@ -105,32 +71,8 @@ li:hover {
     align-items: center;
     flex-wrap: wrap;
 }
-button{
-    width: 200px;
-    height: 50px;
-    outline: none;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    background-color: black;
-    color: white;
-    font-size: medium;
-    cursor: pointer;
-    transition: all 0.2s;
-    align-self: center;
-    margin-top: 20px;
-}
-button:hover{
-    background-color: rgba(153, 153, 153, 0.267); 
-    color: black;
-}
-button#btns{
-    margin-left: 0.7em;
-    margin-top: 3em;
-    }
-button#btns2{
-    margin-left: 4em;
-    margin-top: 3em;
-    }
+
+
 form{
     display: flex;
     flex-direction: column;
@@ -154,17 +96,178 @@ form{
     font-size: 2rem;
 }
 
-.contributor {
-    margin-top: 20px;
-    max-width: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
+
+.inner-width{
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 40px;
 }
 
-.contributor img{
-    width: 50px;
+#home{
+    height: 70vh;
+    min-height: 500px;
+    background:linear-gradient(to bottom, rgb(134, 133, 133) , white);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+#home .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+#home .content{
+    width: 100%;
+    color:black;
+}
+
+#home .content h1{
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
+
+#home .content h1::after{
+    content: "..";
+    animation: textanim 10s linear infinite;
+}
+
+@keyframes textanim{
+    25%{
+      content: "x..";
+    }
+    50%{
+        content: "xt..";
+    }
+
+    75%{
+        content: "xt Analyzer..!"
+    }
+
+}
+
+
+.about-text{
+    margin-top: 0 0px;
+    color: black;
+    font-size: 25px;
+    text-shadow: 2px 2px 5px rgb(224, 64, 15);
+}
+
+section.dark{
+    background-color: white;
+}
+  
+section.dark .section-title{
+    color: black;
+    text-shadow: 2px 2px #86f5fd;
+    font-size: x-large;
+    text-align: center;
+}
+
+section.dark .section-title::before{
+    background-color: #f1f1f1;
+}
+
+section.dark .section-title::after{
+    border: 4px solid #353b48;
+}
+
+.services{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+.service{
+    width: calc(18% - 7px);
+    text-align: center;
+    border: 1px solid #48dbfb;
+    border-radius: 6px;
+    margin: 20px 0;
+    padding: 40px 20px;
+    color:black;
+    cursor: pointer;
+    transition: .3s linear;
+    background: linear-gradient(to bottom,grey,white);
+    background-color: rgb(175, 170, 170);
+    
+}
+
+.service h5{
+        font-size: 16px;
+        margin-bottom: 6px;
+}
+
+.service:hover{
+    background: #5cdcf8;
+    background-color:#5cdcf8;
+}
+
+
+footer{
+    background-color: rgba(136, 135, 135, 0.952);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+.copyright{
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 980px){
+    .inner-width{
+        max-width: 800px;
+    }
+
+    .service{
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .inner-width{
+      padding: 0 20px;
+      
+    }
+
+    .service{
+        width: 100%;
+    }
+}
+
+.main-content {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    align-items: center;
+}
+
+.button {
+    width: 120px;
     height: 50px;
-    margin-right: 15px;
+    float: right;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border: 2px solid black;
+    padding: 0;
+    margin-left: auto;
+    cursor: pointer;
+    transition: .3s linear;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}    
+    
+.button:hover{
+    background-color: rgb(156, 154, 154);
 }

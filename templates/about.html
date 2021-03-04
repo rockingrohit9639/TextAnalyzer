@@ -1,55 +1,120 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block content %}
 
-<style>
-    .main {
-        text-align: center;
-    }
-</style>
+        <style>
+            .main {
+                text-align: center;
+            }
 
-<p><b>W</b>e are the makers/contributors of this project text analyzer where you can
-    perform
-    some operations like capitalize, lower, upper and remove punctuation. This is created using
-    Python Django. It is completely open source hence you can too contribute anything to
-    this project if you want. All your new ideas are welcome here, we
-    will implement it together.
-</p>
+            .home{
+                    min-height: 500px;
+                    background:linear-gradient(to bottom, rgb(134, 133, 133) , white);
+                    background-size: cover;
+                    background-attachment: fixed;
+            }
 
-<div class="mentor">
-    <h2>Our mentor</h2>
-    <p><a href="https://github.com/rockingrohit9639" target="_blank">Rohit Kumar Saini</a></p>
-</div>
+            .avatar {
+                width: calc(100% - 10px);
+                overflow: hidden;
+                border-radius: 50%;
+                margin: 10px 0;
+                cursor: pointer;
+                position: relative;
+            }
 
-<div class="contributors">
-    <h2>Our Contributors</h2>
-    <!--<p><a href="https://github.com/Sloth-Panda">Achyut Kumar Panda</p>
-    <p><a href="https://github.com/ShudhanshuSingh">Shudhanshu Singh</p>
-    <p><a href="https://github.com/muthuannamalai12">Muthu Annamalai</p>
-    <p><a href="https://github.com/ayushrastogi689">Ayush Rastogi</p>
-    <p><a href="https://github.com/tharunc">Tharun C</p>
-    <p><a href="https://github.com/Amit366">Amit Kumar Mishra</p>-->
+            .container {
+                width:150px;
+                text-align:center;
+                display:block;
+                background-color: transparent;
+                border: 1px solid transparent;
+                margin-right: 10px;
+                margin-bottom: 1px;
+                float:left;
+            }
 
+            @media screen and (max-width:980px){
+            
+            .container{
+                width: calc(60% - 9px);
+                }
+            }
+            @media screen and (max-width: 600px){
+            .container{
+                width: 60%;
+                }
+            }
+        </style>
 
-    <div id="contributorsLlist">
+    <div class="home">
+        <div class="main-content">
+            <h5 style="text-align: center;"><b>W</b>e are the makers/contributors of this project 
+            <b>Text Analyzer...</b></h5>
+            <p style="text-align: center;">Where you can perform..some operations like Capitalize the text, 
+            Convert the text into Uppercase or Lowercase,and Remove punctuation.
+            It is completely Open source project..so......
+            you can contribute too..! All your new ideas are welcome here,
+            <b>Let's implement together...!➡</b>
+            </p>
 
-        {% if userData %}
-            {% for data in userData %}
-               <table>
-                <tr>
-                   <td>
-                    <div class="contributor">
-                        <img src="{{ data.avatar_url }}" class="rounded-circle" alt="avatar">
-                        <a href="{{ data.html_url }}"><p> {{ data.login }} <p></a>
-                    </div>
-                   </td>
-                    
-                </tr>
-              </table>
-            {% endfor %}
-        {% endif %}
+            <div>
+                <h2 style="text-align: center;">*Our mentor*</h2>
+                <div class = "container">
+                    <img src="{% static 'images/rohit.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/rockingrohit9639">Rohit Kumar Saini</a>
+                </div>
+            </div>
 
+            <div>
+                <h2 style="text-align: center; margin:10px;">**Our Contributors..</h2>
+                <div class = "container">
+                    <img src="{% static 'images/aakash.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/Akash20x">Aakash</a>
+                </div> 
+                
+                <div class = "container">
+                    <img src="{% static 'images/achyut.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/Sloth-Panda">Achyut Kumar Panda</a>
+                </div>
+
+                <div class = "container">
+                    <img src="{% static 'images/avtar1.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/Amit366">Amit Kumar Mishra</a>
+                </div> 
+
+                
+                <div class = "container">
+                    <img src="{% static 'images/avtar3.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/arbazalam01">Arbaz Alam</a>
+                </div> 
+
+                <div class = "container">
+                    <img src="{% static 'images/ayush.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/ayushrastogi689">Ayush Rastogi</a>
+                </div>
+
+                <div class = "container">
+                    <img src="{% static 'images/avtar2.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/Mansi3546">Mansi Jain </a>
+                </div>
+
+                <div class = "container">
+                    <img src="{% static 'images/muthu.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/muthuannamalai12">Muthu Annamalai </a>
+                </div>
+
+                <div class = "container">
+                    <img src="{% static 'images/avtar4.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/ShudhanshuSingh">Shudhanshu Singh</a>
+                </div>
+
+                <div class = "container">
+                    <img src="{% static 'images/avtar5.png' %}" alt="Avatar" class="avatar" >
+                    <a href = "https://github.com/tharunc">TharunC</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
 
 {% endblock content %}

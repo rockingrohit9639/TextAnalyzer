@@ -1,47 +1,53 @@
 {% extends 'base.html' %}
-{% block content %}  
+{% block content %} 
 
-{% if findWord %}
-<style>
-  #copy_icon{
-    display: none;
-  }
-</style>
-{% endif %}
+  <section id = "home">
+    <div class="main-content">
 
-<h1 class="header">Text Analyzed Successfully 🎉</h1>
-<p>You choosed : {{purpose}}</p>
-<h3>Result : </h3>
+      {% if findWord %}
+      <style>
+        #copy_icon{
+          display: none;
+        }
+      </style>
+      {% endif %}
 
-{% if highlight %}
-<h4> {{ highlight }} </h4>
-{% endif %}
+      <h1 class="header">Text Analyzed Successfully 🎉</h1>
+      <p>You choosed : {{purpose}}</p>
+      <h3>Result : </h3>
 
-<p><pre id="analyzed_text"> {{analyzed_text|safe}}</pre></p>
-<hr />
+      {% if highlight %}
+      <h4> {{ highlight }} </h4>
+      {% endif %}
 
-<i class="fa fa-clone" id="copy_icon" onclick="copyToClipboard('analyzed_text')">
-    <span class="popuptext" id="myPopup">Copy</span>
-  </i>
+      <p><pre id="analyzed_text"> {{analyzed_text|safe}}</pre></p>
+      <hr />
 
-{% if status %}
-    <h4> Status : {{ status }} </h4>
+      <i class="fa fa-clone" id="copy_icon" onclick="copyToClipboard('analyzed_text')">
+          <span class="popuptext" id="myPopup">Copy</span>
+        </i>
 
-    {% if find_image %}
-    <a href="gallery/"><button>Results</button></a>
-    {% endif %}
+      {% if status %}
+          <h4> Status : {{ status }} </h4>
 
-{% endif %}
+          {% if find_image %}
+          <a href="gallery/"><button class = "button">Results</button></a>
+          {% endif %}
 
-<p class="text-muted mt-2"> Words : {{ wordcount }}</p>
+      {% endif %}
 
-{% if analyze_text %}
-<a href="/index"><button>Back</button></a>
-{% endif %}
+      <p class="text-muted mt-2"> Words : {{ wordcount }}</p>
 
-{% if generate_text %}
-<a href="/index2"><button>Back</button></a>
-{% endif %}
+      {% if analyze_text %}
+      <a href="/index"><button class = "button">◀ Back</button></a>
+      {% endif %}
+
+      {% if generate_text %}
+      <a href="/index2"><button class = "button">◀ Back</button></a>
+      {% endif %}
+
+    </div>
+  </section>
 
 {% endblock %}
 
