@@ -71,3 +71,8 @@
   - Solved Issues
     1. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
   - Total Points (50)
+
+- [pranabprohit](https://github.com/pranabprohit)
+  - Solved Issues
+    1. [#71 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/71), PR - [#77](https://github.com/rockingrohit9639/TextAnalyzer/pull/77)
+  - Total Points (50)
