@@ -55,7 +55,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss1](https://github.com/pri1311/TextAnalyzer/blob/master/screenshots/Home.png)
+![ss1](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Home.png)
 
   
 
@@ -63,7 +63,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss2](https://github.com/pri1311/TextAnalyzer/blob/master/screenshots/Text%20analyzer.png)
+![ss2](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Text%20analyzer.png)
 
   
 
@@ -71,7 +71,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss3](https://github.com/pri1311/TextAnalyzer/blob/master/screenshots/Remove%20punctuations%20and%20capitalize.png)
+![ss3](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Remove%20punctuations%20and%20capitalize.png)
 
   
 
@@ -79,7 +79,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss4](https://github.com/pri1311/TextAnalyzer/blob/master/screenshots/Find%20a%20word.png)
+![ss4](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20a%20word.png)
 
   
 
@@ -87,7 +87,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss5](https://github.com/pri1311/TextAnalyzer/blob/master/screenshots/word%20found%20or%20not%20found.png)
+![ss5](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/word%20found%20or%20not%20found.png)
 
 ## Some awesome Contributors ✨
 
