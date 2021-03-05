@@ -7,3 +7,4 @@ gunicorn
 django_heroku
 bs4
 PyDictionary
+textblob
