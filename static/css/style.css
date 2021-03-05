@@ -153,6 +153,8 @@ form{
     font-weight: 500;
     font-size: 2rem;
     word-wrap: break-word;
+    white-space: pre-line;
+    padding: 3rem;
 }
 
 .contributor {
