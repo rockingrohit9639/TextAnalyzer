@@ -12,6 +12,7 @@ from nltk.tokenize import word_tokenize
 import random
 import textwrap
 from PyDictionary import PyDictionary
+from textblob import TextBlob 
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -86,7 +87,8 @@ def analyze(request):
     search_word=request.POST.get('Search_word','off')
     gallery=request.POST.get('q','off')
     Suggest_word=request.POST.get('suggest_word','off')
-    
+    Sen_Analysis=request.POST.get('Sentiment', 'off')
+
     analyzed_text = ""
     word_status = ""
 
@@ -227,7 +229,27 @@ def analyze(request):
             "wordcount": countword
         }
         
-    
+    elif Sen_Analysis=="on":
+          
+        djText=' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", djText).split()) 
+
+        analysis = TextBlob(djText) 
+        # set sentiment 
+        if analysis.sentiment.polarity > 0: 
+            final=str(djText)+" (Positive Text)"
+        elif analysis.sentiment.polarity == 0:
+            final=str(djText)+" (Neutral Text)"
+        else:
+            final=str(djText)+" (Negative Text)"
+
+        result = {
+            "analyzed_text": final,
+            "purpose": "Sentiment Analysis",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+            
+
     elif gallery=="on":
         global val
         def val():
