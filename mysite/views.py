@@ -83,6 +83,7 @@ def analyze(request):
     word_find_flag = request.POST.get('word_find', 'off')
     New_Line = request.POST.get('New_line', 'off')
     Emails= request.POST.get('Email_Address', 'off')
+    Links = request.POST.get('Links', 'off')
     Passgen=request.POST.get('Password_Generator','off')
     search_word=request.POST.get('Search_word','off')
     gallery=request.POST.get('q','off')
@@ -373,7 +374,23 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
-    
+    elif Links == "on":
+        pattern = '(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])'
+        links = re.findall(pattern, djText, re.IGNORECASE)
+        analyzed_text=""
+
+        i = 0
+        for x in links:
+            i = i + 1
+            analyzed_text+=f'<a href="{x}" target="_blank">Link {i}</a>'
+            analyzed_text+='\n '
+
+        result = {
+            "analyzed_text": analyzed_text,
+            "purpose": "Find All Links",
+            "analyze_text":True,
+            "wordcount": countword
+        }    
 
     else:
         return HttpResponse('''<script type="text/javascript">alert("Please select atleast one option.");</script>''')
