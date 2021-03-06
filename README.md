@@ -108,6 +108,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
     <td align="center"><a href="https://github.com/Amit366"><img src="https://avatars.githubusercontent.com/u/60662775?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Amit Kumar Mishra </b></sub></a><br />💻</a></td>
     <td align="center"><a href="https://github.com/pri1311"><img src="https://avatars.githubusercontent.com/u/64613009?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Priya Nagda </b></sub></a><br />💻</a></td>
     <td align="center"><a href="https://github.com/pranabprohit"><img src="https://avatars.githubusercontent.com/u/53513600?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> pranabprohit </b></sub></a><br />💻</a></td>
+    <td align="center"><a href="https://github.com/Blastoise"><img src="https://avatars.githubusercontent.com/u/24838843?s=460&u=131ac20b72221d28b2367bad47ccc63ea142a824&v=4s=100" width="100px;" alt=""/><br /><sub><b> Ashutosh Kumar </b></sub></a><br />💻</a></td>
   </tr>
 </table>
 
