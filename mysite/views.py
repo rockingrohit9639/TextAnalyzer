@@ -113,7 +113,7 @@ def analyze(request):
 
             result = {
                 "analyzed_text": analyzed_text,
-                "highlight":"Choosen word is highlighted by red colour",
+                "highlight":"Chosen word is highlighted in red colour",
                 "purpose": word_find,
                 "status": word_status,
                 "wordcount": countword,
