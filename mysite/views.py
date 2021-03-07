@@ -48,11 +48,11 @@ def index2(request):
 
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
-    place = val()
+    place = request.session['user-input']
     payload = {
         'query': place,
         'client_id': ACCESS_KEY,
-        'per_page': 10,
+        'per_page': 40,
     }
     url = 'https://api.unsplash.com/search/photos'
     r = requests.get(url, params=payload).json()
@@ -252,10 +252,7 @@ def analyze(request):
             
 
     elif gallery=="on":
-        global val
-        def val():
-            return djText
-
+        request.session['user-input']=djText
         result = {
             "analyzed_text": djText,
             "purpose":"Images",
