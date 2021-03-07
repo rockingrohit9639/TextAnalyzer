@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <section id = "home">
+<style>
+    .home{
+                    min-height: 500px;
+                    background:linear-gradient(to bottom, rgb(134, 133, 133) , white);
+                    background-size: cover;
+                    background-attachment: fixed;
+            }
+</style>
+
+    <div class = "home">
         <div class="main-content">
 
             {% if text %}
@@ -16,6 +25,6 @@
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
 
 {% endblock %}
