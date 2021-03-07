@@ -1,47 +1,40 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <style>
-    img{
-    max-width:100%;
-    height:auto;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .gallery {
+    margin: 0 0.65rem;
+    width: 100%;
+  }
+
+  .galleryitem {
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 640px) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 345px);
+      grid-auto-flow: row dense;
     }
-	.gallery{
-	    margin: 0 0.65rem;
-	    width:100%;
-	}
-
-	.galleryitem{
-	    height:auto;
-	    margin: 0.5rem;
-	}
-
-	.gallery-item img{
-	    width: 100%;
-	    height:100%;
-	    object-fit: cover;
-	}
-
-	@media(min-width: 640px){
-	    .gallery{
-	        display: grid;
-	        grid-template-columns:repeat(3,1fr);
-	        grid-template-rows: repeat(5,345px);
-	        grid-auto-flow: row dense; 
-	    }
-	    .gallery-item{
-        /*margin:0.7rem; when consider space between images */
-        }
-	}
-	@media(min-width: 960px){
-	    .gallery{
-	        grid-template-columns:repeat(5,1fr);
-	        grid-template-rows: repeat(5,auto);
-	    }
-	    .gallery-item{
-        /*margin:0.7rem; when consider space between images */
-        }	
-	}
+  }
+  @media (min-width: 960px) {
+    .gallery {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, auto);
+    }
+  }
 </style>
 
 {% if text %}
@@ -49,11 +42,13 @@
 {% endif %}
 
 <div class="gallery">
-	    {% for i in link %}
-	<div class="gallery-item">
-        <img src="{{ i }}" height="160" width="140">
-    </div>
-    {% endfor %}
+  {% for i in link %}
+  <div class="gallery-item">
+    <img src="{{ i }}" height="160" width="140" />
+  </div>
+  {% endfor %}
 </div>
+
+<a href="/"><button id="btns">Back To Home</button></a>
 
 {% endblock %}
