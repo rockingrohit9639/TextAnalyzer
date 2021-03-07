@@ -74,6 +74,11 @@
     1. [#13 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/13), PR - [#23](https://github.com/rockingrohit9639/TextAnalyzer/pull/23)
   - Total Points (100)
 
+- [Yashasvi](https://github.com/kmryashasvi)
+  - Solved Issues
+    1. [#82 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/82), PR - [#85](https://github.com/rockingrohit9639/TextAnalyzer/pull/85)
+  - Total Points (100)
+
 - [kopinasaur](https://github.com/kopinasaur)
   - Solved Issues
     1. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
