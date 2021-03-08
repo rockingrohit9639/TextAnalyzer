@@ -76,19 +76,19 @@ def analyze(request):
     puncts = string.punctuation
     word_to_find = request.POST.get("word_input")
     djText = request.POST.get('text', 'default')
-    remPunc = request.POST.get('removepunc', 'off')
-    cap = request.POST.get('capitalize', 'off')
-    small = request.POST.get('toSmall', 'off')
-    upper = request.POST.get('toUpper', 'off')
-    word_find_flag = request.POST.get('word_find', 'off')
-    New_Line = request.POST.get('New_line', 'off')
-    Emails= request.POST.get('Email_Address', 'off')
-    Links = request.POST.get('Links', 'off')
-    Passgen=request.POST.get('Password_Generator','off')
-    search_word=request.POST.get('Search_word','off')
-    gallery=request.POST.get('q','off')
-    Suggest_word=request.POST.get('suggest_word','off')
-    Sen_Analysis=request.POST.get('Sentiment', 'off')
+    remPunc = request.POST.get('option','removepunc')
+    cap = request.POST.get('option','capitalize')
+    small = request.POST.get('option','toSmall')
+    upper = request.POST.get('option', 'toUpper')
+    word_find_flag = request.POST.get('option','word_find')
+    New_Line = request.POST.get('option','New_line')
+    Emails= request.POST.get('option','Email_Address')
+    Links = request.POST.get('option','Links')
+    Passgen=request.POST.get('option', 'Password_Generator')
+    search_word=request.POST.get('option', 'Search_word')
+    gallery=request.POST.get('option', 'q')
+    Suggest_word=request.POST.get('option', 'suggest_word')
+    Sen_Analysis=request.POST.get('option', 'Sentiment')
 
     analyzed_text = ""
     word_status = ""
@@ -97,7 +97,7 @@ def analyze(request):
 
     countword = len(djText.split())
 
-    if word_find_flag == "on":
+    if word_find_flag == "word_find":
         if word_to_find != "":
             if djText.find(word_to_find) != -1:
                 word_status = "found"
@@ -121,7 +121,7 @@ def analyze(request):
                 "findWord":True
             }
 
-    elif New_Line == "on":
+    elif New_Line == "New_line":
         for char in djText:
             if char == '.':
                 char='\n';
@@ -132,7 +132,7 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
-    elif Emails == "on":
+    elif Emails == "Email_Address":
         regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
         lst= re.findall('\S+@+\S+', djText)
         tmp=""
@@ -147,7 +147,7 @@ def analyze(request):
             "wordcount": countword
         }
 
-    elif Passgen=="on":
+    elif Passgen=="Password_Generator":
         stop_words = set(stopwords.words('english'))
         chars = "!£$%&*#@"
         ucase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -180,7 +180,7 @@ def analyze(request):
             "wordcount": countword
         }
         
-    elif search_word=="on":
+    elif search_word=="Search_word":
         url = 'https://www.dictionary.com/browse/'
         headers = requests.utils.default_headers() 
         headers.update({
@@ -201,7 +201,7 @@ def analyze(request):
         }
 
     
-    elif Suggest_word=="on":
+    elif Suggest_word=="suggest_word":
         find = requests.get(f"https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{djText}?key={api_key}")
         response = find.json()
         
@@ -230,7 +230,7 @@ def analyze(request):
             "wordcount": countword
         }
         
-    elif Sen_Analysis=="on":
+    elif Sen_Analysis=="Sentiment":
           
         djText=' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", djText).split()) 
 
@@ -251,7 +251,7 @@ def analyze(request):
         }
             
 
-    elif gallery=="on":
+    elif gallery=="q":
         request.session['user-input']=djText
         result = {
             "analyzed_text": djText,
@@ -261,78 +261,8 @@ def analyze(request):
             "generate_text":True,
             "wordcount": countword
         }                
-
-        
-    elif remPunc == "on" and cap == "on":
-
-        for char in djText:
-            if char not in puncts:
-                analyzed_text = analyzed_text + char
-
-        analyzed_text = analyzed_text.capitalize()
-        result = {
-            "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations & Capitalize",
-            "analyze_text":True,
-            "wordcount": countword
-        }
-    elif remPunc == "on" and small == "on":
-        for char in djText:
-            if char not in puncts:
-                analyzed_text = analyzed_text + char
-
-        analyzed_text = analyzed_text.lower()
-        result = {
-            "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations & To Small",
-            "analyze_text":True,
-            "wordcount": countword
-        }
-
-    elif remPunc == "on" and upper == "on":
-        for char in djText:
-            if char not in puncts:
-                analyzed_text = analyzed_text + char
-
-        analyzed_text = analyzed_text.upper()
-        result = {
-            "analyzed_text": analyzed_text,
-            "purpose": "Remove Punctuations & To Upper",
-            "analyze_text":True,
-            "wordcount": countword
-        }
-
-    elif cap == "on" and small == "on":
-        analyzed_text = djText
-        analyzed_text = analyzed_text.capitalize()
-        analyzed_text = analyzed_text.lower()
-        result = {
-            "analyzed_text": analyzed_text,
-            "purpose": "Capitalize & To Small",
-            "analyze_text":True,
-            "wordcount": countword
-        }
-
-    elif cap == "on" and upper == "on":
-        analyzed_text = djText
-        analyzed_text = analyzed_text.capitalize()
-        analyzed_text = analyzed_text.upper()
-        result = {
-            "analyzed_text": analyzed_text,
-            "purpose": "Capitalize & To Upper",
-            "analyze_text":True,
-            "wordcount": countword
-        }
-    elif small == "on" and upper == "on":
-        analyzed_text = "Text can be smaller or uppercase only."
-        result = {
-            "analyzed_text": analyzed_text,
-            "purpose": "Small & Upper",
-            "analyze_text":True,
-            "wordcount": countword
-        }
-
-    elif remPunc == 'on':
+    
+    elif remPunc == 'removepunc':
         for char in djText:
             if char not in puncts:
                 analyzed_text = analyzed_text + char
@@ -342,7 +272,7 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
-    elif cap == "on":
+    elif cap == "capitalize":
         analyzed_text = djText.capitalize()
 
         result = {
@@ -352,7 +282,7 @@ def analyze(request):
             "wordcount": countword
         }
 
-    elif small == "on":
+    elif small == "toSmall":
         analyzed_text = djText.lower()
 
         result = {
@@ -362,7 +292,7 @@ def analyze(request):
             "wordcount": countword
         }
 
-    elif upper == "on":
+    elif upper == "toUpper":
         analyzed_text = djText.upper()
 
         result = {
@@ -371,7 +301,7 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
-    elif Links == "on":
+    elif Links == "Links":
         pattern = '(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])'
         links = re.findall(pattern, djText, re.IGNORECASE)
         analyzed_text=""
