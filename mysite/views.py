@@ -121,24 +121,50 @@ def analyze(request):
             if djText.find(word_to_find) != -1:
                 word_status = "found"
                 word=djText.replace(word_to_find,f"""<b style="color:{"red"};">"""+word_to_find+"</b>")
-                djText=word
+                djText=word   
+   
+                try:
+                    synonym_01=get_synonyms(word_to_find)
+
+                    synonyms1=""
+                    for w in synonym_01:
+                        synonyms1+=w+" "
+                    words = list(map(str, synonyms1.split()))
+                    synonyms2=random.sample(words,4)
+
+                    final=""
+                    for f in synonyms2:
+                        final+=f+" , "
+
+                    example=get_example(word_to_find)
+                    ex=""
+                    for x in example:
+                        ex=x+""
+
+                    synonyms=final+ex
+
+                except:
+                    synonyms="Not Available"
 
             else:
                 word_status = "not found"
+                synonyms="Text Not Found"
             
             analyzed_text = djText
             word_find="Find Word = " + word_to_find
-
+            synonym=format_html('<b style="color:{};">{}</b>','green',synonyms)
 
             result = {
                 "analyzed_text": analyzed_text,
-                "highlight":"Chosen word is highlighted in red colour",
+                "highlight":"Chosen word is highlighted in red colour and synonyms/examples in green colour",
                 "purpose": word_find,
                 "status": word_status,
+                "synonym":synonym,
                 "wordcount": countword,
                 "analyze_text":True,
                 "findWord":True
             }
+
 
     elif New_Line == "New_line":
         for char in djText:
@@ -268,56 +294,7 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
-            
-    elif Synonyms=="Synonyms":
-        if word_to_find != "":
-            if djText.find(word_to_find) != -1:
-                word_status = "found"
-                word=djText.replace(word_to_find,f"""<b style="color:{"red"};">"""+word_to_find+"</b>")
-                djText=word   
-   
-                try:
-                    synonym_01=get_synonyms(word_to_find)
-
-                    synonyms1=""
-                    for w in synonym_01:
-                        synonyms1+=w+" "
-                    words = list(map(str, synonyms1.split()))
-                    synonyms2=random.sample(words,4)
-
-                    final=""
-                    for f in synonyms2:
-                        final+=f+" , "
-
-                    example=get_example(word_to_find)
-                    ex=""
-                    for x in example:
-                        ex=x+""
-
-                    synonyms=final+ex
-
-                except:
-                    synonyms="Not Available"
-
-            else:
-                word_status = "not found"
-                synonyms="Text Not Found"
-            
-            analyzed_text = djText
-            word_find="Find Word = " + word_to_find
-            synonym=format_html('<b style="color:{};">{}</b>','green',synonyms)
-
-            result = {
-                "analyzed_text": analyzed_text,
-                "highlight":"Chosen word is highlighted in red colour and synonyms/examples in green colour",
-                "purpose": word_find,
-                "status": word_status,
-                "synonym":synonym,
-                "wordcount": countword,
-                "analyze_text":True,
-                "findWord":True
-            }
-
+        
     elif gallery=="q":
         request.session['user-input']=djText
         result = {
