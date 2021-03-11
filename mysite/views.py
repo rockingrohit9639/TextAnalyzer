@@ -115,7 +115,6 @@ def analyze(request):
     gallery=request.POST.get('option', 'q')
     Suggest_word=request.POST.get('option', 'suggest_word')
     Sen_Analysis=request.POST.get('option', 'Sentiment')
-    Synonyms=request.POST.get('option', 'Synonyms')
 
     analyzed_text = ""
     word_status = ""
