@@ -1,14 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="foo">
+    <h5></h5>
+    <h6 style="color: red"><b>-Dr. APJ Abdul Kalam</b></h6>
+</div>
 
-{% load static %}
-
-
-    {% block content %}
-    <h1 style="text-align: center;" class="mb-3">Easy way to analyze your text</h1>
-                <p style="text-align: center;" class="mt-3">We provide services to remove Punctuations,Capitalize,convert your text
-                    to uppercase/lowercase</p>
-                <p style="text-align: center;" class="mt-3">This is an open source project managed by 
-                    <a href="https://www.linkedin.com/in/rohit-kumar-saini/"> <u> Rohit Saini </u> </a>.</p>
-            		<a href="/index"><button>Analyze Text</button></a>
-        			<a href="/index2"><button> Generate</button></a>
-    {% endblock %}
+<h1 style="text-align: center" class="mb-3">Easy way to analyze your text</h1>
+<p style="text-align: center" class="mt-3">
+    We provide services to remove Punctuations,Capitalize,convert your text to
+    uppercase/lowercase
+</p>
+<p style="text-align: center" class="mt-3">
+    This is an open source project managed by
+    <a href="https://www.linkedin.com/in/rohit-kumar-saini/">
+        <u> Rohit Saini </u> </a>.
+</p>
+<a href="/index"><button>Analyze Text</button></a>
+<a href="/index2"><button>Generate</button></a>
+{% endblock %}

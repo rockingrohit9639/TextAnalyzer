@@ -173,15 +173,15 @@ form{
 }
 
 .foo{
-    background-color: white;
-    width: 100%;
+    width: 80%;
     color: black;
-  }
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
 .foo h5{
     font-size: 25px;
     margin-top: 10px;
-
 }
 
 .foo h5::after{
