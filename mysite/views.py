@@ -13,12 +13,10 @@ import random
 import textwrap
 from PyDictionary import PyDictionary
 from textblob import TextBlob
-from nltk.corpus import wordnet as wn
 import random
 
 
 nltk.download('stopwords')
-nltk.download('wordnet')
 nltk.download('punkt')
 
 #Api key for the meriam-webster api
@@ -50,18 +48,28 @@ def index2(request):
     return render(request, 'index2.html')
 
 def get_synonyms(word):
-    synonyms=[]
-    for synset in wn.synsets(word):
-        for lemma in synset.lemmas():
-            if lemma:
-                synonyms.append(lemma.name())
-    return list(set(synonyms))
+    try:
+        synonyms=[]
+        res = requests.get('https://www.merriam-webster.com/dictionary/'+word)
+        soup = BeautifulSoup(res.text, 'lxml')
+        containers=soup.findAll(
+            'ul',{'class':'mw-list'})[0].findAll('li')
+        for con in containers:
+            synonyms.append(con.find("a").text)
+        return synonyms
+    except:
+        dictionary=PyDictionary()
+        testdict=dictionary.synonym(word)
+        return testdict
 
 def get_example(word):
-    synset=wn.synsets(word)
-    if synset:
-        return synset[0].examples()
-    else:
+    try:
+        res = requests.get('https://www.merriam-webster.com/dictionary/'+word)
+        soup = BeautifulSoup(res.text, 'lxml')
+        containers=soup.find("div",{'class':'in-sentences'}).text
+        example=' '.join(containers.split()).split('.')[3].strip()
+        return example
+    except:
         return None
 
 def gallery(request):
@@ -125,23 +133,15 @@ def analyze(request):
    
                 try:
                     synonym_01=get_synonyms(word_to_find)
-
-                    synonyms1=""
-                    for w in synonym_01:
-                        synonyms1+=w+" "
-                    words = list(map(str, synonyms1.split()))
-                    synonyms2=random.sample(words,4)
+                    synonyms2=random.sample(synonym_01,4)
 
                     final=""
                     for f in synonyms2:
                         final+=f+" , "
 
                     example=get_example(word_to_find)
-                    ex=""
-                    for x in example:
-                        ex=x+""
 
-                    synonyms=final+ex
+                    synonyms=final+example
 
                 except:
                     synonyms="Not Available"
