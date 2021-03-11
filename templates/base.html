@@ -38,6 +38,9 @@
   </head>
 
   <body>
+    <!-- pre-loader -->
+    <div id="loading"></div>
+
     <div class="container_main">
       <!-- Bootstrap Navbar  -->
 
@@ -93,6 +96,14 @@
 
     </div>
     <script src="{% static 'js/Script.js' %}"></script>
+
+    <script>
+      // pre-loader
+      window.onload=function(){
+          document.getElementById('loading').style.display="none";
+          document.getElementById('container_main').style.display="block";
+        }
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
