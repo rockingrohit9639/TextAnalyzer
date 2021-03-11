@@ -71,6 +71,11 @@
   - Solved Issues 
     1. [#2 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/2), PR - [#24](https://github.com/rockingrohit9639/TextAnalyzer/pull/24)
   - Total Points (200)
+
+- [Mansi](https://github.com/Mansi3546)
+  - Solved Issues
+    1. [#64 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/64), PR - [#93](https://github.com/rockingrohit9639/TextAnalyzer/pull/93)
+  - Total Points (200)
  
 - [tharunc](https://github.com/tharunc)
   - Solved Issues
