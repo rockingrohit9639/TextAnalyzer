@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}  
 
+{% load static %}
+
 {% if findWord %}
 <style>
   #copy_icon{
@@ -14,7 +16,11 @@
 </style>
 {% endif %}
 
-<h1 class="header">Text Analyzed Successfully 🎉</h1>
+<link rel="stylesheet" href="{% static 'css/analyze.css' %}">
+
+<section class="analyze-result">
+
+  <h1 class="header">Text Analyzed Successfully 🎉</h1>
 <p>You chose : {{purpose}}</p>
 <h3>Result : </h3>
 
@@ -51,6 +57,9 @@
 {% if generate_text %}
 <a href="/index2"><button>Back</button></a>
 {% endif %}
+
+</section>
+
 
 {% endblock %}
 
