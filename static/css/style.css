@@ -87,10 +87,6 @@ li:hover {
     border-radius: 10px;
 }
 
-.logo {
-    padding-left: 20px;
-}
-
 .input-field{
     width: 100%;
     background-color: white;
@@ -177,20 +173,6 @@ form{
     padding: 3rem;
 }
 
-.contributor {
-    margin-top: 20px;
-    max-width: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
-}
-
-.contributor img{
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-}
 
 .foo{
     width: 80%;

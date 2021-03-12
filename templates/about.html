@@ -1,55 +1,52 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-<style>
-    .main {
-        text-align: center;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
 
-<p><b>W</b>e are the makers/contributors of this project text analyzer where you can
-    perform
-    operations like capitalize, transform to lowercase/uppercase and remove punctuation. This is created using
-    Python Django. It is completely open source hence you too can contribute anything to
-    this project if you want. All your new ideas are welcome here, we
-    will implement it together.
-</p>
+<section class="about-section">
+  <p>
+    <b>W</b>e are the makers/contributors of this project text analyzer where
+    you can perform operations like capitalize, transform to lowercase/uppercase
+    and remove punctuation. This is created using Python Django. It is
+    completely open source hence you too can contribute anything to this project
+    if you want. All your new ideas are welcome here, we will implement it
+    together.
+  </p>
 
-<div class="mentor">
+  <div class="mentor">
     <h2>Our mentor</h2>
-    <p><a href="https://github.com/rockingrohit9639" target="_blank">Rohit Kumar Saini</a></p>
-</div>
+    <a href="https://github.com/rockingrohit9639" target="_blank"><h1> Rohit Kumar Saini </h1></a>
+    <hr>
+  </div>
 
-<div class="contributors">
+  <div class="contributors">
     <h2>Our Contributors</h2>
-    <!--<p><a href="https://github.com/Sloth-Panda">Achyut Kumar Panda</p>
-    <p><a href="https://github.com/ShudhanshuSingh">Shudhanshu Singh</p>
-    <p><a href="https://github.com/muthuannamalai12">Muthu Annamalai</p>
-    <p><a href="https://github.com/ayushrastogi689">Ayush Rastogi</p>
-    <p><a href="https://github.com/tharunc">Tharun C</p>
-    <p><a href="https://github.com/Amit366">Amit Kumar Mishra</p>-->
-
 
     <div id="contributorsLlist">
-
-        {% if userData %}
-            {% for data in userData %}
-               <table>
-                <tr>
-                   <td>
-                    <div class="contributor">
-                        <img src="{{ data.avatar_url }}" class="rounded-circle" alt="avatar">
-                        <a href="{{ data.html_url }}"><p> {{ data.login }} <p></a>
-                    </div>
-                   </td>
-                    
-                </tr>
-              </table>
-            {% endfor %}
-        {% endif %}
-
+      {% if userData %}
+      <table>
+        <tbody>
+          {% for data in userData %}
+          <tr>
+            <td>
+              <div class="contributor">
+                <img
+                  src="{{ data.avatar_url }}"
+                  class="rounded-circle"
+                  alt="avatar"
+                />
+                <a href="{{ data.html_url }}"
+                  ><p>{{ data.login }}</p>
+                  <p></p
+                ></a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
     </div>
-</div>
-
+  </div>
+</section>
 
 {% endblock content %}
