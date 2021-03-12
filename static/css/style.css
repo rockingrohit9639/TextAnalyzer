@@ -80,117 +80,6 @@ a {
     padding-top: 15px;
 }
 
-.header {
-    width: 100%;
-    height: 100vh;
-    background-color: var(--primary-color);
-    padding: 4rem;
-    margin-top: 3rem;
-}
-
-.content {
-    color: var(--secondary-color);
-    margin-top: 10rem;
-}
-
-.content h4{
-    font-size: 2rem;
-}
-
-.content p{
-    color: var(--secondary-color);
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.buttons {
-    margin-top: 5rem;
-}
-
-.buttons a:nth-child(1){
-    border: 2px solid var(--secondary-color);
-    padding: 10px 20px;
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-.buttons a:nth-child(2){
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 12px 20px;
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-.header__right p{
-    color: var(--secondary-color);
-    font-size: 25rem;
-    font-weight: 700;
-}
-
-.services {
-    width: 100%;
-    height: 100vh;
-    padding-top: 15px;
-}
-
-.services .top .icons {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 5px;
-}
-
-.services .top h3 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 3rem;
-}
-
-.services .top .icons i{
-    padding: 0 10px;
-    font-size: 2rem;
-}
-
-.services .top .icons hr{
-    width: 10rem;
-    height: 1px;
-    color: var(--primary-color);
-}
-
-.cards { 
-    height: 60%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 5rem;
-}
-
-.card-s {
-    width: 300px;
-    height: 400px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    padding: 10px;
-    text-align: center;
-}
-
-.card-s h3{
-    font-size: 1.5rem;
-    padding: 10px;
-}
-
-.card-s .desc {
-    height: 70%;
-    padding: 50px;
-    font-size: large;
-    font-weight: 100;
-}
-
-.card-s a{
-    background-color: var(--secondary-color);
-    padding: 5px 20px;
-    color: var(--primary-color);
-}
-
 li:hover {
     background-color: rgba(153, 153, 153, 0.267);
     border-radius: 10px;
@@ -200,9 +89,6 @@ li:hover {
     padding-left: 20px;
 }
 
-.main-content > p{
-    margin-top: -10px;
-}
 .input-field{
     width: 100%;
     background-color: white;
@@ -213,21 +99,25 @@ li:hover {
     resize: vertical;
     font-size: medium;
 }
+
 .form-input{
     width: 20px;
     height:20px;
     cursor: pointer;
 }
+
 .form-label{
     font-size: medium;
 }
+
 .button-container{
     display: flex;
-    /* width: 800px; */
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
+
+
 button{
     width: 200px;
     height: 50px;
@@ -242,14 +132,19 @@ button{
     align-self: center;
     margin-top: 20px;
 }
+
+
 button:hover{
     background-color: rgba(153, 153, 153, 0.267); 
     color: black;
 }
+
+
 button#btns{
     margin-left: 0.7em;
     margin-top: 3em;
     }
+
 button#btns2{
     margin-left: 4em;
     margin-top: 3em;

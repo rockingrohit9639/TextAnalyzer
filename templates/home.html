@@ -4,8 +4,8 @@
 
 {% block content %}
 
-
-<section class="header">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<section class="header" id="header">
 
     <div class="container-fluid">
 
@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="buttons">
-                    <a href=""> Analyze </a>
-                    <a href=""> Generate </a>
+                    <a href="/index"> Analyze </a>
+                    <a href="/index2"> Generate </a>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
             </div>
             
 
-            <a href="#"> GO </a>
+            <a href="/index2"> GO </a>
         </div>
 
         <div class="card-s">
@@ -65,7 +65,7 @@
                 <p> Analyze the sentiment of any text given by you. </p>
             </div>
 
-            <a href="#"> GO </a>
+            <a href="/index2"> GO </a>
         </div>
 
         <div class="card-s">
@@ -76,7 +76,7 @@
                 <p> Search images for any word enetered by you. </p>
             </div>
 
-            <a href="#"> GO </a>
+            <a href="/index2"> GO </a>
         </div>
 
     </div>
