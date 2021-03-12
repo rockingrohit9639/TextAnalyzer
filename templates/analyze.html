@@ -6,6 +6,11 @@
   #copy_icon{
     display: none;
   }
+  #set{
+  	text-align: center;
+  	padding: 1rem;
+  	margin-top: -6rem;
+  }
 </style>
 {% endif %}
 
@@ -19,6 +24,10 @@
 
 <p><pre id="analyzed_text"> {{analyzed_text|safe}}</pre></p>
 <hr />
+
+{% if synonym %}
+    <h3 id="set"> Synonms/Example : {{ synonym }} </h3>
+{% endif %}
 
 <i class="fa fa-clone" id="copy_icon" onclick="copyToClipboard('analyzed_text')">
     <span class="popuptext" id="myPopup">Copy</span>

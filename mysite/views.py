@@ -12,7 +12,9 @@ from nltk.tokenize import word_tokenize
 import random
 import textwrap
 from PyDictionary import PyDictionary
-from textblob import TextBlob 
+from textblob import TextBlob
+import random
+
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -45,6 +47,30 @@ def index2(request):
 
     return render(request, 'index2.html')
 
+def get_synonyms(word):
+    try:
+        synonyms=[]
+        res = requests.get('https://www.merriam-webster.com/dictionary/'+word)
+        soup = BeautifulSoup(res.text, 'lxml')
+        containers=soup.findAll(
+            'ul',{'class':'mw-list'})[0].findAll('li')
+        for con in containers:
+            synonyms.append(con.find("a").text)
+        return synonyms
+    except:
+        dictionary=PyDictionary()
+        testdict=dictionary.synonym(word)
+        return testdict
+
+def get_example(word):
+    try:
+        res = requests.get('https://www.merriam-webster.com/dictionary/'+word)
+        soup = BeautifulSoup(res.text, 'lxml')
+        containers=soup.find("div",{'class':'in-sentences'}).text
+        example=' '.join(containers.split()).split('.')[3].strip()
+        return example
+    except:
+        return None
 
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
@@ -102,24 +128,42 @@ def analyze(request):
             if djText.find(word_to_find) != -1:
                 word_status = "found"
                 word=djText.replace(word_to_find,f"""<b style="color:{"red"};">"""+word_to_find+"</b>")
-                djText=word
+                djText=word   
+   
+                try:
+                    synonym_01=get_synonyms(word_to_find)
+                    synonyms2=random.sample(synonym_01,4)
+
+                    final=""
+                    for f in synonyms2:
+                        final+=f+" , "
+
+                    example=get_example(word_to_find)
+
+                    synonyms=final+example
+
+                except:
+                    synonyms="Not Available"
 
             else:
                 word_status = "not found"
+                synonyms="Text Not Found"
             
             analyzed_text = djText
             word_find="Find Word = " + word_to_find
-
+            synonym=format_html('<b style="color:{};">{}</b>','green',synonyms)
 
             result = {
                 "analyzed_text": analyzed_text,
-                "highlight":"Chosen word is highlighted in red colour",
+                "highlight":"Chosen word is highlighted in red colour and synonyms/examples in green colour",
                 "purpose": word_find,
                 "status": word_status,
+                "synonym":synonym,
                 "wordcount": countword,
                 "analyze_text":True,
                 "findWord":True
             }
+
 
     elif New_Line == "New_line":
         for char in djText:
@@ -249,8 +293,7 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
-            
-
+        
     elif gallery=="q":
         request.session['user-input']=djText
         result = {
