@@ -1,5 +1,96 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-<div class="foo">
+{% extends 'base.html' %} 
+{% load static %} 
+
+
+{% block content %}
+
+
+<section class="header">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-6 header__left">
+                <div class="content">
+                    <h4>Easy way to analyze your texts.</h4>
+                    <p>This is an open source project managed by <a href="https://www.linkedin.com/in/rohit-kumar-saini/" target="_blank"> <u> Rohit Saini </u> </a>.</p>
+                </div>
+
+                <div class="buttons">
+                    <a href=""> Analyze </a>
+                    <a href=""> Generate </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 header__right">
+                <p> T. </p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="services">
+
+    <div class="top">
+        <h3> Services </h3>
+
+        <div class="icons">
+            <hr>
+            <i class="fas fa-star"></i>
+            <hr>
+        </div>
+    </div>
+
+    <div class="cards">
+        
+        <div class="card-s">
+            <h3> Generate Password </h3>
+            <hr>
+            <div class="desc">
+                <p> Generate a random password by enetring some text. </p>
+            </div>
+            
+
+            <a href="#"> GO </a>
+        </div>
+
+        <div class="card-s">
+            <h3> Sentiment Anaysis </h3>
+            <hr>
+            
+            <div class="desc">
+                <p> Analyze the sentiment of any text given by you. </p>
+            </div>
+
+            <a href="#"> GO </a>
+        </div>
+
+        <div class="card-s">
+            <h3> Search Images </h3>
+            <hr>
+            
+            <div class="desc">
+                <p> Search images for any word enetered by you. </p>
+            </div>
+
+            <a href="#"> GO </a>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+
+{% endblock %}
+
+
+<!-- <div class="foo">
     <h5></h5>
     <h6 style="color: red"><b>-Dr. APJ Abdul Kalam</b></h6>
 </div>
@@ -15,5 +106,4 @@
         <u> Rohit Saini </u> </a>.
 </p>
 <a href="/index"><button>Analyze Text</button></a>
-<a href="/index2"><button>Generate</button></a>
-{% endblock %}
+<a href="/index2"><button>Generate</button></a> -->

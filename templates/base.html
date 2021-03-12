@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="shortcut icon"
-      href="../static/images/favicon.png"
+      href="{% static 'images/favicon.png' %}"
       type="image/png"
     />
     <link
@@ -30,10 +30,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <script src="https://kit.fontawesome.com/3363a42b67.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
 
@@ -41,68 +40,48 @@
     <!-- pre-loader -->
     <div id="loading"></div>
 
+    <!-- navigation bar  -->
     <div class="container_main">
-      <!-- Bootstrap Navbar  -->
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Text Analyzer</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about">About Us</a>
-              </li>
-            </ul>
-          </div>
-          <div class="social">
-            <li>
-              <a
-                href="https://github.com/rockingrohit9639/TextAnalyzer"
-                target="_blank"
-                ><img
-                  class="git-logo"
-                  src="https://image.flaticon.com/icons/png/512/25/25231.png"
-              /></a>
-            </li>
-          </div>
-        </div>
+      <nav class="nav-bar">
+        <a href="/about"> About </a>
+        <a href="/"><h2>TextAnalyzer</h2></a>
+        <a
+          href="https://github.com/rockingrohit9639/TextAnalyzer"
+          target="_blank"
+        >
+          GitHub
+        </a>
       </nav>
 
       <!-- end of Navbar  -->
 
-      <div class="main">
-        <div class="main-content">{% block content %} {% endblock %}</div>
-      </div>
+      {% block content %} {% endblock %}
 
-      
+      <footer class="footer">
+        <div class="footer__left">
+          <a href=""> Privacy & Policies </a>
+          <a href=""> GitHub </a>
+        </div>
 
-      <footer style="text-align: center">
-        Made with 💖 by Open Source Contributors
+        <div class="footer__center">
+          <p>Made with 💖 by Open Source Contributors</p>
+        </div>
+
+        <div class="footer__right">
+          <p>&uarr;</p>
+        </div>
       </footer>
 
     </div>
+
     <script src="{% static 'js/Script.js' %}"></script>
 
     <script>
       // pre-loader
-      window.onload=function(){
-          document.getElementById('loading').style.display="none";
-          document.getElementById('container_main').style.display="block";
-        }
+      window.onload = function () {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("container_main").style.display = "block";
+      };
     </script>
 
     <script
@@ -115,5 +94,6 @@
       integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>
