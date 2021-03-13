@@ -1,54 +1,72 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
 
 <style>
-  img {
-    max-width: 100%;
-    height: auto;
+  #btns{
+    margin-bottom: 10px;
   }
-  .gallery {
-    margin: 0 0.65rem;
-    width: 100%;
-  }
-
-  .galleryitem {
-    height: auto;
-    margin: 0.5rem;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  #photos {
+    /* Prevent vertical gaps */
+    line-height: 0;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 5;
+    -moz-column-gap: 0px;
+    column-count: 5;
+    column-gap: 0px;
   }
 
-  @media (min-width: 640px) {
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(5, 345px);
-      grid-auto-flow: row dense;
+  #photos img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  @media (max-width: 1200px) {
+    #photos {
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+      column-count: 4;
     }
   }
-  @media (min-width: 960px) {
-    .gallery {
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(5, auto);
+  @media (max-width: 1000px) {
+    #photos {
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+      column-count: 3;
+    }
+  }
+  @media (max-width: 800px) {
+    #photos {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+    }
+  }
+  @media (max-width: 400px) {
+    #photos {
+      -moz-column-count: 1;
+      -webkit-column-count: 1;
+      column-count: 1;
     }
   }
 </style>
 
-{% if text %}
-<h2 id="text">{{ text }}</h2>
-{% endif %}
+<section class="gallery-section">
 
-<div class="gallery">
-  {% for i in link %}
-  <div class="gallery-item">
+  {% if text %}
+  <h2 id="text">{{ text }}</h2>
+  {% endif %}
+
+  <div id="photos">
+    {% for i in link %}
     <img src="{{ i }}" height="160" width="140" />
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 
-<a href="/"><button id="btns">Back To Home</button></a>
+  <a href="/"><button id="btns">Back To Home</button></a>
+
+</section>
 
 {% endblock %}

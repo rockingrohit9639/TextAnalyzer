@@ -1,6 +1,14 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
 
-<h1 class="header" style="text-align: center">Welcome to Text Analyzer</h1>
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/index2.css' %}">
+
+<section class="generate-section">
+
+    <h1 class="header" style="text-align: center">Welcome to Text Analyzer</h1>
 <h4 class="header" style="text-align: center">(Text Generator Mode)</h4>
 <p style="text-align: center; margin-top: 2px">
     Add your text below to perform desired operations on it
@@ -35,5 +43,7 @@
     <a href="/"><button id="btns">Back To Home</button></a>
     <a href="/index"><button id="btns2">Text Analyzer</button></a>
 </div>
+
+</section>
 
 {% endblock %}

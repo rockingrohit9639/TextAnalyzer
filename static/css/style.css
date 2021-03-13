@@ -1,85 +1,88 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
 
-.container_main {
-    margin: 0;
-    padding: 0;
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+:root{
+    --primary-color: #000;
+    --secondary-color: #f2f2f2;
+}
+
+/* pre-loader */
+#loading{
+    position: fixed;
     width: 100%;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background-color: #D4F4E7;
-}
-
-li {
-    list-style: none;
-    padding: 5px;
+    height: 100vh;
+    background: #5c9dfb url('https://cdn.dribbble.com/users/1193395/screenshots/4348563/speed-data-search-loader.gif') no-repeat center;
+    z-index: 999;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    
 }
 
-.nav-links {
+.nav-bar {
     display: flex;
-    flex: 0.3;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    height: 4.5rem;
+    color: var(--secondary-color);
+    padding: 0 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    z-index: 100;
 }
 
-.git-logo {
-    width: 30px;
-    object-fit: contain;
+a:hover {
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
 }
 
-li:hover {
-    background-color: rgba(153, 153, 153, 0.267);
-    border-radius: 10px;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    margin-top: auto;
+    width: 100%;
 }
 
-.main {
-    padding: 0;
-    height: 85vh;
-    overflow-y: auto;
-}
-
-.main-content {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0;
+.footer__left {
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.footer__right{
+    border: 1px solid var(--secondary-color);
+    width: 25px;
+    height: 25px;
+    display: flex;
     align-items: center;
-}
-
-.main-content>a>button {
-    width: 200px;
-    height: 50px;
-    outline: none;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    background-color: black;
-    color: white;
-    font-size: medium;
+    justify-content: center;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
-.main-content>a>button:hover {
-    background-color: rgba(153, 153, 153, 0.267);
-    color: black;
+.footer__right p {
+    padding-top: 15px;
 }
 
-.logo {
-    padding-left: 20px;
-}
-
-.main-content > p{
-    margin-top: -10px;
-}
 .input-field{
     width: 100%;
     background-color: white;
@@ -90,21 +93,25 @@ li:hover {
     resize: vertical;
     font-size: medium;
 }
+
 .form-input{
     width: 20px;
     height:20px;
     cursor: pointer;
 }
+
 .form-label{
     font-size: medium;
 }
+
 .button-container{
     display: flex;
-    /* width: 800px; */
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
+
+
 button{
     width: 200px;
     height: 50px;
@@ -119,14 +126,19 @@ button{
     align-self: center;
     margin-top: 20px;
 }
+
+
 button:hover{
     background-color: rgba(153, 153, 153, 0.267); 
     color: black;
 }
+
+
 button#btns{
     margin-left: 0.7em;
     margin-top: 3em;
     }
+
 button#btns2{
     margin-left: 4em;
     margin-top: 3em;
@@ -157,17 +169,31 @@ form{
     padding: 3rem;
 }
 
-.contributor {
-    margin-top: 20px;
-    max-width: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
+
+.foo{
+    width: 80%;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.contributor img{
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+.foo h5{
+    font-size: 25px;
+    margin-top: 10px;
 }
+
+.foo h5::after{
+    content: "All of us do not have equal talent. But, all of us have an equal opportunity to develop our talents.";
+    animation: textanim 10s linear infinite;
+  }
+
+  @keyframes textanim{
+    40%{
+      content:'If you fail, never give up because FAIL means "First Attempt In Learning".' ;
+    }
+    70%{
+      content:"No matter what is the environment around you, it is always possible to maintain your brand of integrity." ;
+    }
+  }
+
+
