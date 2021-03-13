@@ -26,15 +26,9 @@ body{
     z-index: 999;
 }
 
-
-li {
-    list-style: none;
-    padding: 5px;
-}
-
 a {
     text-decoration: none;
-    color: inherit;  
+    color: inherit;
 }
 
 .nav-bar {
@@ -48,7 +42,14 @@ a {
     color: var(--secondary-color);
     padding: 0 20px;
     border-bottom: 2px solid var(--secondary-color);
+    z-index: 100;
 }
+
+a:hover {
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
 
 .footer {
     display: flex;
@@ -80,11 +81,6 @@ a {
 
 .footer__right p {
     padding-top: 15px;
-}
-
-li:hover {
-    background-color: rgba(153, 153, 153, 0.267);
-    border-radius: 10px;
 }
 
 .input-field{

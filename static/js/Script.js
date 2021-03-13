@@ -17,10 +17,7 @@ function copyToClipboard(elementId) {
     document.execCommand("copy");
   
     // Remove the input from the body
-    document.body.removeChild(aux);
-  
-  }
-  
-  function log(){
-      console.log('---')
-  }
+    document.body.removeChild(aux); 
+}
+
+console.log("This is injected")

@@ -5,6 +5,7 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 <section class="header" id="header">
 
     <div class="container-fluid">
@@ -13,13 +14,13 @@
 
             <div class="col-md-6 header__left">
                 <div class="content">
-                    <h4>Easy way to analyze your texts.</h4>
+                    <h4>Easy way to analyze your text.</h4>
                     <p>This is an open source project managed by <a href="https://www.linkedin.com/in/rohit-kumar-saini/" target="_blank"> <u> Rohit Saini </u> </a>.</p>
                 </div>
 
                 <div class="buttons">
-                    <a href="/index"> Analyze </a>
-                    <a href="/index2"> Generate </a>
+                    <a id="btn1" href="/index"> Analyze </a>
+                    <a id="btn2" href="/index2"> Generate </a>
                 </div>
             </div>
 
@@ -29,6 +30,9 @@
 
         </div>
     </div>
+
+    <span class="skewOne"></span>
+    <span class="skewTwo"></span>
 
 </section>
 
@@ -86,6 +90,19 @@
 
 
 
+<script type="text/javascript">
+    
+    const skewOne = document.querySelector(".skewOne");
+    const skewTwo = document.querySelector(".skewTwo");
+
+    window.addEventListener("scroll", () => {
+        const val1 = -15 + window.scrollY / 45;
+        const val2 = 15 + window.scrollY / -45;
+        skewOne.style.transform = `skewY(${val1}deg)`;
+        skewTwo.style.transform = `skewY(${val2}deg)`;
+    })
+
+</script>
 
 {% endblock %}
 
