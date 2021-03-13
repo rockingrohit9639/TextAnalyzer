@@ -14,6 +14,7 @@ import textwrap
 from PyDictionary import PyDictionary
 from textblob import TextBlob
 import random
+from gingerit.gingerit import GingerIt
 
 
 nltk.download('stopwords')
@@ -115,6 +116,7 @@ def analyze(request):
     gallery=request.POST.get('option', 'q')
     Suggest_word=request.POST.get('option', 'suggest_word')
     Sen_Analysis=request.POST.get('option', 'Sentiment')
+    Grammar=request.POST.get('option','grammar')
 
     analyzed_text = ""
     word_status = ""
@@ -290,6 +292,22 @@ def analyze(request):
         result = {
             "analyzed_text": final,
             "purpose": "Sentiment Analysis",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+        
+    elif Grammar=="grammar":
+        parser = GingerIt()
+        result = parser.parse(djText)
+        final=result["result"]
+
+        if final=='':
+            final="Please write some text to check grammar"
+
+        result = {
+            "analyzed_text": final,
+            "grammar":djText,
+            "purpose": "Spelling & Grammar Check",
             "analyze_text":True,
             "wordcount": countword
         }
