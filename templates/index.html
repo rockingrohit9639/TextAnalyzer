@@ -1,65 +1,84 @@
+{% extends 'base.html' %} 
 
-{% extends 'base.html' %}
+{% load static %} 
 
-{% load static %}
+{% block content %} 
 
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 
-    {% block content %}
+<section class="analyze-section">
+
+    <h1 class="header" style="text-align: center;">Welcome to Text Analyzer</h1>
+    <p style="text-align: center;">Add your text below to perform desired operations on it</p>
+
+    <form action="/analyze" method="POST">{% csrf_token %}
+        <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
+
         
-                    <h1 class="header" style="text-align: center;">Welcome to Text Analyzer</h1>
-                    <p style="text-align: center;">Add your text below to perform desired operations on it</p>
-                    <form action="/analyze" method="POST">{% csrf_token %}
-                        <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
-        
-                        
-                        <input class="form-control input-word" id="word_input" name="word_input" autocomplete="off" placeholder="Enter word to find in text"/>
-            
-                        <p style="text-align: center;">Actions you can perform : </p>
-                        <div class="button-container">
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="word_find" 
-                                id="word_find" name="option">
-                                <label class="form-label" for="word_find">Find word</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="removepunc"
-                                 id="removepunc" name="option">
-                                <label class="form-label" for=removepunc">Remove Punctuations</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="capitalize" id="capitalize" name="option">
-                                <label class="form-label" for=capitalize">Capitalize</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="toSmall" id="toSmall" name="option">
-                                <label class="form-label" for=toSmall">To Lowercase</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="toUpper" id="toUpper" name="option">
-                                <label class="form-label" for="toUpper">To Uppercase</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="New_line" 
-                                id="New_line" name="option">
-                                <label class="form-label" for="New_line">'.' To New Line</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="Email_Address" 
-                                id="Email_Address" name="option">
-                                <label class="form-label" for="Email_Address">Email Addresses</label>
-                            </div>
-                            <div class="buttons">
-                                <input class="form-input" type="radio" value="Links" id="Links"
-                                 name="option">
-                                <label class="form-label" for="Links">Links</label>
-                            </div>
-                                                             
-                        </div>
-                        <button type="submit">Analyze</button>
-                    </form>
-                    <div id="container">
-                        <a href="/"><button id="btns">Back To Home</button></a>
-                        <a href="/index2"><button id="btns2"> Generator </button></a>
-                    </div>
-                    
-        {% endblock %}
+        <input class="form-control input-word" id="word_input" name="word_input" autocomplete="off" placeholder="Enter word to find in text"/>
+
+        <p style="text-align: center;">Actions you can perform : </p>
+        <div class="button-container">
+            <div class="buttons">
+                <input class="form-input" type="radio" value="word_find" 
+                id="word_find" name="option">
+                <label class="form-label" for="word_find">Find word</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="removepunc"
+                 id="removepunc" name="option">
+                <label class="form-label" for=removepunc">Remove Punctuations</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="capitalize" id="capitalize" name="option">
+                <label class="form-label" for=capitalize">Capitalize</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="toSmall" id="toSmall" name="option">
+                <label class="form-label" for=toSmall">To Lowercase</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="toUpper" id="toUpper" name="option">
+                <label class="form-label" for="toUpper">To Uppercase</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="New_line" 
+                id="New_line" name="option">
+                <label class="form-label" for="New_line">'.' To New Line</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="Email_Address" 
+                id="Email_Address" name="option">
+                <label class="form-label" for="Email_Address">Email Addresses</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="Links" id="Links"
+                 name="option">
+                <label class="form-label" for="Links">Links</label>
+            </div>
+
+            <div class="buttons">
+                <input class="form-input" type="radio" value="Sentiment" id="Sentiment"
+                 name="option">
+                <label class="form-label" for="Sentiment">Sentiment Analysis</label>
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="grammar" id="grammar"
+                 name="option">
+                <label class="form-label" for="grammar">Check Grammar</label>
+            </div>
+                                             
+        </div>
+        <button type="submit">Analyze</button>
+    </form>
+
+    <div id="container">
+        <a href="/"><button id="btns">Back To Home</button></a>
+        <a href="/index2"><button id="btns2"> Generator </button></a>
+    </div>
+
+</section>
+
+
+
+{% endblock %}
