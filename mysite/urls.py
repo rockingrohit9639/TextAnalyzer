@@ -16,4 +16,6 @@ urlpatterns = [
     path('index', views.home, name='Get Started'),
     path('index2', views.index2, name='Generate Text'),
     path('gallery/',views.gallery,name='gallery'),
+    path('youtube/', views.youtube, name='youtube'),
+
 ]
