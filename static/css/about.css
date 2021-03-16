@@ -19,6 +19,10 @@ tbody{
     align-items: center;
 }
 
+td{
+    padding: 10px;
+}
+
 .mentor h2{
     text-align: center;
 }
@@ -27,14 +31,28 @@ tbody{
     margin-bottom: 20px;
 }
 
+.mentor a:hover {
+    color: rgba(0, 0, 0, 0.63);
+}
+
 .contributor {
     margin-top: 20px;
     margin-left: 20px;
-    max-width: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
+}
+
+.contributor:hover{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background: #30363d;
+    box-shadow: 0 5px 14px -8px rgba(0, 0, 0,  0.5);
+}
+
+.contributor:hover a{
+    color: #fff;
 }
 
 .contributor img{
