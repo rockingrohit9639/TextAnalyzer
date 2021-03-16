@@ -96,7 +96,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss4](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20image.png)
+![ss6](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20image.png)
 
 
 
@@ -104,7 +104,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss4](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20images%20result%20page.png)
+![ss7](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20images%20result%20page.png)
 
 
 
@@ -112,7 +112,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss4](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Generate%20Password.png)
+![ss8](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Generate%20Password.png)
 
 
 
@@ -120,7 +120,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-![ss4](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Password%20Generated.png)
+![ss9](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Password%20Generated.png)
 
 
 ## Some awesome Contributors ✨
