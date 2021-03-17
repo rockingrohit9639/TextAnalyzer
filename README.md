@@ -68,11 +68,11 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
 
   
 
-## Remove Punctuations & Capitalize
+## Remove Punctuations
 
   
 
-![ss3](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Remove%20punctuations%20and%20capitalize.png)
+![ss3](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Remove%20punctuations.png)
 
   
 
@@ -89,6 +89,39 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
   
 
 ![ss5](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/word%20found%20or%20not%20found.png)
+
+
+
+## Find Images
+
+  
+
+![ss6](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20image.png)
+
+
+
+## Images Gallery
+
+  
+
+![ss7](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Find%20images%20result%20page.png)
+
+
+
+## Generate A Password
+
+  
+
+![ss8](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Generate%20Password.png)
+
+
+
+## Password Generator Result
+
+  
+
+![ss9](https://github.com/rockingrohit9639/TextAnalyzer/blob/master/screenshots/Password%20Generated.png)
+
 
 ## Some awesome Contributors ✨
 
