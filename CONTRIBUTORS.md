@@ -75,7 +75,8 @@
     1. [#70 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/70), PR - [#73](https://github.com/rockingrohit9639/TextAnalyzer/pull/73)
     2. [#74 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/74), PR - [#75](https://github.com/rockingrohit9639/TextAnalyzer/pull/75)
     3. [#79 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/74), PR - [#80](https://github.com/rockingrohit9639/TextAnalyzer/pull/80)
-  - Total Points (250)
+    4. [#100 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/100), PR - [#106](https://github.com/rockingrohit9639/TextAnalyzer/pull/106)
+  - Total Points (300)
   
 - [Muthu Annamalai](https://github.com/muthuannamalai12)
   - Solved Issues
