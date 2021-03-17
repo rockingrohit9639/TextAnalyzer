@@ -8,4 +8,3 @@ django_heroku
 bs4
 PyDictionary
 textblob
-gingerit-0.8.1
