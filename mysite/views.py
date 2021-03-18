@@ -64,6 +64,47 @@ def youtube(request):
 
     return render(request, 'youtube.html', context)
 
+def searchBook(request):
+    GOOGLE_BOOKS_API_KEY="AIzaSyDmymOgoPKQZfhMmd3gd9Be-mM6cb8okeM"
+    query = request.session['user-input']
+    payload = {
+        "key": GOOGLE_BOOKS_API_KEY,
+        "maxResults": 6,
+        "q": query,
+    }
+    
+    resp = requests.get("https://www.googleapis.com/books/v1/volumes", params=payload).json()
+    res_items = resp["items"]
+    arr=[]
+
+    
+    for data in res_items:
+        try:
+            temp={
+            'title':data["volumeInfo"]["title"],
+            'link':data["volumeInfo"]["infoLink"],
+            'description_text':"".join(data["volumeInfo"]["description"].split(".")[0]),
+            'thumbnail':data["volumeInfo"]["imageLinks"]["smallThumbnail"],
+            }
+        except:
+            temp={
+            'title':data["volumeInfo"]["title"],
+            'link':data["volumeInfo"]["infoLink"],
+            'description_text':"Description Not Available",
+            'thumbnail':data["volumeInfo"]["imageLinks"]["smallThumbnail"],
+            }
+
+        arr.append(temp)
+
+    context = {
+        "result": arr,
+        "text":query
+    }
+
+    return render(request, 'books.html', context)
+    
+
+
 def home(request):
 
     return render(request, 'index.html')
@@ -143,6 +184,8 @@ def analyze(request):
     Sen_Analysis=request.POST.get('option', 'Sentiment')
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
+    books=request.POST.get('option','suggest_books')
+
 
 
     analyzed_text = ""
@@ -350,6 +393,16 @@ def analyze(request):
             "wordcount": countword
         }    
 
+    elif books=="suggest_books":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": djText,
+            "purpose":"Search Books",
+            "status": "Press Button To View Books",
+            "find_books": True,
+            "generate_text":True,
+            "wordcount": countword
+        }    
 
         
     elif gallery=="q":
