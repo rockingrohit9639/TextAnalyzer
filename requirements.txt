@@ -9,8 +9,5 @@ bs4
 PyDictionary
 textblob
 gingerit==0.8.1
-<<<<<<< HEAD
 python-youtube==0.7.0
-=======
-python-youtube==0.7.0
->>>>>>> 40d5260dc0870a9d5945a3348ed8d2ec9cfaff1f
+
