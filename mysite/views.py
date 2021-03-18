@@ -15,6 +15,7 @@ from PyDictionary import PyDictionary
 from textblob import TextBlob
 import random
 from gingerit.gingerit import GingerIt
+from pyyoutube import Api
 
 
 nltk.download('stopwords')
@@ -38,6 +39,30 @@ def about(request):
     }
 
     return render(request, 'about.html', context)
+
+def youtube(request):
+    api=Api(api_key="AIzaSyDHAS3sDLVtUqM1vx-kxykrBHMVSi0BLJI")
+    query = request.session['user-input']
+    res=api.search_by_keywords(q=query,search_type=["channel"],count=25,limit=8)
+    res=res.to_dict()
+    res_items=res["items"]
+    result=[]
+
+    for data in res_items:
+        temp={
+        "channel_name":data["snippet"]["title"],
+        "channel_url":"https:/www.youtube.com/channel/"+str(data["snippet"]["channelId"]),
+        "channel_logo":data["snippet"]["thumbnails"]["default"]["url"]
+        }
+
+        result.append(temp)
+
+    context = {
+        "result": result,
+        "text":query
+    }
+
+    return render(request, 'youtube.html', context)
 
 def home(request):
 
@@ -117,6 +142,8 @@ def analyze(request):
     Suggest_word=request.POST.get('option', 'suggest_word')
     Sen_Analysis=request.POST.get('option', 'Sentiment')
     Grammar=request.POST.get('option','grammar')
+    Channel=request.POST.get('option','suggest_youtube')
+
 
     analyzed_text = ""
     word_status = ""
@@ -311,6 +338,19 @@ def analyze(request):
             "analyze_text":True,
             "wordcount": countword
         }
+
+    elif Channel=="suggest_youtube":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": djText,
+            "purpose":"Suggest youtube channels",
+            "status": "Press Button To View Channel links",
+            "find_channel": True,
+            "generate_text":True,
+            "wordcount": countword
+        }    
+
+
         
     elif gallery=="q":
         request.session['user-input']=djText

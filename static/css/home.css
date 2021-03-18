@@ -59,31 +59,31 @@
     font-weight: 700;
 }
 
-.services {
+.services, .contact {
     width: 100%;
     /* height: 100vh; */
     padding-top: 15px;
     background: var(--secondary-color);
 }
 
-.services .top .icons {
+.services .top .icons, .contact .top .icons {
     display: flex;
     justify-content: space-evenly;
     padding: 5px;
 }
 
-.services .top h3 {
+.services .top h3, .contact .top h3 {
     text-align: center;
     font-weight: 600;
     font-size: 3rem;
 }
 
-.services .top .icons i{
+.services .top .icons i, .contact .top .icons i {
     padding: 0 10px;
     font-size: 2rem;
 }
 
-.services .top .icons hr{
+.services .top .icons hr, .contact .top .icons hr {
     width: 10rem;
     height: 1px;
     color: var(--primary-color);
@@ -122,6 +122,68 @@
     background-color: var(--secondary-color);
     padding: 5px 35px;
     color: var(--primary-color);
+}
+
+/* contact-us */
+.contact-form{
+    width: 100%;
+    margin: auto;
+    padding: 0 40px;
+    margin-top: 50px;
+}
+
+/*common style class*/
+.base-form{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 4px;
+    color: var(--secondary-color);
+}
+
+/*isolates forms in div for easier styling.*/
+.parent-user-form{
+    display: table;
+    width: 100%;
+}
+
+/*makes the forms go side by side*/
+.child-user-form{
+    display: table-cell;
+}
+
+/*styles for name*/
+.user-name{
+    padding-right: 10px;
+}
+
+/*Required for aligning email field to end of message field*/
+.user-email{
+    padding-left: 10px;
+}
+
+.messageZone{
+    min-height: 200px;
+    resize: vertical;
+}
+
+.contact-form .btn{
+    width: 180px;
+    padding: 10px 20px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.contact-form .btn:hover{
+    transform: scale(1.04);
 }
 
 .skewOne {

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/youtube.css' %}" />
+
+<section class="youtube-section">
+
+  <div class="youtubers">
+    <h2>Youtube Channels related to {{text}}</h2>
+
+    <div id="channeLlist">
+      {% if result %}
+      <table>
+        <tbody>
+          {% for i in result %}
+          <tr>
+            <td>
+              <div class="Channels">
+                <img
+                  src="{{ i.channel_logo }}"
+                  class="rounded-circle"
+                  alt="avatar"/>
+                <a href="{{ i.channel_url }}"
+                target="_blank"
+                  ><p>{{ i.channel_name }}</p>
+                  <p></p
+                ></a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </div>
+  </div>
+
+  <a href="/index2"><button id="btns">Back</button></a>
+
+</section>
+
+{% endblock content %}
