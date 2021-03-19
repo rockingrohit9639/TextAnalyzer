@@ -17,5 +17,6 @@ urlpatterns = [
     path('index2', views.index2, name='Generate Text'),
     path('gallery/',views.gallery,name='gallery'),
     path('youtube/', views.youtube, name='youtube'),
+    path('books/', views.searchBook, name='books'),
 
 ]
