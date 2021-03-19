@@ -29,7 +29,8 @@
     3. [#35 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/35), PR - [#44](https://github.com/rockingrohit9639/TextAnalyzer/pull/44)
     4. [#39 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/39), PR - [#56](https://github.com/rockingrohit9639/TextAnalyzer/pull/56)
     5. [#42 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/42), PR - [#59](https://github.com/rockingrohit9639/TextAnalyzer/pull/59)
-  - Total Points (1900)
+    6. [#99 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/99), PR - [#110](https://github.com/rockingrohit9639/TextAnalyzer/pull/110)
+  - Total Points (2400)
 
 - [Achyut Kumar](https://github.com/Sloth-Panda)
   - Solved Issues
