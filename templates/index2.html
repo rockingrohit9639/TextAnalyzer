@@ -47,6 +47,12 @@
     </div>
     <button type="submit">Generate</button>
 </form>
+ 
+<div id="container2">        
+    <button onclick="Clear_text();">Clear</button>
+    <button onclick="Default_text();">Default Text</button>
+</div>
+
 <div id="container">
     <a href="/"><button id="btns">Back To Home</button></a>
     <a href="/index"><button id="btns2">Text Analyzer</button></a>
@@ -54,4 +60,33 @@
 
 </section>
 
+
+<script>
+    function Clear_text(){
+        document.getElementById('text').value='';
+    };
+
+    function Default_text(){
+        if(document.getElementById('Password_Generator').checked){
+        document.getElementById("text").value="testpass"
+        }
+        if(document.getElementById('word_find').checked){
+        document.getElementById("text").value="equinox"
+        }
+        if(document.getElementById('gallery').checked){
+        document.getElementById("text").value="birds"
+        }
+        if(document.getElementById('suggest_word').checked){
+        document.getElementById("text").value="ta"
+        }
+        if(document.getElementById('suggest_youtube').checked){
+        document.getElementById("text").value="python tutorials"
+        }
+        if(document.getElementById('suggest_books').checked){
+        document.getElementById("text").value="motivation"
+        }
+    };
+</script>
+
 {% endblock %}
+
