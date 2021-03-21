@@ -20,8 +20,9 @@
     14. [#63 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/63), PR - [#103](https://github.com/rockingrohit9639/TextAnalyzer/pull/103)
     15. [#97 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/97), PR - [#104](https://github.com/rockingrohit9639/TextAnalyzer/pull/104)
     16. [#96 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/96), PR - [#111](https://github.com/rockingrohit9639/TextAnalyzer/pull/111)
-    17. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
-  - Total Points (5900)
+    17. [#112 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/112), PR - [#113](https://github.com/rockingrohit9639/TextAnalyzer/pull/113)
+    18. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
+  - Total Points (6400)
 
 - [Arbaz Alam](https://github.com/arbazalam01)
   - Solved Issues 
