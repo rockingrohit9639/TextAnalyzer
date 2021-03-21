@@ -14,7 +14,6 @@
     <form action="/analyze" method="POST">{% csrf_token %}
         <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
 
-        
         <input class="form-control input-word" id="word_input" name="word_input" autocomplete="off" placeholder="Enter word to find in text"/>
 
         <p style="text-align: center;">Actions you can perform : </p>
@@ -73,6 +72,10 @@
         </div>
         <button type="submit">Analyze</button>
     </form>
+     <div id="container2">        
+        <button onclick="Clear_text();">Clear</button>
+        <button onclick="Default_text();">Default Text</button>
+    </div>
 
     <div id="container">
         <a href="/"><button id="btns">Back To Home</button></a>
@@ -82,6 +85,46 @@
 </section>
 
 
+<script>
+    function Clear_text(){
+        document.getElementById('text').value='';
+        document.getElementById("word_input").value='';
+    };
+
+    function Default_text(){
+        if(document.getElementById('word_find').checked){
+        document.getElementById("text").value="I wanna add my text to text analyzer and return a output texts."
+        document.getElementById("word_input").value="text"
+        }
+        if(document.getElementById('removepunc').checked){
+        document.getElementById("text").value="simplify to test@ your+% text!!%"
+        }
+        if(document.getElementById('capitalize').checked){
+        document.getElementById("text").value="you should read this article."
+        }
+        if(document.getElementById('toSmall').checked){
+        document.getElementById("text").value="Convert MY Text INTo Lowercase"
+        }
+        if(document.getElementById('toUpper').checked){
+        document.getElementById("text").value="convert my text into uppercase"
+        }
+        if(document.getElementById('New_line').checked){
+        document.getElementById("text").value="Imagination is more important than knowledge.Technology makes what was once impossible possible."
+        }
+        if(document.getElementById('Email_Address').checked){
+        document.getElementById("text").value="mymail: test543@gmail.com is confirmed"
+        }
+        if(document.getElementById('Links').checked){
+        document.getElementById("text").value="link: https://www.djangoproject.com/ ,visit this website"
+        }
+        if(document.getElementById('Sentiment').checked){
+        document.getElementById("text").value="this person is unfaithful"
+        }
+        if(document.getElementById('grammar').checked){
+        document.getElementById("text").value="Machne Learniing is impotant"
+        }
+    };
+</script>
 
 {% endblock %}
 
