@@ -100,11 +100,11 @@
         </div>
     </div>
 
-   <form action="MAILTO:rohitkumarsaini.personal@gmail.com" method="post" enctype="text/plain" class="contact-form">
+   <form action="contact" method="post" class="contact-form">{% csrf_token %}
         <div class="parent-user-form">
-            <div class="child-user-form user-name"><input type="text" class="base-form nameZone" placeholder="Your Full Name">
+            <div class="child-user-form user-name"><input type="text" name="Name" class="base-form nameZone" placeholder="Your Full Name">
             </div>
-            <div class="child-user-form user-email"><input type="email" class="base-form emailZone" placeholder="Your Email">
+            <div class="child-user-form user-email"><input type="email" name="Email" class="base-form emailZone" placeholder="Your Email">
             </div>
         </div>
 
