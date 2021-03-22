@@ -31,6 +31,27 @@ a {
     color: inherit;
 }
 
+
+#nav-heading{
+    animation: text 3s steps(22) infinite alternate;
+    animation: text 3s linear infinite alternate;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    align-self: center;
+    margin: auto;
+    text-align: center;
+}
+
+@keyframes text{
+    0%{
+        width: 0ch;
+    }
+    100%{
+        width: 11ch;
+    }
+}
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -195,5 +216,3 @@ form{
       content:"No matter what is the environment around you, it is always possible to maintain your brand of integrity." ;
     }
   }
-
-
