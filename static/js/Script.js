@@ -21,3 +21,27 @@ function copyToClipboard(elementId) {
 }
 
 console.log("This is injected")
+
+
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+})
+
+/*===== SCROLL REVEAL ANIMATION-CARDS =====*/
+sr.reveal('.generate-password', {})
+sr.reveal('.sentiment-analysis', {delay: 200})
+sr.reveal('.search-images', { delay: 400})
+
+/*===== SCROLL REVEAL ANIMATION-HEADER =====*/
+sr.reveal('.header__left', {origin:'left'})
+sr.reveal('.header__right', {origin:'right'})
+
+
+/*===== SCROLL REVEAL ANIMATION-CONTACT FORM =====*/
+sr.reveal('.contact-form', {})
+sr.reveal('.icons', {})
