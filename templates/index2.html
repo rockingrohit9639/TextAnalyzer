@@ -44,6 +44,10 @@
             <input class="form-input" type="radio" value="suggest_books" id="suggest_books" name="option" />
             <label class="form-label" for="suggest_books">Suggest Books</label>
         </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="suggest_articles" id="suggest_articles" name="option" />
+            <label class="form-label" for="suggest_articles">Suggest Articles</label>
+        </div>
     </div>
     <button type="submit">Generate</button>
 </form>
@@ -84,6 +88,9 @@
         }
         if(document.getElementById('suggest_books').checked){
         document.getElementById("text").value="motivation"
+        }
+        if(document.getElementById('suggest_articles').checked){
+        document.getElementById("text").value="javascript"
         }
     };
 </script>
