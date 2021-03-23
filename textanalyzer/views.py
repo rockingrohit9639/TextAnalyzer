@@ -104,7 +104,72 @@ def searchBook(request):
 
     return render(request, 'books.html', context)
     
+def articles(request):
+    Base_string = "https://medium.com/tag/"
+    query = request.session['user-input']
+    url=Base_string + query
+    res = requests.get(url)
+    soup = BeautifulSoup(res.text, 'html.parser')
 
+    logo=[]
+    writer=[]
+    publisher=[]
+    title=[]
+    link=[]
+
+    start = soup.find_all('div',class_='streamItem streamItem--postPreview js-streamItem')
+    for span in start:
+        start1=span.find_all('img')[0]['src']
+        logo.append(start1)
+        start2=span.find_all('div',class_='postMetaInline postMetaInline-authorLockup ui-captionStrong u-flex1 u-noWrapWithEllipsis')
+        for span2 in start2:
+            start3=span2.find_all('a')[0].text
+            writer.append(start3)
+            start4=span2.find_all('a')[1].text
+            publisher.append(start4)
+        start5 = span.find_all('h3',class_='graf graf--h3 graf-after--figure graf--title')
+        for span2 in start5:
+            start6=span2.text.replace("\xa0",' ')
+            title.append(start6)
+        start7=span.find_all('a')[3]['href']
+        link.append(start7)
+
+    myDict={"title":[],"writer":[],"publisher":[],"logo":[],"link":[]}
+    myDict['title'].extend(title)
+    myDict['writer'].extend(writer)
+    myDict['publisher'].extend(publisher)
+    myDict['logo'].extend(logo)
+    myDict['link'].extend(link)
+
+    arr2 = []
+    for i in range(0,7):
+        try:
+            temp = {
+            "title": myDict["title"][i],
+            "writer": myDict["writer"][i],
+            "publisher": myDict["publisher"][i],
+            "logo": myDict["logo"][i],
+            "link":myDict["link"][i]
+           }
+
+        except:
+            temp = {
+            "title": "Not Available",
+            "writer": " ",
+            "publisher":" ",
+            "logo": " ",
+            "link":" "
+           }
+
+        arr2.append(temp)
+
+    context = {
+        "result": arr2,
+        "text":query
+    }
+
+    return render(request, 'articles.html', context)
+    
 
 def home(request):
 
@@ -186,7 +251,7 @@ def analyze(request):
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
-
+    articles=request.POST.get('option','suggest_articles')
 
 
     analyzed_text = ""
@@ -404,8 +469,18 @@ def analyze(request):
             "generate_text":True,
             "wordcount": countword
         }    
-
-        
+    
+    elif articles=="suggest_articles":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": djText,
+            "purpose":"Search Articles",
+            "status": "Press Button To View Articles",
+            "find_articles": True,
+            "generate_text":True,
+            "wordcount": countword
+        } 
+            
     elif gallery=="q":
         request.session['user-input']=djText
         result = {
