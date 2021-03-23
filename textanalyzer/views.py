@@ -483,7 +483,8 @@ def contact(request):
     if request.method=="POST":
         name=request.POST['Name']
         email=request.POST['Email']
-        user = User_profile.objects.create(name=name,email=email)
+        message=request.POST['Message']
+        user = User_profile.objects.create(name=name,email=email,message=message)
         user.save()
     return render(request,"home.html")
 
