@@ -4,12 +4,12 @@
 
 <section class="about-section">
   <p>
-    <b>W</b>e are the makers/contributors of this project text analyzer where
+    <b>W</b><i>e are the makers/contributors of this project text analyzer where
     you can perform operations like capitalize, transform to lowercase/uppercase
     and remove punctuation. This is created using Python Django. It is
     completely open source hence you too can contribute anything to this project
     if you want. All your new ideas are welcome here, we will implement it
-    together.
+    together.</i>
   </p>
 
   <div class="mentor">
@@ -24,7 +24,6 @@
     <div id="contributorsLlist">
       {% if userData %}
       <table>
-        <tbody>
           {% for data in userData %}
           <tr>
             <td>
@@ -35,6 +34,7 @@
                   alt="avatar"
                 />
                 <a href="{{ data.html_url }}"
+                class="user-names"
                 target="_blank"
                   ><p>{{ data.login }}</p>
                   <p></p
@@ -43,7 +43,6 @@
             </td>
           </tr>
           {% endfor %}
-        </tbody>
       </table>
       {% endif %}
     </div>
