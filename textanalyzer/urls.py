@@ -12,6 +12,6 @@ urlpatterns = [
     path('gallery/',views.gallery,name='gallery'),
     path('youtube/', views.youtube, name='youtube'),
     path('books/', views.searchBook, name='books'),
-    path("contact",views.contact,name="contact")
-
+    path("contact",views.contact,name="contact"),
+    path('articles/', views.articles, name='articles'),
 ]
