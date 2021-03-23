@@ -16,6 +16,7 @@ from textblob import TextBlob
 import random
 from gingerit.gingerit import GingerIt
 from pyyoutube import Api
+from .models import *
 
 
 nltk.download('stopwords')
@@ -477,3 +478,13 @@ def analyze(request):
         return HttpResponse('''<script type="text/javascript">alert("Please select atleast one option.");</script>''')
 
     return render(request, 'analyze.html', result)
+
+def contact(request):
+    if request.method=="POST":
+        name=request.POST['Name']
+        email=request.POST['Email']
+        message=request.POST['Message']
+        user = User_profile.objects.create(name=name,email=email,message=message)
+        user.save()
+    return render(request,"home.html")
+
