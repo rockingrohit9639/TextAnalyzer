@@ -60,7 +60,8 @@
     2. [#61 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/61), PR - [#95](https://github.com/rockingrohit9639/TextAnalyzer/pull/95)
     3. [#101 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/101), PR - [#107](https://github.com/rockingrohit9639/TextAnalyzer/pull/107)
     4. [#98 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/98), PR - [#119](https://github.com/rockingrohit9639/TextAnalyzer/pull/119)
-  - Total Points (650)
+    5. [#117 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/117), PR - [#121](https://github.com/rockingrohit9639/TextAnalyzer/pull/121)
+  - Total Points (750)
 
 - [Amit Kumar Mishra](https://github.com/Amit366)
   - Solved Issues
