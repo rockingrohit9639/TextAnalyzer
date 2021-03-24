@@ -53,18 +53,19 @@
     6. [#102 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/102), PR - [#115](https://github.com/rockingrohit9639/TextAnalyzer/pull/115)
   - Total Points (850)
 
-- [Amit Kumar Mishra](https://github.com/Amit366)
-  - Solved Issues
-    1. [#1 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/1), PR - [#26](https://github.com/rockingrohit9639/TextAnalyzer/pull/26)
-    2. [#31 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/31), PR - [#68](https://github.com/rockingrohit9639/TextAnalyzer/pull/68)
-  - Total Points (600)
-
 - [pranabprohit](https://github.com/pranabprohit)
   - Solved Issues
     1. [#71 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/71), PR - [#77](https://github.com/rockingrohit9639/TextAnalyzer/pull/77)
     2. [#61 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/61), PR - [#95](https://github.com/rockingrohit9639/TextAnalyzer/pull/95)
     3. [#101 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/101), PR - [#107](https://github.com/rockingrohit9639/TextAnalyzer/pull/107)
-  - Total Points (450)
+    4. [#98 (medium: 200)](https://github.com/rockingrohit9639/TextAnalyzer/issues/98), PR - [#119](https://github.com/rockingrohit9639/TextAnalyzer/pull/119)
+  - Total Points (650)
+
+- [Amit Kumar Mishra](https://github.com/Amit366)
+  - Solved Issues
+    1. [#1 (easy: 100)](https://github.com/rockingrohit9639/TextAnalyzer/issues/1), PR - [#26](https://github.com/rockingrohit9639/TextAnalyzer/pull/26)
+    2. [#31 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/31), PR - [#68](https://github.com/rockingrohit9639/TextAnalyzer/pull/68)
+  - Total Points (600)
 
 - [Shudhanshu Singh](https://github.com/ShudhanshuSingh) 
    - Solved Issues
