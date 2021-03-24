@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
 import random
 import textwrap
 from PyDictionary import PyDictionary
@@ -252,6 +253,8 @@ def analyze(request):
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
     articles=request.POST.get('option','suggest_articles')
+    lemmitizer=request.POST.get('option','grammar')
+
 
 
     analyzed_text = ""
@@ -444,6 +447,28 @@ def analyze(request):
             "analyzed_text": final,
             "grammar":djText,
             "purpose": "Spelling & Grammar Check",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+
+    elif lemmitizer=="lemmitize":
+        wordnet_lemmatizer = WordNetLemmatizer()
+        tokenization = nltk.word_tokenize(djText)
+        count=True
+        for w in tokenization:
+            k=wordnet_lemmatizer.lemmatize(w,pos ="v")
+            if w!=k:
+                result="{} -> {}".format(w, wordnet_lemmatizer.lemmatize(w,pos ="v"))
+                count=False
+        if count==True:
+            final="No need for lemmatization"
+        if count==False:
+            final="(Original word) - > (Lemmatized word)"
+       
+        result = {
+            "analyzed_text": result,
+            "highlight":final,
+            "purpose": "Lemmatization of text",
             "analyze_text":True,
             "wordcount": countword
         }
