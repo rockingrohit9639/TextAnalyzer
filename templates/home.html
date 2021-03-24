@@ -109,7 +109,7 @@
         </div>
 
         <textarea class="base-form messageZone" name="Message" placeholder="Message"></textarea>
-        <input type="submit" value="Send Message" class="base-form btn">
+        <input type="submit" value="Send Message" class="base-form btn" onclick="validateform()">
     </form>
 </section>
 
@@ -124,6 +124,10 @@
         skewOne.style.transform = `skewY(${val1}deg)`;
         skewTwo.style.transform = `skewY(${val2}deg)`;
     })
+
+    function validateform() {
+        alert('Your query is submitted successfully.');
+    }
 
 </script>
 
