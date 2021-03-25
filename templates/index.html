@@ -65,10 +65,13 @@
             <div class="buttons">
                 <input class="form-input" type="radio" value="grammar" id="grammar"
                  name="option">
-                <label class="form-label" for="grammar">Check Grammar</label>
-                                
+                <label class="form-label" for="grammar">Check Grammar</label>              
             </div>
-                                             
+            <div class="buttons">
+                <input class="form-input" type="radio" value="lemmitize" id="lemmitize"
+                 name="option">
+                <label class="form-label" for="lemmitize">Lemmitizer</label>              
+            </div>                           
         </div>
         <button type="submit">Analyze</button>
     </form>
@@ -123,6 +126,9 @@
         else if(document.getElementById('grammar').checked){
         document.getElementById("text").value="Machne Learniing is impotant"
         }
+        else if(document.getElementById('lemmitize').checked){
+        document.getElementById("text").value="Your text is ready to be analysed"
+        }                                                                 
         else {
             alert("Choose an option first!!");
         }
