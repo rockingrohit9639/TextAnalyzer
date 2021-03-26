@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.utils.html import format_html
+from django.shortcuts import render,get_object_or_404
+from django.utils.html import format_html 
+from django.template.loader import get_template
 import string
 import re
 import requests
@@ -18,6 +19,10 @@ import random
 from gingerit.gingerit import GingerIt
 from pyyoutube import Api
 from .models import *
+from xhtml2pdf import pisa
+from django.views.generic import ListView
+from .models import Pdf
+
 
 
 nltk.download('stopwords')
@@ -25,6 +30,26 @@ nltk.download('punkt')
 
 #Api key for the meriam-webster api
 api_key = "e7aa870d-ee6d-482c-a437-eb6bb0bcb9c1"
+
+
+class PdfListView(ListView):
+    model = Pdf
+    template_name = 'analyze.html'
+
+def render_pdf_view(request):
+    template_path = 'pdf.html'
+    data = request.session['user-input']
+    context = {'myvar': data}
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    template = get_template(template_path)
+    html = template.render(context)
+
+    pisa_status = pisa.CreatePDF(
+        html, dest=response)
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
 
 def index(request):
 
@@ -254,6 +279,7 @@ def analyze(request):
     books=request.POST.get('option','suggest_books')
     articles=request.POST.get('option','suggest_articles')
     lemmitizer=request.POST.get('option','grammar')
+    start_pdf=request.POST.get('option','generate_pdf')
 
 
 
@@ -502,6 +528,17 @@ def analyze(request):
             "purpose":"Search Articles",
             "status": "Press Button To View Articles",
             "find_articles": True,
+            "generate_text":True,
+            "wordcount": countword
+        } 
+
+    elif start_pdf=="generate_pdf":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": "Check Your Pdf",
+            "purpose":"Generate Pdf",
+            "status": "Press Button To View Pdf",
+            "make_pdf": True,
             "generate_text":True,
             "wordcount": countword
         } 
