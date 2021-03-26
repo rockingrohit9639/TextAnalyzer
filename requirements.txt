@@ -10,4 +10,5 @@ PyDictionary
 textblob
 gingerit==0.8.1
 python-youtube==0.7.0
+xhtml2pdf==0.2.5
 
