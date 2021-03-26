@@ -63,6 +63,10 @@
     <a href="articles/"><button>Results</button></a>
     {% endif %}
 
+    {% if make_pdf %}
+    <a href="{% url 'pdf-view' %}"><button>pdf</button></a>
+    {% endif %}
+
 {% endif %}
 
 <p class="text-muted mt-2"> Words : {{ wordcount }}</p>
