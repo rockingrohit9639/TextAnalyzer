@@ -15,8 +15,7 @@
 </p>
 <form action="/analyze" method="POST">
     {% csrf_token %}
-    <input id="text" name="text" class="form-control" autofocus="true" autocomplete="off" placeholder="Enter your text here" />
-
+    <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be generate"></textarea>
     <p style="text-align: center">Actions you can perform :</p>
     <div class="button-container">
         <div class="buttons">
@@ -48,6 +47,10 @@
             <input class="form-input" type="radio" value="suggest_articles" id="suggest_articles" name="option" />
             <label class="form-label" for="suggest_articles">Suggest Articles</label>
         </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="generate_pdf" id="generate_pdf" name="option" />
+            <label class="form-label" for="generate_pdf">Generate Pdf</label>
+        </div>       
     </div>
     <button type="submit">Generate</button>
 </form>
@@ -91,6 +94,9 @@
         }
         if(document.getElementById('suggest_articles').checked){
         document.getElementById("text").value="javascript"
+        }
+        if(document.getElementById('generate_pdf').checked){
+        document.getElementById("text").value="Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. Built by experienced developers, Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It is free and open source, has a thriving and active community, great documentation, and many options for free and paid-for support. Django helps developers avoid many common security mistakes by providing a framework that has been engineered to do the right things to protect the website automatically."
         }
     };
 </script>
