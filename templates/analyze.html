@@ -36,6 +36,10 @@
     <h3 id="set"> Synonms/Example : {{ synonym }} </h3>
 {% endif %}
 
+{% if my_wordcloud %}
+    <img src='{{ my_wordcloud }}' style="margin-top: -8rem; margin-bottom:3rem;"/>
+{% endif %}
+
 {% if grammar %}
     <h3 style="margin-top: -5rem;">Original Text : {{ grammar }} </h3>
 {% endif %}

@@ -22,8 +22,9 @@ from .models import *
 from xhtml2pdf import pisa
 from django.views.generic import ListView
 from .models import Pdf
-
-
+from wordcloud import WordCloud,STOPWORDS
+import io
+import base64
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -280,14 +281,13 @@ def analyze(request):
     articles=request.POST.get('option','suggest_articles')
     lemmitizer=request.POST.get('option','grammar')
     start_pdf=request.POST.get('option','generate_pdf')
-
+    replace_text=request.POST.get('option','replace')
+    Word_cloud=request.POST.get('option','wordcloud')
 
 
     analyzed_text = ""
     word_status = ""
-
-    
-
+  
     countword = len(djText.split())
 
     if word_find_flag == "word_find":
@@ -542,6 +542,32 @@ def analyze(request):
             "generate_text":True,
             "wordcount": countword
         } 
+        
+    elif replace_text=="replace":
+        final_text=re.sub(word_to_find,replace_input,djText)
+        result = {
+            "analyzed_text": final_text,
+            "purpose": "Replacemet of text in sentence",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+        
+    elif Word_cloud=="wordcloud":
+        cloud=WordCloud(background_color="white",max_words=200,stopwords=set(STOPWORDS))
+        wc=cloud.generate(djText)
+        buf=io.BytesIO()
+        wc.to_image().save(buf,format="png")
+        data=base64.b64encode(buf.getbuffer()).decode("utf8")
+        final="data:image/png;base64,{}".format(data)
+
+        result = {
+        "analyzed_text":" ",
+        "purpose":"Wordcloud",
+        "my_wordcloud": final,
+        "generate_text":True,
+        "wordcount": countword
+        } 
+        
             
     elif gallery=="q":
         request.session['user-input']=djText
