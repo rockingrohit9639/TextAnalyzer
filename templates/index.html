@@ -79,6 +79,16 @@
                 <input class="form-input" type="radio" value="replace" id="replace"
                  name="option">
                 <label class="form-label" for="replace">Replace</label>              
+            </div> 
+            <div class="buttons">
+                <input class="form-input" type="radio" value="date" id="date"
+                 name="option">
+                <label class="form-label" for="date">Date Extractor</label>              
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="word_frequency" id="word_frequency"
+                 name="option">
+                <label class="form-label" for="word_frequency">Word Frequency</label>              
             </div>                
         </div>
         <button type="submit">Analyze</button>
@@ -161,7 +171,13 @@ $("input[type='radio']").change(function(){
         document.getElementById("text").value="This word is used for text analysis";
         document.getElementById("word_input").value="word";
         document.getElementById("other").value="sentence";
-        }                                                                   
+        }
+        else if(document.getElementById('date').checked){
+        document.getElementById("text").value="I start my journey on 10 October 1997"
+        }  
+        else if(document.getElementById('word_frequency').checked){
+        document.getElementById("text").value="This text is started with a line to show line in a text .You have to show it as a text in a line"
+        }                                                               
         else {
             alert("Choose an option first!!");
         }

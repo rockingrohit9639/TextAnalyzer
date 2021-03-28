@@ -24,7 +24,11 @@ from django.views.generic import ListView
 from .models import Pdf
 from wordcloud import WordCloud,STOPWORDS
 import io
-import base64
+from io import BytesIO
+import urllib,base64
+from date_extractor import extract_dates
+import matplotlib.pyplot as plt
+
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -232,6 +236,24 @@ def get_example(word):
     except:
         return None
 
+    
+def get_words_dict(text):
+    words_raw = text.split()
+    words = {}
+    for word in words_raw:
+        if word in words:
+            words[word] += 1
+        else:
+            words[word] = 1
+
+    return {key: value for key, value in sorted(words.items(), key=lambda item: item[1], reverse=True)}
+
+def format_spaces(string1, string2, total_chars=40, min_spaces=1):
+    num_spaces = total_chars - (len(str(string1)) + min_spaces)
+    if num_spaces < min_spaces:
+        num_spaces = min_spaces
+
+    return str(string1) + " " * num_spaces + str(string2)
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
     place = request.session['user-input']
@@ -278,6 +300,7 @@ def analyze(request):
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
+<<<<<<< HEAD
     
     if len(djText)==0:
         context = {
@@ -285,6 +308,15 @@ def analyze(request):
         }
         return render(request, 'index.html', context)
 
+=======
+    articles=request.POST.get('option','suggest_articles')
+    lemmitizer=request.POST.get('option','grammar')
+    start_pdf=request.POST.get('option','generate_pdf')
+    replace_text=request.POST.get('option','replace')
+    Word_cloud=request.POST.get('option','wordcloud')
+    Date=request.POST.get('option','date')
+    Word_frequency=request.POST.get('option','word_frequency')
+>>>>>>> daac65d47d487f8cd44b90252f15963d720ebeb3
 
 
     analyzed_text = ""
@@ -569,7 +601,72 @@ def analyze(request):
         "generate_text":True,
         "wordcount": countword
         } 
+    
+    elif Date=="date":
+        final=extract_dates(djText)
+        final_text=final[0].date()
+
+        result = {
+            "analyzed_text": final_text,
+            "purpose": "Extract Dates from text",
+            "analyze_text":True,
+            "wordcount": countword
+        }
         
+    elif Word_frequency=="word_frequency":
+        input_text = djText.replace("\n", " ")
+        djText = input_text.lower()
+
+        words_dict = get_words_dict(djText)
+        # create graph
+        if len(words_dict)>10:
+            k=10
+        else:
+            k=len(words_dict)
+
+        y_pos = range(0, k)
+        bars = []
+        height = []
+        count=0
+
+        # print and save values to graph
+        format_spaces("word", "occurrences")
+        for word_str, word_amount in words_dict.items():
+            format_spaces(word_str, word_amount)
+            count+=1
+            if count<=10:
+                bars.append(word_str)
+                height.append(int(word_amount))
+            else:
+                pass
+
+        # # Create bars
+        plt.bar(y_pos, height)
+
+        # Create names on the x-axis
+        plt.xticks(y_pos, bars, size=9)
+
+        plt.xticks(rotation='horizontal')
+        plt.ylabel('Word Frequency',fontsize=12,labelpad=10)
+        plt.xlabel('Words',fontsize=12,labelpad=10)
+
+        fig=plt.gcf()
+
+        buf=BytesIO()
+        fig.savefig(buf,format='png')
+        buf.seek(0)
+        data=base64.b64encode(buf.read())
+        uri=urllib.parse.quote(data)
+        final="data:image/png;base64,{}".format(uri)
+
+        result = {
+            "analyzed_text": " ",
+            "purpose": "Word Frequency for every word in text",
+            "bar_graph": final,
+            "analyze_text":True,
+            "wordcount": countword
+        }
+  
             
     elif gallery=="q":
         request.session['user-input']=djText
