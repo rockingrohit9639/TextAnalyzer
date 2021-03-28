@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+
 from django.shortcuts import render,get_object_or_404
 from django.utils.html import format_html 
 from django.template.loader import get_template
@@ -10,6 +11,7 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+
 from nltk.stem import WordNetLemmatizer
 import random
 import textwrap
@@ -18,6 +20,7 @@ from textblob import TextBlob
 import random
 from gingerit.gingerit import GingerIt
 from pyyoutube import Api
+
 from .models import *
 from xhtml2pdf import pisa
 from django.views.generic import ListView
@@ -55,6 +58,7 @@ def render_pdf_view(request):
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
+
 
 def index(request):
 
@@ -200,7 +204,7 @@ def articles(request):
     }
 
     return render(request, 'articles.html', context)
-    
+
 
 def home(request):
 
@@ -236,6 +240,7 @@ def get_example(word):
     except:
         return None
 
+
     
 def get_words_dict(text):
     words_raw = text.split()
@@ -254,6 +259,7 @@ def format_spaces(string1, string2, total_chars=40, min_spaces=1):
         num_spaces = min_spaces
 
     return str(string1) + " " * num_spaces + str(string2)
+
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
     place = request.session['user-input']
@@ -300,7 +306,6 @@ def analyze(request):
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
-<<<<<<< HEAD
     
     if len(djText)==0:
         context = {
@@ -308,7 +313,6 @@ def analyze(request):
         }
         return render(request, 'index.html', context)
 
-=======
     articles=request.POST.get('option','suggest_articles')
     lemmitizer=request.POST.get('option','grammar')
     start_pdf=request.POST.get('option','generate_pdf')
@@ -316,12 +320,12 @@ def analyze(request):
     Word_cloud=request.POST.get('option','wordcloud')
     Date=request.POST.get('option','date')
     Word_frequency=request.POST.get('option','word_frequency')
->>>>>>> daac65d47d487f8cd44b90252f15963d720ebeb3
+
 
 
     analyzed_text = ""
     word_status = ""
-  
+
     countword = len(djText.split())
 
     if word_find_flag == "word_find":
@@ -533,6 +537,7 @@ def analyze(request):
             "wordcount": countword
         }
 
+
     elif Channel=="suggest_youtube":
         request.session['user-input']=djText
         result = {
@@ -554,6 +559,7 @@ def analyze(request):
             "generate_text":True,
             "wordcount": countword
         }    
+
     
     elif articles=="suggest_articles":
         request.session['user-input']=djText
@@ -667,7 +673,7 @@ def analyze(request):
             "wordcount": countword
         }
   
-            
+
     elif gallery=="q":
         request.session['user-input']=djText
         result = {
@@ -740,6 +746,7 @@ def analyze(request):
         return HttpResponse('''<script type="text/javascript">alert("Please select atleast one option.");</script>''')
 
     return render(request, 'analyze.html', result)
+
 
 def contact(request):
     if request.method=="POST":
