@@ -1,98 +1,103 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/index2.css' %}">
 
-<section class="generate-section">
+    <section class="generate-section">
 
-    <h1 class="header" style="text-align: center">Welcome to Text Analyzer</h1>
-<h4 class="header" style="text-align: center">(Text Generator Mode)</h4>
-<p style="text-align: center; margin-top: 2px">
-    Add your text below to perform desired operations on it
+        <h1 class="header" style="text-align: center">Welcome to Text Analyzer</h1>
+        <h4 class="header" style="text-align: center">(Text Generator Mode)</h4>
+        <p style="text-align: center; margin-top: 2px">
+            Add your text below to perform desired operations on it
 </p>
-<form action="/analyze" method="POST">
-    {% csrf_token %}
-    <input id="text" name="text" class="form-control" autofocus="true" autocomplete="off" placeholder="Enter your text here" />
+        <form action="/analyze" method="POST">
+            {% csrf_token %}
+            <input id="text" name="text" class="form-control" autofocus="true" autocomplete="off" placeholder="Enter your text here" />
 
-    <p style="text-align: center">Actions you can perform :</p>
-    <div class="button-container">
-        <div class="buttons">
-            <input class="form-input" type="radio" value="Password_Generator" id="Password_Generator" name="option" />
-            <label class="form-label" for="Password_Generator">Generate Password</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="radio" value="Search_word" id="word_find" 
-            name="option" />
-            <label class="form-label" for="Search_word">Find Meaning</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="radio" id="gallery" name="option" value="q" />
-            <label class="form-label" for="q">Search Images </label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="radio" value="suggest_word" id="suggest_word" name="option" />
-            <label class="form-label" for="suggest_word">Suggest Word</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="radio" value="suggest_youtube" id="suggest_youtube" name="option" />
-            <label class="form-label" for="suggest_youtube">Suggest Youtube Channels</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="radio" value="suggest_books" id="suggest_books" name="option" />
-            <label class="form-label" for="suggest_books">Suggest Books</label>
-        </div>
-        <div class="buttons">
-            <input class="form-input" type="radio" value="suggest_articles" id="suggest_articles" name="option" />
-            <label class="form-label" for="suggest_articles">Suggest Articles</label>
-        </div>
-    </div>
-    <button type="submit">Generate</button>
-</form>
- 
-<div id="container2">        
-    <button onclick="Clear_text();">Clear</button>
-    <button onclick="Default_text();">Default Text</button>
-</div>
+            <p style="text-align: center">Actions you can perform :</p>
+            <div class="button-container">
+                <div class="buttons">
+                    <input class="form-input" type="radio" value="Password_Generator" id="Password_Generator" name="option" />
+                    <label class="form-label" for="Password_Generator">Generate Password</label>
+                </div>
+                <div class="buttons">
+                    <input class="form-input" type="radio" value="Search_word" id="word_find"
+                        name="option" />
+                    <label class="form-label" for="Search_word">Find Meaning</label>
+                </div>
+                <div class="buttons">
+                    <input class="form-input" type="radio" id="gallery" name="option" value="q" />
+                    <label class="form-label" for="q">Search Images </label>
+                </div>
+                <div class="buttons">
+                    <input class="form-input" type="radio" value="suggest_word" id="suggest_word" name="option" />
+                    <label class="form-label" for="suggest_word">Suggest Word</label>
+                </div>
+                <div class="buttons">
+                    <input class="form-input" type="radio" value="suggest_youtube" id="suggest_youtube" name="option" />
+                    <label class="form-label" for="suggest_youtube">Suggest Youtube Channels</label>
+                </div>
+                <div class="buttons">
+                    <input class="form-input" type="radio" value="suggest_books" id="suggest_books" name="option" />
+                    <label class="form-label" for="suggest_books">Suggest Books</label>
+                </div>
+                <div class="buttons">
+                    <input class="form-input" type="radio" value="suggest_articles" id="suggest_articles" name="option" />
+                    <label class="form-label" for="suggest_articles">Suggest Articles</label>
+                </div>
+            </div>
+            <button type="submit">Generate</button>
+        </form>
 
-<div id="container">
-    <a href="/"><button id="btns">Back To Home</button></a>
-    <a href="/index"><button id="btns2">Text Analyzer</button></a>
-</div>
+        <div id="container2">
+            <button onclick="Clear_text();">Clear</button>
+            <button onclick="Default_text();">Default Text</button>
+        </div>
 
-</section>
+        <div id="container">
+            <a href="/"><button id="btns">Back To Home</button></a>
+            <a href="/index"><button id="btns2">Text Analyzer</button></a>
+        </div>
+
+    </section>
 
 
-<script>
-    function Clear_text(){
-        document.getElementById('text').value='';
-    };
+    <script>
+        function Clear_text(){
+            document.getElementById('text').value = ''
+        };
 
     function Default_text(){
+
+
         if(document.getElementById('Password_Generator').checked){
-        document.getElementById("text").value="testpass"
+            document.getElementById("text").value = "testpass"
         }
-        if(document.getElementById('word_find').checked){
-        document.getElementById("text").value="equinox"
+        else if(document.getElementById('word_find').checked){
+            document.getElementById("text").value = "equinox"
         }
-        if(document.getElementById('gallery').checked){
-        document.getElementById("text").value="birds"
+        else if(document.getElementById('gallery').checked){
+            document.getElementById("text").value = "birds"
         }
-        if(document.getElementById('suggest_word').checked){
-        document.getElementById("text").value="ta"
+        else if(document.getElementById('suggest_word').checked){
+            document.getElementById("text").value = "ta"
         }
-        if(document.getElementById('suggest_youtube').checked){
-        document.getElementById("text").value="python tutorials"
+        else if(document.getElementById('suggest_youtube').checked){
+            document.getElementById("text").value = "python tutorials"
         }
-        if(document.getElementById('suggest_books').checked){
-        document.getElementById("text").value="motivation"
+        else if(document.getElementById('suggest_books').checked){
+            document.getElementById("text").value = "motivation"
         }
-        if(document.getElementById('suggest_articles').checked){
-        document.getElementById("text").value="javascript"
+        else if(document.getElementById('suggest_articles').checked){
+            document.getElementById("text").value = "javascript"
         }
-    };
+        else {
+            alert("Please select and operation first!!!")
+        }
+    }
 </script>
 
 {% endblock %}
