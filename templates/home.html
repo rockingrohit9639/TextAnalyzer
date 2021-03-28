@@ -100,16 +100,16 @@
         </div>
     </div>
 
-   <form action="contact" method="post" class="contact-form">{% csrf_token %}
+   <form action="contact" method="post" name="myform" class="contact-form" onsubmit="return validateform()">{% csrf_token %}
         <div class="parent-user-form">
-            <div class="child-user-form user-name"><input type="text" name="Name" class="base-form nameZone" placeholder="Your Full Name">
+            <div class="child-user-form user-name"><input type="text" name="name" id="name" class="base-form nameZone" placeholder="Your Full Name">
             </div>
-            <div class="child-user-form user-email"><input type="email" name="Email" class="base-form emailZone" placeholder="Your Email">
+            <div class="child-user-form user-email"><input type="email" name="email" id="email" class="base-form emailZone" placeholder="Your Email">
             </div>
         </div>
 
-        <textarea class="base-form messageZone" name="Message" placeholder="Message"></textarea>
-        <input type="submit" value="Send Message" class="base-form btn" onclick="validateform()">
+        <textarea class="base-form messageZone" name="message" id="message" placeholder="Message"></textarea>
+        <input type="submit" value="Send Message" class="base-form btn">
     </form>
 </section>
 
@@ -126,7 +126,24 @@
     })
 
     function validateform() {
-        alert('Your query is submitted successfully.');
+        var name = document.myform.name.value;
+        var email = document.myform.email.value;
+        var message = document.myform.message.value;
+        
+        if (name == null || name == "") {
+            alert('Invalid Name');
+            return false;
+        } else if (email == null || email == "") {
+            alert('Invalid Email Id');
+            return false;
+        } else if (message == "" || message == null) {
+            alert('Please Write Something in the Message');
+            return false;
+        } else  {
+            alert('Your query is submitted successfully.');
+            return true;
+        }
+        
     }
 
 </script>
