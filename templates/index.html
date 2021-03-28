@@ -14,6 +14,7 @@
     <form action="/analyze" method="POST">{% csrf_token %}
         <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be analyzed"></textarea>
 
+
         <input class="form-control input-word" id="word_input" name="word_input" autocomplete="off" placeholder="Enter word to find in text"/>
 
         <p style="text-align: center;">Actions you can perform : </p>
@@ -81,6 +82,12 @@
         <a href="/"><button id="btns">Back To Home</button></a>
         <a href="/index2"><button id="btns2"> Generator </button></a>
     </div>
+
+    {% if emptyText %}
+    <script>
+        alert("Please enter some text first!")
+    </script>
+    {% endif %}
 
 </section>
 

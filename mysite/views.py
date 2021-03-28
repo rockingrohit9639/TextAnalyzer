@@ -185,6 +185,12 @@ def analyze(request):
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
+    
+    if len(djText)==0:
+        context = {
+            'emptyText': True
+        }
+        return render(request, 'index.html', context)
 
 
 
