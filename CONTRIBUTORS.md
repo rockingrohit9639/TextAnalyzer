@@ -25,8 +25,9 @@
     19. [#120 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/120), PR - [#124](https://github.com/rockingrohit9639/TextAnalyzer/pull/124)
     20. [#123 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/123), PR - [#128](https://github.com/rockingrohit9639/TextAnalyzer/pull/128)
     21. [#129 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/129), PR - [#131](https://github.com/rockingrohit9639/TextAnalyzer/pull/131)
-    22. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
-  - Total Points (8400)
+    22. [#132 (hard: 500)](https://github.com/rockingrohit9639/TextAnalyzer/issues/132), PR - [#136](https://github.com/rockingrohit9639/TextAnalyzer/pull/136)
+    23. [#58 (good-first-issue: 50)](https://github.com/rockingrohit9639/TextAnalyzer/issues/58)
+  - Total Points (8900)
 
 - [Arbaz Alam](https://github.com/arbazalam01)
   - Solved Issues 
