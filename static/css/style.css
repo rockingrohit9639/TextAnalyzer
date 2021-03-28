@@ -68,7 +68,6 @@ a {
 
 a:hover {
     color: var(--secondary-color);
-    border-bottom: 1px solid var(--secondary-color);
 }
 
 
@@ -81,6 +80,7 @@ a:hover {
     color: var(--secondary-color);
     margin-top: auto;
     width: 100%;
+    margin-top: 10px;
 }
 
 .footer__left {

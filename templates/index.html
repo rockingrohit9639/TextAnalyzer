@@ -17,6 +17,8 @@
 
         <input class="form-control input-word" id="word_input" name="word_input" autocomplete="off" placeholder="Enter word to find in text"/>
 
+        <input style="display: none;" class="form-control input-word" id="other" name="other_input" autocomplete="off" placeholder="Enter word to be replace with in text"/>
+
         <p style="text-align: center;">Actions you can perform : </p>
         <div class="button-container">
             <div class="buttons">
@@ -66,10 +68,28 @@
             <div class="buttons">
                 <input class="form-input" type="radio" value="grammar" id="grammar"
                  name="option">
-                <label class="form-label" for="grammar">Check Grammar</label>
-                                
+                <label class="form-label" for="grammar">Check Grammar</label>              
             </div>
-                                             
+            <div class="buttons">
+                <input class="form-input" type="radio" value="lemmitize" id="lemmitize"
+                 name="option">
+                <label class="form-label" for="lemmitize">Lemmitizer</label>              
+            </div>     
+            <div class="buttons">
+                <input class="form-input" type="radio" value="replace" id="replace"
+                 name="option">
+                <label class="form-label" for="replace">Replace</label>              
+            </div> 
+            <div class="buttons">
+                <input class="form-input" type="radio" value="date" id="date"
+                 name="option">
+                <label class="form-label" for="date">Date Extractor</label>              
+            </div>
+            <div class="buttons">
+                <input class="form-input" type="radio" value="word_frequency" id="word_frequency"
+                 name="option">
+                <label class="form-label" for="word_frequency">Word Frequency</label>              
+            </div>                
         </div>
         <button type="submit">Analyze</button>
     </form>
@@ -91,7 +111,21 @@
 
 </section>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("input[type='radio']").change(function(){
+    if($(this).val()=="replace")
+    {
+    $("#other").show();
+    }
+    else
+    {
+    $("#other").hide();
+    }
+  });
+});
+</script>
 <script>
     function Clear_text(){
         document.getElementById('text').value='';
@@ -103,32 +137,49 @@
         document.getElementById("text").value="I wanna add my text to text analyzer and return a output texts."
         document.getElementById("word_input").value="text"
         }
-        if(document.getElementById('removepunc').checked){
+        else if(document.getElementById('removepunc').checked){
         document.getElementById("text").value="simplify to test@ your+% text!!%"
         }
-        if(document.getElementById('capitalize').checked){
+        else if(document.getElementById('capitalize').checked){
         document.getElementById("text").value="you should read this article."
         }
-        if(document.getElementById('toSmall').checked){
+        else if(document.getElementById('toSmall').checked){
         document.getElementById("text").value="Convert MY Text INTo Lowercase"
         }
-        if(document.getElementById('toUpper').checked){
+        else if(document.getElementById('toUpper').checked){
         document.getElementById("text").value="convert my text into uppercase"
         }
-        if(document.getElementById('New_line').checked){
+        else if(document.getElementById('New_line').checked){
         document.getElementById("text").value="Imagination is more important than knowledge.Technology makes what was once impossible possible."
         }
-        if(document.getElementById('Email_Address').checked){
+        else if(document.getElementById('Email_Address').checked){
         document.getElementById("text").value="mymail: test543@gmail.com is confirmed"
         }
-        if(document.getElementById('Links').checked){
+        else if(document.getElementById('Links').checked){
         document.getElementById("text").value="link: https://www.djangoproject.com/ ,visit this website"
         }
-        if(document.getElementById('Sentiment').checked){
+        else if(document.getElementById('Sentiment').checked){
         document.getElementById("text").value="this person is unfaithful"
         }
-        if(document.getElementById('grammar').checked){
+        else if(document.getElementById('grammar').checked){
         document.getElementById("text").value="Machne Learniing is impotant"
+        }
+        else if(document.getElementById('lemmitize').checked){
+        document.getElementById("text").value="Your text is ready to be analysed"
+        }
+        else if(document.getElementById('replace').checked){
+        document.getElementById("text").value="This word is used for text analysis";
+        document.getElementById("word_input").value="word";
+        document.getElementById("other").value="sentence";
+        }
+        else if(document.getElementById('date').checked){
+        document.getElementById("text").value="I start my journey on 10 October 1997"
+        }  
+        else if(document.getElementById('word_frequency').checked){
+        document.getElementById("text").value="This text is started with a line to show line in a text .You have to show it as a text in a line"
+        }                                                               
+        else {
+            alert("Choose an option first!!");
         }
     };
 </script>

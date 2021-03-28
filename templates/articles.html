@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/articles.css' %}" />
+
+<section class="articles-section">
+
+  <div class="ArticlesClass">
+    <h2>Medium articles related to {{text}}</h2>
+
+    <div id="articleslist">
+      {% if result %}
+      <table>
+        <tbody>
+          {% for i in result %}
+          <tr>
+            <td>
+              <div class="Articles">
+                <img
+                  src="{{ i.logo }}"
+                  class="rounded-circle"
+                  alt="avatar"/>
+                <a href="{{ i.link}}"
+                target="_blank"
+                  ><p>{{ i.title }}</p>
+                  <p>{{ i.writer }}</p>
+                  <p>{{ i.publisher }}</p>
+                  <p></p
+                  ></a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </div>
+  </div>
+
+  <a href="/index2"><button id="btns">Back</button></a>
+
+</section>
+
+{% endblock content %}

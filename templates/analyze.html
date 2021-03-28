@@ -36,6 +36,14 @@
     <h3 id="set"> Synonms/Example : {{ synonym }} </h3>
 {% endif %}
 
+{% if my_wordcloud %}
+    <img src='{{ my_wordcloud }}' style="margin-top: -8rem; margin-bottom:3rem;"/>
+{% endif %}
+
+{% if bar_graph %}
+    <img src='{{ bar_graph|safe}}'' width="800" height="500" style="margin-top: -11rem; margin-bottom:3rem;"/>
+{% endif %}
+
 {% if grammar %}
     <h3 style="margin-top: -5rem;">Original Text : {{ grammar }} </h3>
 {% endif %}
@@ -57,6 +65,14 @@
 
     {% if find_books %}
     <a href="books/"><button>Results</button></a>
+    {% endif %}
+    
+    {% if find_articles %}
+    <a href="articles/"><button>Results</button></a>
+    {% endif %}
+
+    {% if make_pdf %}
+    <a href="{% url 'pdf-view' %}"><button>pdf</button></a>
     {% endif %}
 
 {% endif %}

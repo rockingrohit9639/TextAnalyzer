@@ -5,18 +5,11 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 """
 
 from django.contrib import admin
-from django.urls import path
-from . import views
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
+    path("",include("textanalyzer.urls")),
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('analyze', views.analyze, name='rmvpunc'),
-    path('about', views.about, name='About Us'),
-    path('index', views.home, name='Get Started'),
-    path('index2', views.index2, name='Generate Text'),
-    path('gallery/',views.gallery,name='gallery'),
-    path('youtube/', views.youtube, name='youtube'),
-    path('books/', views.searchBook, name='books'),
-
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

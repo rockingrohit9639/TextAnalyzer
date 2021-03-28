@@ -147,6 +147,7 @@ Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/Mansi3546"><img src="https://avatars.githubusercontent.com/u/78791648?s=460&v=4s=100" width="100px;" alt=""/><br /><sub><b> Mansi </b></sub></a><br />💻</a></td>
+    <td align="center"><a href="https://github.com/kmryashasvi"><img src="https://avatars.githubusercontent.com/u/66861659?s=460&u=64fefa0d1dc0f089b0cdb61f10f3691ee24cd636&v=4s=100" width="100px;" alt=""/><br /><sub><b> Yashasvi </b></sub></a><br />💻</a></td>
   </tr>
 </table>
 

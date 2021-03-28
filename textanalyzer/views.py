@@ -1,6 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.utils.html import format_html
+
+from django.shortcuts import render,get_object_or_404
+from django.utils.html import format_html 
+from django.template.loader import get_template
 import string
 import re
 import requests
@@ -9,6 +11,8 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+
+from nltk.stem import WordNetLemmatizer
 import random
 import textwrap
 from PyDictionary import PyDictionary
@@ -17,12 +21,44 @@ import random
 from gingerit.gingerit import GingerIt
 from pyyoutube import Api
 
+from .models import *
+from xhtml2pdf import pisa
+from django.views.generic import ListView
+from .models import Pdf
+from wordcloud import WordCloud,STOPWORDS
+import io
+from io import BytesIO
+import urllib,base64
+from date_extractor import extract_dates
+import matplotlib.pyplot as plt
+
 
 nltk.download('stopwords')
 nltk.download('punkt')
 
 #Api key for the meriam-webster api
 api_key = "e7aa870d-ee6d-482c-a437-eb6bb0bcb9c1"
+
+
+class PdfListView(ListView):
+    model = Pdf
+    template_name = 'analyze.html'
+
+def render_pdf_view(request):
+    template_path = 'pdf.html'
+    data = request.session['user-input']
+    context = {'myvar': data}
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    template = get_template(template_path)
+    html = template.render(context)
+
+    pisa_status = pisa.CreatePDF(
+        html, dest=response)
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
 
 def index(request):
 
@@ -103,6 +139,71 @@ def searchBook(request):
 
     return render(request, 'books.html', context)
     
+def articles(request):
+    Base_string = "https://medium.com/tag/"
+    query = request.session['user-input']
+    url=Base_string + query
+    res = requests.get(url)
+    soup = BeautifulSoup(res.text, 'html.parser')
+
+    logo=[]
+    writer=[]
+    publisher=[]
+    title=[]
+    link=[]
+
+    start = soup.find_all('div',class_='streamItem streamItem--postPreview js-streamItem')
+    for span in start:
+        start1=span.find_all('img')[0]['src']
+        logo.append(start1)
+        start2=span.find_all('div',class_='postMetaInline postMetaInline-authorLockup ui-captionStrong u-flex1 u-noWrapWithEllipsis')
+        for span2 in start2:
+            start3=span2.find_all('a')[0].text
+            writer.append(start3)
+            start4=span2.find_all('a')[1].text
+            publisher.append(start4)
+        start5 = span.find_all('h3',class_='graf graf--h3 graf-after--figure graf--title')
+        for span2 in start5:
+            start6=span2.text.replace("\xa0",' ')
+            title.append(start6)
+        start7=span.find_all('a')[3]['href']
+        link.append(start7)
+
+    myDict={"title":[],"writer":[],"publisher":[],"logo":[],"link":[]}
+    myDict['title'].extend(title)
+    myDict['writer'].extend(writer)
+    myDict['publisher'].extend(publisher)
+    myDict['logo'].extend(logo)
+    myDict['link'].extend(link)
+
+    arr2 = []
+    for i in range(0,7):
+        try:
+            temp = {
+            "title": myDict["title"][i],
+            "writer": myDict["writer"][i],
+            "publisher": myDict["publisher"][i],
+            "logo": myDict["logo"][i],
+            "link":myDict["link"][i]
+           }
+
+        except:
+            temp = {
+            "title": "Not Available",
+            "writer": " ",
+            "publisher":" ",
+            "logo": " ",
+            "link":" "
+           }
+
+        arr2.append(temp)
+
+    context = {
+        "result": arr2,
+        "text":query
+    }
+
+    return render(request, 'articles.html', context)
 
 
 def home(request):
@@ -138,6 +239,26 @@ def get_example(word):
         return example
     except:
         return None
+
+
+    
+def get_words_dict(text):
+    words_raw = text.split()
+    words = {}
+    for word in words_raw:
+        if word in words:
+            words[word] += 1
+        else:
+            words[word] = 1
+
+    return {key: value for key, value in sorted(words.items(), key=lambda item: item[1], reverse=True)}
+
+def format_spaces(string1, string2, total_chars=40, min_spaces=1):
+    num_spaces = total_chars - (len(str(string1)) + min_spaces)
+    if num_spaces < min_spaces:
+        num_spaces = min_spaces
+
+    return str(string1) + " " * num_spaces + str(string2)
 
 def gallery(request):
     ACCESS_KEY = 'YBBd6J15p1YwXIV3THzl4Zt3eHiD3BGT8unud0VUNQo'
@@ -192,12 +313,18 @@ def analyze(request):
         }
         return render(request, 'index.html', context)
 
+    articles=request.POST.get('option','suggest_articles')
+    lemmitizer=request.POST.get('option','grammar')
+    start_pdf=request.POST.get('option','generate_pdf')
+    replace_text=request.POST.get('option','replace')
+    Word_cloud=request.POST.get('option','wordcloud')
+    Date=request.POST.get('option','date')
+    Word_frequency=request.POST.get('option','word_frequency')
+
 
 
     analyzed_text = ""
     word_status = ""
-
-    
 
     countword = len(djText.split())
 
@@ -388,6 +515,29 @@ def analyze(request):
             "wordcount": countword
         }
 
+    elif lemmitizer=="lemmitize":
+        wordnet_lemmatizer = WordNetLemmatizer()
+        tokenization = nltk.word_tokenize(djText)
+        count=True
+        for w in tokenization:
+            k=wordnet_lemmatizer.lemmatize(w,pos ="v")
+            if w!=k:
+                result="{} -> {}".format(w, wordnet_lemmatizer.lemmatize(w,pos ="v"))
+                count=False
+        if count==True:
+            final="No need for lemmatization"
+        if count==False:
+            final="(Original word) - > (Lemmatized word)"
+       
+        result = {
+            "analyzed_text": result,
+            "highlight":final,
+            "purpose": "Lemmatization of text",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+
+
     elif Channel=="suggest_youtube":
         request.session['user-input']=djText
         result = {
@@ -410,7 +560,120 @@ def analyze(request):
             "wordcount": countword
         }    
 
+    
+    elif articles=="suggest_articles":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": djText,
+            "purpose":"Search Articles",
+            "status": "Press Button To View Articles",
+            "find_articles": True,
+            "generate_text":True,
+            "wordcount": countword
+        } 
+
+    elif start_pdf=="generate_pdf":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": "Check Your Pdf",
+            "purpose":"Generate Pdf",
+            "status": "Press Button To View Pdf",
+            "make_pdf": True,
+            "generate_text":True,
+            "wordcount": countword
+        } 
         
+    elif replace_text=="replace":
+        final_text=re.sub(word_to_find,replace_input,djText)
+        result = {
+            "analyzed_text": final_text,
+            "purpose": "Replacemet of text in sentence",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+        
+    elif Word_cloud=="wordcloud":
+        cloud=WordCloud(background_color="white",max_words=200,stopwords=set(STOPWORDS))
+        wc=cloud.generate(djText)
+        buf=io.BytesIO()
+        wc.to_image().save(buf,format="png")
+        data=base64.b64encode(buf.getbuffer()).decode("utf8")
+        final="data:image/png;base64,{}".format(data)
+
+        result = {
+        "analyzed_text":" ",
+        "purpose":"Wordcloud",
+        "my_wordcloud": final,
+        "generate_text":True,
+        "wordcount": countword
+        } 
+    
+    elif Date=="date":
+        final=extract_dates(djText)
+        final_text=final[0].date()
+
+        result = {
+            "analyzed_text": final_text,
+            "purpose": "Extract Dates from text",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+        
+    elif Word_frequency=="word_frequency":
+        input_text = djText.replace("\n", " ")
+        djText = input_text.lower()
+
+        words_dict = get_words_dict(djText)
+        # create graph
+        if len(words_dict)>10:
+            k=10
+        else:
+            k=len(words_dict)
+
+        y_pos = range(0, k)
+        bars = []
+        height = []
+        count=0
+
+        # print and save values to graph
+        format_spaces("word", "occurrences")
+        for word_str, word_amount in words_dict.items():
+            format_spaces(word_str, word_amount)
+            count+=1
+            if count<=10:
+                bars.append(word_str)
+                height.append(int(word_amount))
+            else:
+                pass
+
+        # # Create bars
+        plt.bar(y_pos, height)
+
+        # Create names on the x-axis
+        plt.xticks(y_pos, bars, size=9)
+
+        plt.xticks(rotation='horizontal')
+        plt.ylabel('Word Frequency',fontsize=12,labelpad=10)
+        plt.xlabel('Words',fontsize=12,labelpad=10)
+
+        fig=plt.gcf()
+
+        buf=BytesIO()
+        fig.savefig(buf,format='png')
+        buf.seek(0)
+        data=base64.b64encode(buf.read())
+        uri=urllib.parse.quote(data)
+        final="data:image/png;base64,{}".format(uri)
+
+        result = {
+            "analyzed_text": " ",
+            "purpose": "Word Frequency for every word in text",
+            "bar_graph": final,
+            "analyze_text":True,
+            "wordcount": countword
+        }
+  
+
     elif gallery=="q":
         request.session['user-input']=djText
         result = {
@@ -483,3 +746,14 @@ def analyze(request):
         return HttpResponse('''<script type="text/javascript">alert("Please select atleast one option.");</script>''')
 
     return render(request, 'analyze.html', result)
+
+
+def contact(request):
+    if request.method=="POST":
+        name=request.POST['Name']
+        email=request.POST['Email']
+        message=request.POST['Message']
+        user = User_profile.objects.create(name=name,email=email,message=message)
+        user.save()
+    return render(request,"home.html")
+

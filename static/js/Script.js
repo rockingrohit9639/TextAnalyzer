@@ -45,3 +45,7 @@ sr.reveal('.header__right', {origin:'right'})
 /*===== SCROLL REVEAL ANIMATION-CONTACT FORM =====*/
 sr.reveal('.contact-form', {})
 sr.reveal('.icons', {})
+
+/*===== SCROLL REVEAL ANIMATION-CONTRIBUTER =====*/
+sr.reveal('.user-names', {})
+sr.reveal('.rounded-circle', {delay: 200})
