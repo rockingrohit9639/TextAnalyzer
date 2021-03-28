@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.utils.html import format_html
+from django.shortcuts import render,get_object_or_404
+from django.utils.html import format_html 
+from django.template.loader import get_template
 import string
 import re
 import requests
@@ -18,13 +19,38 @@ import random
 from gingerit.gingerit import GingerIt
 from pyyoutube import Api
 from .models import *
-
+from xhtml2pdf import pisa
+from django.views.generic import ListView
+from .models import Pdf
+from wordcloud import WordCloud,STOPWORDS
+import io
+import base64
 
 nltk.download('stopwords')
 nltk.download('punkt')
 
 #Api key for the meriam-webster api
 api_key = "e7aa870d-ee6d-482c-a437-eb6bb0bcb9c1"
+
+
+class PdfListView(ListView):
+    model = Pdf
+    template_name = 'analyze.html'
+
+def render_pdf_view(request):
+    template_path = 'pdf.html'
+    data = request.session['user-input']
+    context = {'myvar': data}
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    template = get_template(template_path)
+    html = template.render(context)
+
+    pisa_status = pisa.CreatePDF(
+        html, dest=response)
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
 
 def index(request):
 
@@ -254,14 +280,14 @@ def analyze(request):
     books=request.POST.get('option','suggest_books')
     articles=request.POST.get('option','suggest_articles')
     lemmitizer=request.POST.get('option','grammar')
-
+    start_pdf=request.POST.get('option','generate_pdf')
+    replace_text=request.POST.get('option','replace')
+    Word_cloud=request.POST.get('option','wordcloud')
 
 
     analyzed_text = ""
     word_status = ""
-
-    
-
+  
     countword = len(djText.split())
 
     if word_find_flag == "word_find":
@@ -505,6 +531,43 @@ def analyze(request):
             "generate_text":True,
             "wordcount": countword
         } 
+
+    elif start_pdf=="generate_pdf":
+        request.session['user-input']=djText
+        result = {
+            "analyzed_text": "Check Your Pdf",
+            "purpose":"Generate Pdf",
+            "status": "Press Button To View Pdf",
+            "make_pdf": True,
+            "generate_text":True,
+            "wordcount": countword
+        } 
+        
+    elif replace_text=="replace":
+        final_text=re.sub(word_to_find,replace_input,djText)
+        result = {
+            "analyzed_text": final_text,
+            "purpose": "Replacemet of text in sentence",
+            "analyze_text":True,
+            "wordcount": countword
+        }
+        
+    elif Word_cloud=="wordcloud":
+        cloud=WordCloud(background_color="white",max_words=200,stopwords=set(STOPWORDS))
+        wc=cloud.generate(djText)
+        buf=io.BytesIO()
+        wc.to_image().save(buf,format="png")
+        data=base64.b64encode(buf.getbuffer()).decode("utf8")
+        final="data:image/png;base64,{}".format(data)
+
+        result = {
+        "analyzed_text":" ",
+        "purpose":"Wordcloud",
+        "my_wordcloud": final,
+        "generate_text":True,
+        "wordcount": countword
+        } 
+        
             
     elif gallery=="q":
         request.session['user-input']=djText

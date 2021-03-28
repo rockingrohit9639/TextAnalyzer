@@ -13,6 +13,7 @@
         <p style="text-align: center; margin-top: 2px">
             Add your text below to perform desired operations on it
 </p>
+<<<<<<< HEAD
         <form action="/analyze" method="POST">
             {% csrf_token %}
             <input id="text" name="text" class="form-control" autofocus="true" autocomplete="off" placeholder="Enter your text here" />
@@ -56,6 +57,58 @@
             <button onclick="Clear_text();">Clear</button>
             <button onclick="Default_text();">Default Text</button>
         </div>
+=======
+<form action="/analyze" method="POST">
+    {% csrf_token %}
+    <textarea  id="text" name="text" class="form-control input-field" autofocus=true placeholder="Enter your text that need to be generate"></textarea>
+    <p style="text-align: center">Actions you can perform :</p>
+    <div class="button-container">
+        <div class="buttons">
+            <input class="form-input" type="radio" value="Password_Generator" id="Password_Generator" name="option" />
+            <label class="form-label" for="Password_Generator">Generate Password</label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="Search_word" id="word_find" 
+            name="option" />
+            <label class="form-label" for="Search_word">Find Meaning</label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" id="gallery" name="option" value="q" />
+            <label class="form-label" for="q">Search Images </label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="suggest_word" id="suggest_word" name="option" />
+            <label class="form-label" for="suggest_word">Suggest Word</label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="suggest_youtube" id="suggest_youtube" name="option" />
+            <label class="form-label" for="suggest_youtube">Suggest Youtube Channels</label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="suggest_books" id="suggest_books" name="option" />
+            <label class="form-label" for="suggest_books">Suggest Books</label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="suggest_articles" id="suggest_articles" name="option" />
+            <label class="form-label" for="suggest_articles">Suggest Articles</label>
+        </div>
+        <div class="buttons">
+            <input class="form-input" type="radio" value="generate_pdf" id="generate_pdf" name="option" />
+            <label class="form-label" for="generate_pdf">Generate Pdf</label>
+        </div>    
+        <div class="buttons">
+            <input class="form-input" type="radio" value="wordcloud" id="wordcloud" name="option" />
+            <label class="form-label" for="wordcloud">Wordcloud</label>
+        </div>       
+    </div>
+    <button type="submit">Generate</button>
+</form>
+ 
+<div id="container2">        
+    <button onclick="Clear_text();">Clear</button>
+    <button onclick="Default_text();">Default Text</button>
+</div>
+>>>>>>> c489521a54624060dcb17e15f75280a512f41be6
 
         <div id="container">
             <a href="/"><button id="btns">Back To Home</button></a>
@@ -69,6 +122,8 @@
         function Clear_text(){
             document.getElementById('text').value = ''
         };
+
+    sample_text="Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. Built by experienced developers, Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It is free and open source, has a thriving and active community, great documentation, and many options for free and paid-for support. Django helps developers avoid many common security mistakes by providing a framework that has been engineered to do the right things to protect the website automatically."
 
     function Default_text(){
 
@@ -97,7 +152,17 @@
         else {
             alert("Please select and operation first!!!")
         }
+<<<<<<< HEAD
     }
+=======
+        if(document.getElementById('generate_pdf').checked){
+        document.getElementById("text").value=sample_text
+        }
+        if(document.getElementById('wordcloud').checked){
+        document.getElementById("text").value=sample_text
+        }
+    };
+>>>>>>> c489521a54624060dcb17e15f75280a512f41be6
 </script>
 
 {% endblock %}

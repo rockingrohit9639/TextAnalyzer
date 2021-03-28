@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+from .views import render_pdf_view, PdfListView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,4 +16,7 @@ urlpatterns = [
     path('books/', views.searchBook, name='books'),
     path("contact",views.contact,name="contact"),
     path('articles/', views.articles, name='articles'),
+    path('pdf/', render_pdf_view, name='pdf-view'),
+    path('', PdfListView.as_view(), name='pdf-list-view'),
 ]
+
