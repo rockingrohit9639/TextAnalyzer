@@ -278,11 +278,13 @@ def analyze(request):
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
-    articles=request.POST.get('option','suggest_articles')
-    lemmitizer=request.POST.get('option','grammar')
-    start_pdf=request.POST.get('option','generate_pdf')
-    replace_text=request.POST.get('option','replace')
-    Word_cloud=request.POST.get('option','wordcloud')
+    
+    if len(djText)==0:
+        context = {
+            'emptyText': True
+        }
+        return render(request, 'index.html', context)
+
 
 
     analyzed_text = ""
