@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-
 from django.shortcuts import render,get_object_or_404
 from django.utils.html import format_html 
 from django.template.loader import get_template
@@ -11,7 +10,6 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-
 from nltk.stem import WordNetLemmatizer
 import random
 import textwrap
@@ -20,7 +18,6 @@ from textblob import TextBlob
 import random
 from gingerit.gingerit import GingerIt
 from pyyoutube import Api
-
 from .models import *
 from xhtml2pdf import pisa
 from django.views.generic import ListView
@@ -306,6 +303,7 @@ def analyze(request):
     Grammar=request.POST.get('option','grammar')
     Channel=request.POST.get('option','suggest_youtube')
     books=request.POST.get('option','suggest_books')
+    replace_input = request.POST.get("other")
     
     if len(djText)==0:
         context = {
@@ -316,7 +314,7 @@ def analyze(request):
     articles=request.POST.get('option','suggest_articles')
     lemmitizer=request.POST.get('option','grammar')
     start_pdf=request.POST.get('option','generate_pdf')
-    replace_text=request.POST.get('option','replace')
+    replace_text = request.POST.get('option', 'replace')
     Word_cloud=request.POST.get('option','wordcloud')
     Date=request.POST.get('option','date')
     Word_frequency=request.POST.get('option','word_frequency')
@@ -583,8 +581,8 @@ def analyze(request):
             "wordcount": countword
         } 
         
-    elif replace_text=="replace":
-        final_text=re.sub(word_to_find,replace_input,djText)
+    elif replace_text == "replace":
+        final_text = re.sub(word_to_find, replace_input, djText)
         result = {
             "analyzed_text": final_text,
             "purpose": "Replacemet of text in sentence",
