@@ -13,3 +13,4 @@ python-youtube==0.7.0
 xhtml2pdf==0.2.5
 wordcloud==1.8.1
 date-extractor==5.1.5
+python-dateutil==2.8.1
