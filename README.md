@@ -19,34 +19,14 @@ This is a simple text analyzer where you can perform some operations like capita
 - CSS
 - Bootstrap
 
-# CrossWoC
-[![chat on discord](https://img.shields.io/badge/chat-on%20discord-brightgreen)](https://discord.gg/GycEMxYm)
-
+#Open Source Programs
+This project has been a part of the following programs
+### CrossWoC
 CrossWoC is a six-week long opensource event organised by IEEE DTU & IEEE DTU CS, which gives programmers and innovators an opportunity to bring out their nascent talent and find intriguing solutions to real-world problems. It provides a platform for developers to dig deeper into their gray matter and bring out their latent creativity through open source.
 
 [<img src="https://camo.githubusercontent.com/4d270d544d67ce146ad9ec7d3811e165a64de576dc29b783c6960d7644a3e3b6/68747470733a2f2f63726f7373776f632e696565656474752e696e2f696d616765732f696d6763772e706e67">](https://crosswoc.ieeedtu.in/)
 
-
-##### Points Table
-
-- Good first Issue: 50 point
-
-- Easy: 100 point
-
-- Medium: 200 point
-
-- Hard: 500 point
-
-  
-
-You can ask any of your doubts related to Git, GitHub, Project, Django or anything else. I will definitely assist you.
-
 Join our [Discord](https://discord.gg/GycEMxYm) server for more details.
-
-  
-  
-  
-  
 
 # SCREENSHOTS
 
